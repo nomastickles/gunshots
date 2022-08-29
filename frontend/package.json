@@ -2,6 +2,7 @@
   "name": "gunshots-frontend",
   "version": "1.0.0",
   "author": "nomastickles",
+  "homepage": "https://nomastickles.github.io/gunshots",
   "license": "MIT",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
