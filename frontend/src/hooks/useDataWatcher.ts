@@ -4,13 +4,14 @@ import Sockette from "sockette";
 import * as actions from "../actions";
 import { TEMP_DATA } from "../constants";
 import * as selectors from "../selectors";
-import { Incident } from "../types";
+import { AppSteps, Incident } from "../types";
 
 const useDataWatcher = () => {
   const websocket = useSelector(selectors.getWebsocket);
   const websocketConnection: MutableRefObject<Sockette | undefined> = useRef();
   const dispatch = useDispatch();
-  const hasLocalData = !!TEMP_DATA;
+  const stepMap = useSelector(selectors.getStepMap);
+  const isPublic = !!stepMap[AppSteps.IS_PUBIC];
 
   const onWebhookMessageReceived = useCallback(
     ({ data }: { data: string }) => {
@@ -24,19 +25,19 @@ const useDataWatcher = () => {
     [dispatch]
   );
 
-  // useEffect(() => {
-  //   if (!hasLocalData) {
-  //     return;
-  //   }
-  //   if (!TEMP_DATA) {
-  //     return;
-  //   }
-  //   const results = JSON.parse(TEMP_DATA) as Incident[];
-  //   dispatch(actions.setUSTerritoryData(results));
-  // }, [dispatch, hasLocalData]);
+  useEffect(() => {
+    if (!isPublic) {
+      return;
+    }
+    if (!TEMP_DATA) {
+      return;
+    }
+    const results = JSON.parse(TEMP_DATA) as Incident[];
+    dispatch(actions.setUSTerritoryData(results));
+  }, [dispatch, isPublic]);
 
   useEffect(() => {
-    if (hasLocalData) {
+    if (isPublic) {
       return;
     }
     if (!websocket) {
@@ -77,7 +78,7 @@ const useDataWatcher = () => {
       websocketConnection.current?.close();
       websocketConnection.current = undefined;
     };
-  }, [dispatch, hasLocalData, onWebhookMessageReceived, websocket]);
+  }, [dispatch, isPublic, onWebhookMessageReceived, websocket]);
 };
 
 export default useDataWatcher;

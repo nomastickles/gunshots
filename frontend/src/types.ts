@@ -28,6 +28,7 @@ export enum AppSteps {
   SHOW_INCIDENT = "SHOW_INCIDENT",
   HIDE_INCIDENT = "HIDE_INCIDENT",
   SHOW_INPUT = "SHOW_INPUT",
+  IS_PUBIC = "IS_PUBIC",
 }
 
 export type AppState = {

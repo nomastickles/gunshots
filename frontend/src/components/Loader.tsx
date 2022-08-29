@@ -17,6 +17,7 @@ function Loader() {
     classEnd: "animate__fadeOut",
   });
   const showInput = stepMap[AppSteps.SHOW_INPUT];
+  const isPublic = !!stepMap[AppSteps.IS_PUBIC];
 
   /**
    * look for websocket on load
@@ -25,6 +26,10 @@ function Loader() {
    * this only happens once since dispatch is static
    */
   React.useEffect(() => {
+    if (isPublic) {
+      return;
+    }
+
     if (!WEBSOCKET_ENDPOINT) {
       dispatch(actions.setStepValue({ step: AppSteps.SHOW_INPUT }));
       return;
@@ -40,7 +45,7 @@ function Loader() {
         actions.setStepValue({ step: AppSteps.SHOW_INPUT, clear: true })
       );
     },
-    [dispatch]
+    [dispatch, isPublic]
   );
 
   return (
