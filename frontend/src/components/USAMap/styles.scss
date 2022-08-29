@@ -1,0 +1,43 @@
+.svg-map {
+  width: 100%;
+  height: auto;
+  stroke: rgb(112, 87, 87);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  .svg-map__location {
+    &--heat0 {
+      fill: rgba(107, 69, 69, 0.267);
+    }
+
+    &--heat1 {
+      fill: rgba(107, 69, 69, 0.418);
+    }
+
+    &--heat2 {
+      fill: rgba(107, 69, 69, 0.616);
+    }
+
+    &--heat3 {
+      fill: rgba(107, 69, 69, 0.808);
+    }
+  }
+
+  &__location {
+    fill: #282c34;
+    cursor: pointer;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &:hover {
+      outline: 0;
+    }
+  }
+
+  .currentUSTerritory {
+    fill: rgb(229, 112, 112);
+  }
+}

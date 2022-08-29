@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "VisualStudioExptTeam.vscodeintellicode",
+    "pflannery.vscode-versionlens",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "mohsen1.prettify-json",
+    "azemoh.one-monokai",
+    "Tyriar.sort-lines",
+    "shd101wyy.markdown-preview-enhanced"
+  ]
+}
