@@ -54,7 +54,7 @@ function Incident() {
           <div className="text-gray-700 sm:float-left">
             <h2 className="text-gray-800">{incident?.date}</h2>
             <p>{incident?.address}</p>
-            <p className="text-base">
+            <p className="text-sm">
               {incident?.city}, {incident?.state}
             </p>
           </div>
@@ -62,7 +62,7 @@ function Incident() {
             {title && <h2 className="text-red-500">{title}</h2>}
             {!title && <p>&nbsp;</p>}
             <p className="">&nbsp;</p>
-            <p className="text-base text-gray-500">
+            <p className="text-sm text-gray-500">
               {currentIncidentInfo?.stateTotals?.killed} killed +{" "}
               {currentIncidentInfo?.stateTotals?.injured} injured in{" "}
               {incident?.state}
