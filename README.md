@@ -4,7 +4,7 @@ DEMO: [https://nomastickles.github.io/gunshots/](https://nomastickles.github.io/
 
 The backend and frontend code of this project constitutes a data visualization system that runs on data provided by [gunviolencearchive.org](https://www.gunviolencearchive.org).
 
-This system is a teaching aid for a Udemy course that will also bring awareness to [gunviolencearchive.org](https://www.gunviolencearchive.org) initiatives.
+This system is a teaching aid for a Udemy course that will also bring awareness to [gunviolencearchive.org](https://www.gunviolencearchive.org/about) initiatives.
 
 |                 mobile example 1                  |                 mobile example 2                  |
 | :-----------------------------------------------: | :-----------------------------------------------: |
