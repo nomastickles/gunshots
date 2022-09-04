@@ -58,11 +58,11 @@ const uploadIncidents: SNSHandler = async (event) => {
   const incidentsAllPrevious = await dynamodb.getAllIncidents();
   const allPreviousImagesKeys = await s3.fetchAllItemKeys();
 
-  for (const incidentsChunked of libGeneral.chunkArray(
+  for (const incidentsBatch of libGeneral.chunkArray(
     incidentsIncoming,
     libGeneral.GoogleBatchLimitPerSecond
   )) {
-    const initializeIncidentsPromises = incidentsChunked.map(
+    const newIncidentsPromises = incidentsBatch.map(
       async (item: IncidentIncoming) => {
         try {
           const newIncidentResults = await libIncidents.createNewIncident(
@@ -81,7 +81,7 @@ const uploadIncidents: SNSHandler = async (event) => {
       }
     );
 
-    await Promise.all(initializeIncidentsPromises); // all at once
+    await Promise.all(newIncidentsPromises); // all at once
 
     if (incidentsIncoming.length > libGeneral.GoogleBatchLimitPerSecond) {
       // pausing since we can only do 500/second at a time

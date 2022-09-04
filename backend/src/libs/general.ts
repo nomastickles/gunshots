@@ -1,5 +1,3 @@
-import { Incident } from "@src/types";
-
 export const DynamoDBWriteCapacityUnits = 2;
 export const DynamoDBReadCapacityUnits = 1;
 
@@ -17,14 +15,16 @@ export const GoogleBatchLimitPerSecond = 500;
 
 export const S3BaseURL = `https://${process.env.S3_NAME}.s3.amazonaws.com/`;
 
-export const DIVIDER = ":";
-
 export const SEND_TO_ALL_INDICATOR = "*";
 
-export const chunkArray = (arr: any[], size: number) =>
-  Array.from({ length: Math.ceil(arr.length / size) }, (_v, i) =>
-    arr.slice(i * size, i * size + size)
-  );
+export function batchArray(arr: any[], batchSize: number) {
+  const result = [];
+  for (let i = 0; i < arr.length; i += batchSize) {
+    const chunk = arr.slice(i, i + batchSize);
+    result.push(chunk);
+  }
+  return result;
+}
 
 export const timeout = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -32,9 +32,3 @@ export const timeout = (ms: number) => {
 
 export const getNewRandomWord = () =>
   (Math.random() + 1).toString(36).substring(7);
-
-export const getAllIncidentsHashesStringFromIncidents = (items: Incident[]) =>
-  items
-    .map((i) => i.id.split(DIVIDER)[1])
-    .sort()
-    .join("");

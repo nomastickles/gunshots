@@ -6,9 +6,11 @@ import { Response } from "node-fetch";
 import * as google from "@libs/google";
 import * as s3 from "@libs/s3";
 
+export const SET_HASH_DIVIDER = ":";
+
 export const getCombinedIncidentHashes = (items: Incident[]) =>
   items
-    .map((i) => i.id.split(libGeneral.DIVIDER)[1])
+    .map((i) => i.id.split(SET_HASH_DIVIDER)[1])
     .sort()
     .join("");
 
@@ -20,7 +22,7 @@ export const getLocationStringFromIncident = (item: Incident) => {
 
 /**
  *
- *  newItem.id = `${currentSetId}${DIVIDER}${hashOfIncident}`;
+ *  newItem.id = `${currentSetId}${SET_HASH_DIVIDER}${hashOfIncident}`;
  *
  * @param currentSetId
  * @param item
@@ -70,7 +72,7 @@ export const createNewIncident = async (
   /**
    * 💥 the PK/id
    */
-  newItem.id = `${newIncidentSetId}${libGeneral.DIVIDER}${hashOfIncident}`;
+  newItem.id = `${newIncidentSetId}${SET_HASH_DIVIDER}${hashOfIncident}`;
 
   if (newItem.address === "N/A") {
     console.log("🗺 🗄 🌕 no address to lookup", newItem);
