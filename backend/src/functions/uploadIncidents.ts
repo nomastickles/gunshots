@@ -128,7 +128,7 @@ const uploadIncidents: SNSHandler = async (event) => {
    * find images with no known incoming hashes (to delete)
    * remember: S3 files names: <hash of db item>.jpg
    */
-  const S3KeysToDelete = allPreviousImagesKeys.filter(
+  const S3KeysToDelete = allPreviousImageKeys.filter(
     (fileNameWithExtension) => {
       const hashOfIncident = fileNameWithExtension.split(".")[0];
 
