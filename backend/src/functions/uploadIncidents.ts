@@ -28,9 +28,10 @@ const uploadIncidents: SNSHandler = async (event) => {
   const incidentsToSave: Incident[] = [];
 
   if (!incomingRawData) {
-    console.warn("no data");
-    return null;
+    throw new Error("no data");
   }
+
+  console.log({ incomingRawData });
 
   try {
     const parsedData = papaparse.parse(incomingRawData, {
@@ -38,13 +39,13 @@ const uploadIncidents: SNSHandler = async (event) => {
     });
 
     if (!parsedData.data) {
-      throw new Error("no data");
+      throw new Error("no parsedData.data");
     }
 
     incidentsIncoming.push(...(parsedData.data as IncidentIncoming[]));
   } catch (err) {
-    console.error("parsing broke", err);
-    return null;
+    console.error("parsing broke");
+    throw err;
   }
 
   if (!incidentsIncoming.length) {
@@ -58,7 +59,7 @@ const uploadIncidents: SNSHandler = async (event) => {
   const incidentsAllPrevious = await dynamodb.getAllIncidents();
   const allPreviousImagesKeys = await s3.fetchAllItemKeys();
 
-  for (const incidentsBatch of libGeneral.chunkArray(
+  for (const incidentsBatch of libGeneral.batchArray(
     incidentsIncoming,
     libGeneral.GoogleBatchLimitPerSecond
   )) {
@@ -92,6 +93,7 @@ const uploadIncidents: SNSHandler = async (event) => {
   console.log("🙏 incidentsToSave", incidentsToSave);
 
   if (!incidentsToSave.length) {
+    console.log("🌕 nothing to saved");
     return null;
   }
 

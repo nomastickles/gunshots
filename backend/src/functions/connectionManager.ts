@@ -7,22 +7,18 @@ import type { APIGatewayRequestAuthorizerEvent, Handler } from "aws-lambda";
 const connectionManager: Handler<APIGatewayRequestAuthorizerEvent> = async (
   event
 ) => {
-  try {
-    const id = event.requestContext.connectionId;
+  const id = event.requestContext.connectionId;
 
-    if (event.requestContext.eventType === "CONNECT") {
-      await dynamodb.addConnection(id);
+  if (event.requestContext.eventType === "CONNECT") {
+    await dynamodb.addConnection(id);
 
-      await sns.sendMessage(process.env.SNS_SEND_INCIDENTS, id);
-    } else if (event.requestContext.eventType === "DISCONNECT") {
-      await dynamodb.removeItemByPrimaryKey(id);
-    }
-    return formatJSONResponse({
-      message: "🟢",
-    });
-  } catch (e) {
-    console.log("💥", e);
+    await sns.sendMessage(process.env.SNS_SEND_INCIDENTS, id);
+  } else if (event.requestContext.eventType === "DISCONNECT") {
+    await dynamodb.removeItemByPrimaryKey(id);
   }
+  return formatJSONResponse({
+    message: "🟢",
+  });
 };
 
 export default middyfy(connectionManager);
