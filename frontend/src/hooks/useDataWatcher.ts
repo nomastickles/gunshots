@@ -34,7 +34,9 @@ const useDataWatcher = () => {
     if (!localIncidents.length) {
       return;
     }
-    dispatch(actions.setUSTerritoryData(localIncidents));
+    setTimeout(() => {
+      dispatch(actions.setUSTerritoryData(localIncidents));
+    }, 1000);
   }, [dispatch, isPublic]);
 
   useEffect(() => {
