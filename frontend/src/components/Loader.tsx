@@ -36,7 +36,7 @@ function Loader() {
     }
 
     dispatch(actions.websocketUpdate(WEBSOCKET_ENDPOINT));
-  }, [dispatch]);
+  }, [dispatch, isPublic]);
 
   const onInputChange = React.useCallback(
     (text: string) => {
@@ -45,7 +45,7 @@ function Loader() {
         actions.setStepValue({ step: AppSteps.SHOW_INPUT, clear: true })
       );
     },
-    [dispatch, isPublic]
+    [dispatch]
   );
 
   return (

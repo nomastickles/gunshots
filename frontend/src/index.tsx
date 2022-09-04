@@ -1,11 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
+import { createRoot } from "react-dom/client";
 
 import { configureStore } from "@reduxjs/toolkit";
 import { AppSlice } from "./slice";
+
+const container = document.getElementById("root")!;
+const root = createRoot(container);
 
 export const store = configureStore({
   reducer: {
@@ -16,11 +19,10 @@ export const store = configureStore({
 
 export type RootState = ReturnType<typeof store.getState>;
 
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
