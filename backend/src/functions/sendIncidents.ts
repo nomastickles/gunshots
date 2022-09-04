@@ -42,7 +42,7 @@ const sendIncidents: SNSHandler = async (event) => {
       const client = getApiGatewayManagementClient(websocket);
       await client.postToConnection(data).promise();
     } catch (err) {
-      console.log("🙅🏻‍♀️ sendMessageToConnections", err);
+      console.error("🙅🏻‍♀️ sendMessageToConnections", err);
       if (err?.statusCode === 410) {
         await dynamodb.removeItemByPrimaryKey(connectionId);
       }
