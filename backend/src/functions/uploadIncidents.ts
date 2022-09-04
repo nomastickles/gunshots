@@ -58,7 +58,7 @@ const uploadIncidents: SNSHandler = async (event) => {
 
   const googleAPIKey = await ssm.getParameter(process.env.SSM_PATH_GOOGLE_KEY);
   const incidentsAllPrevious = await dynamodb.getAllIncidents();
-  const allPreviousImagesKeys = await s3.fetchAllItemKeys();
+  const allPreviousImageKeys = await s3.fetchAllItemKeys();
 
   for (const incidentsBatch of libGeneral.batchArray(
     incidentsIncoming,
@@ -70,7 +70,7 @@ const uploadIncidents: SNSHandler = async (event) => {
           const newIncidentResults = await libIncidents.createNewIncident(
             newIncidentSetId,
             item,
-            allPreviousImagesKeys,
+            allPreviousImageKeys,
             googleAPIKey
           );
 

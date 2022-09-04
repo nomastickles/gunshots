@@ -32,7 +32,7 @@ export const getLocationStringFromIncident = (item: Incident) => {
 export const createNewIncident = async (
   newIncidentSetId: string,
   item: IncidentIncoming,
-  allPreviousImagesKeys: string[],
+  allPreviousImageKeys: string[],
   googleAPIKey?: string
 ) => {
   const newItem: Incident = {
@@ -78,7 +78,7 @@ export const createNewIncident = async (
     return newItem;
   }
 
-  const previousS3Key = allPreviousImagesKeys?.find((key) =>
+  const previousS3Key = allPreviousImageKeys?.find((key) =>
     key.includes(hashOfIncident)
   );
 
