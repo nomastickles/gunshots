@@ -1,5 +1,4 @@
 import { createSelector } from "reselect";
-// import { TEMP_DATA } from "./constants";
 import { AppSlice } from "./slice";
 import { RootState } from "./index";
 import { Incident } from "./types";

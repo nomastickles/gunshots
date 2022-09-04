@@ -2,9 +2,11 @@ import { MutableRefObject, useCallback, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Sockette from "sockette";
 import * as actions from "../actions";
-import { TEMP_DATA } from "../constants";
+import { LOCAL_DATA } from "../constants";
 import * as selectors from "../selectors";
 import { AppSteps, Incident } from "../types";
+
+const localIncidents = LOCAL_DATA.incidents as unknown as Incident[];
 
 const useDataWatcher = () => {
   const websocket = useSelector(selectors.getWebsocket);
@@ -29,11 +31,10 @@ const useDataWatcher = () => {
     if (!isPublic) {
       return;
     }
-    if (!TEMP_DATA) {
+    if (!localIncidents.length) {
       return;
     }
-    const results = TEMP_DATA.incidents as Incident[];
-    dispatch(actions.setUSTerritoryData(results));
+    dispatch(actions.setUSTerritoryData(localIncidents));
   }, [dispatch, isPublic]);
 
   useEffect(() => {
