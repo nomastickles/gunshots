@@ -22,6 +22,7 @@ const TableName = process.env.DB_NAME;
 const IndexName = process.env.DB_NAME_GSPK;
 
 export const addConnection = async (connectionId: string) => {
+  await libGeneral.timeout(DynamoDBWriteTimeout);
   const item: DynamoDBItem = {
     PK: {
       S: connectionId,
