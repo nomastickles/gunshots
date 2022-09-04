@@ -6,11 +6,7 @@ const GRANT_PUBLIC_READ = "uri=http://acs.amazonaws.com/groups/global/AllUsers";
 
 export const S3BaseURL = `https://${process.env.S3_NAME}.s3.amazonaws.com/`;
 
-/**
- **/
-export const listAllObjects = async (
-  token?: string
-): Promise<AWS.S3.Object[]> => {
+const listAllObjects = async (token?: string): Promise<AWS.S3.Object[]> => {
   const { Contents, NextContinuationToken } = await s3Client
     .listObjectsV2({
       Bucket,
