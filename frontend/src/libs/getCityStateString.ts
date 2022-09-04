@@ -10,7 +10,7 @@ function getCityStateString(city = "", state = "") {
   const results = `${city}, ${state}`.toUpperCase();
 
   if (
-    window.btoa(results) !==
+    window.btoa(results) ===
     "V0lOU1RPTiBTQUxFTSAoV0lOU1RPTi1TQUxFTSksIE5PUlRIIENBUk9MSU5B"
   ) {
     return results.split(" (")[0].replace(" ", "-");
