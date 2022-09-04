@@ -34,6 +34,8 @@ export interface Incident {
   metrics?: Metrics;
 }
 
+export type DynamoDBItemName = "connection" | "incident" | "setting";
+
 export interface DynamoDBItem extends Record<string, any> {
   /**
    * Partition Key
@@ -48,7 +50,7 @@ export interface DynamoDBItem extends Record<string, any> {
    * (paired with Global Secondary Sort key)
    */
   GSPK?: {
-    S: string;
+    S: DynamoDBItemName;
   };
   /**
    * Global Secondary Sort key
@@ -58,7 +60,7 @@ export interface DynamoDBItem extends Record<string, any> {
   };
 
   /**
-   * storage for JSON
+   * storage for JSON or strings
    */
   DATA?: {
     S: string;
