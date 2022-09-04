@@ -10,10 +10,6 @@ const serverlessConfiguration: AWS = {
         forceExclude: ["aws-sdk"],
       },
     },
-    routeSettings: {
-      burstLimit: 10,
-      rateLimit: 5,
-    },
     ACCOUNT_ID: "${file(./config.js):aws.accountId}",
     S3_NAME:
       "${file(./config.js):aws.s3NamePrefix}-${self:service}-${self:provider.stage}", // public facing
@@ -23,11 +19,7 @@ const serverlessConfiguration: AWS = {
       "arn:aws:sns:${self:provider.region}:${self:custom.ACCOUNT_ID}",
     SSM_PATH_GOOGLE_KEY: "/gunshots/googleAPIKey",
   },
-  plugins: [
-    "serverless-webpack",
-    "serverless-iam-roles-per-function",
-    "serverless-apigateway-route-settings",
-  ],
+  plugins: ["serverless-webpack", "serverless-iam-roles-per-function"],
   provider: {
     name: "aws",
     runtime: "nodejs16.x",

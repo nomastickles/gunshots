@@ -4,8 +4,8 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "deploy:dev": "node_modules/.bin/serverless deploy --verbose --stage dev",
-    "destroy:dev": "node_modules/.bin/serverless remove --stage dev",
+    "deploy:dev": "node_modules/.bin/serverless deploy --verbose --stage dev1",
+    "destroy:dev": "node_modules/.bin/serverless remove --stage dev1",
     "deploy:boom": "node_modules/.bin/serverless deploy --verbose --stage boom",
     "destroy:boom": "node_modules/.bin/serverless remove --stage boom",
     "serverless:metrics": "node_modules/.bin/serverless metrics",
@@ -26,7 +26,6 @@
     "@types/node-fetch": "^2.6.2",
     "aws-sdk": "^2.1189.0",
     "serverless": "3.21.0",
-    "serverless-apigateway-route-settings": "^1.1.0",
     "serverless-iam-roles-per-function": "^3.2.0",
     "serverless-webpack": "^5.8.0",
     "ts-loader": "^9.3.1",
