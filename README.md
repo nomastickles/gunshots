@@ -14,22 +14,30 @@ This system is a teaching aid for a Udemy course that will also bring awareness 
 | :-----------------------------------------------: |
 | ![example-incident-1](img/example-incident-1.png) |
 
-### TECHNOLOGIES / LIBRARIES
+## BACKEND
 
-- Serverless Framework + Typescript
+- Serverless Framework + Typescript + Tests
 - AWS IAM, Lambda, API Gateway Websockets, DynamoDb, SNS, S3, SSM
 - Google Street View Images API
-- React + Typescript, Redux Toolkit, Tailwind CSS Responsive, Animate.css
 
-## DATA FLOW / 72 HOUR CSV UPLOAD
+## FRONTEND
+
+- React + Redux Toolkit + Typescript + Tests
+- Tailwind CSS Responsive Design, Animate.css
+
+## DATA UPLOAD
 
 ![cloud-design-upload](img/cloud-design-upload.png)
 
-## DATA FLOW / BROWSER CONNECTIONS
+## WEBSOCKET CONNECTIONS
 
 ![cloud-design-browsers](img/cloud-design-browsers.png)
 
-## DYNAMODB STRUCTURE / INCIDENTS
+## DYNAMODB STRUCTURE
+
+DynamoDB holds three data structures: websocket connection ids, gunshot incident records, and various settings .
+
+### INCIDENTS
 
 ```
 // Primary Key "PK" is in the form of <currentSetId>:<hash of db item>
@@ -50,7 +58,7 @@ This system is a teaching aid for a Udemy course that will also bring awareness 
 }
 ```
 
-## DYNAMODB STRUCTURE / APP SETTINGS
+### APP SETTINGS
 
 example currentSetId
 
