@@ -17,10 +17,6 @@ const sendIncidents: SNSHandler = async (event) => {
       return;
     }
 
-    if (!websocket) {
-      console.error("missing websocket!! ");
-      return;
-    }
     if (incomingId === libGeneral.SEND_TO_ALL_INDICATOR) {
       const ids = await dynamodb.getAllConnectionsIds();
       connectionIds.push(...ids);
