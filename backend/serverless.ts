@@ -1,5 +1,5 @@
 import type { AWS } from "@serverless/typescript";
-import * as libDynamoDB from "./src/libs/dynamoDB";
+import * as constants from "./src/constants";
 const serverlessConfiguration: AWS = {
   service: "gunshots",
   frameworkVersion: "3",
@@ -80,8 +80,8 @@ const serverlessConfiguration: AWS = {
             },
           ],
           ProvisionedThroughput: {
-            ReadCapacityUnits: libDynamoDB.DynamoDBReadCapacityUnits,
-            WriteCapacityUnits: libDynamoDB.DynamoDBWriteCapacityUnits,
+            ReadCapacityUnits: constants.DynamoDBReadCapacityUnits,
+            WriteCapacityUnits: constants.DynamoDBWriteCapacityUnits,
           },
           GlobalSecondaryIndexes: [
             {
@@ -90,8 +90,8 @@ const serverlessConfiguration: AWS = {
                 ProjectionType: "ALL",
               },
               ProvisionedThroughput: {
-                ReadCapacityUnits: libDynamoDB.DynamoDBReadCapacityUnits,
-                WriteCapacityUnits: libDynamoDB.DynamoDBWriteCapacityUnits,
+                ReadCapacityUnits: constants.DynamoDBReadCapacityUnits,
+                WriteCapacityUnits: constants.DynamoDBWriteCapacityUnits,
               },
               KeySchema: [
                 {

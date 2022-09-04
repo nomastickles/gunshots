@@ -5,16 +5,14 @@ import {
   QueryCommand,
 } from "@aws-sdk/client-dynamodb";
 import * as libGeneral from "@libs/general";
+import * as constants from "@src/constants";
 import { DynamoDBItem, DynamoDBItemName, Incident } from "@src/types";
 
-export const DynamoDBWriteCapacityUnits = 2;
-export const DynamoDBReadCapacityUnits = 1;
-
 export const DynamoDBWriteTimeout = Math.round(
-  (1 / DynamoDBWriteCapacityUnits) * 1000
+  (1 / constants.DynamoDBWriteCapacityUnits) * 1000
 );
 export const DynamoDBReadTimeout = Math.round(
-  (1 / DynamoDBReadCapacityUnits) * 1000
+  (1 / constants.DynamoDBReadCapacityUnits) * 1000
 );
 
 const dbClient = new DynamoDBClient({ region: process.env.AWS_REGION });
