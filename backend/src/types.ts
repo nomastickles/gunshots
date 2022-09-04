@@ -17,7 +17,7 @@ export interface Incident {
   address: string;
 
   /**
-   * image S3 URL for hosting
+   * image S3 URL
    */
   image?: string;
 
