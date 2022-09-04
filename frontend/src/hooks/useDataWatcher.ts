@@ -32,7 +32,7 @@ const useDataWatcher = () => {
     if (!TEMP_DATA) {
       return;
     }
-    const results = JSON.parse(TEMP_DATA) as Incident[];
+    const results = TEMP_DATA.incidents as Incident[];
     dispatch(actions.setUSTerritoryData(results));
   }, [dispatch, isPublic]);
 
