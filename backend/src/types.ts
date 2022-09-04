@@ -1,8 +1,6 @@
-export type Metrics = {
-  injured: number;
-  killed: number;
-};
-
+/**
+ * pre formatted data
+ */
 export interface IncidentIncoming {
   ["# Injured"]: number;
   ["# Killed"]: number;
@@ -33,6 +31,11 @@ export interface Incident {
 
   metrics?: Metrics;
 }
+
+export type Metrics = {
+  injured: number;
+  killed: number;
+};
 
 export type DynamoDBItemName = "connection" | "incident" | "setting";
 
