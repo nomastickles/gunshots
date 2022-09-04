@@ -4,8 +4,7 @@ import {
   PutItemCommand,
   QueryCommand,
 } from "@aws-sdk/client-dynamodb";
-import * as generalLib from "@libs/general";
-import * as constants from "@src/constants";
+import * as libGeneral from "@libs/general";
 import { Incident } from "@src/types";
 
 const dbClient = new DynamoDBClient({ region: process.env.AWS_REGION });
@@ -67,7 +66,7 @@ export const addConnection = async (id: string) => {
 };
 
 export const getAllConnectionsIds = async (exclusiveStartKey?: any) => {
-  await generalLib.timeout(constants.DynamoDBReadTimeout);
+  await libGeneral.timeout(libGeneral.DynamoDBReadTimeout);
   const { Items, LastEvaluatedKey } = await dbClient.send(
     new QueryCommand({
       TableName,
@@ -94,7 +93,7 @@ export const getAllConnectionsIds = async (exclusiveStartKey?: any) => {
 export const getAllIncidents = async (
   exclusiveStartKey?: any
 ): Promise<Incident[]> => {
-  await generalLib.timeout(constants.DynamoDBReadTimeout);
+  await libGeneral.timeout(libGeneral.DynamoDBReadTimeout);
   const { Items, LastEvaluatedKey } = await dbClient.send(
     new QueryCommand({
       TableName,
@@ -122,7 +121,7 @@ export const getAllIncidents = async (
  * and we can add 'data' as the data store
  */
 export const addIncident = async (incident: Incident) => {
-  await generalLib.timeout(constants.DynamoDBWriteTimeout);
+  await libGeneral.timeout(libGeneral.DynamoDBWriteTimeout);
   const item: DynamoDBItem = {
     PK: {
       S: incident.id,
@@ -149,7 +148,7 @@ export const addIncident = async (incident: Incident) => {
 };
 
 export const removeItemByPrimaryKey = async (id: string) => {
-  await generalLib.timeout(constants.DynamoDBWriteTimeout);
+  await libGeneral.timeout(libGeneral.DynamoDBWriteTimeout);
   await dbClient.send(
     new DeleteItemCommand({
       TableName,
@@ -164,7 +163,7 @@ export const removeItemByPrimaryKey = async (id: string) => {
 };
 
 export const getSettings = async () => {
-  await generalLib.timeout(constants.DynamoDBReadTimeout);
+  await libGeneral.timeout(libGeneral.DynamoDBReadTimeout);
   const { Items } = await dbClient.send(
     new QueryCommand({
       TableName,
@@ -199,7 +198,7 @@ export const getSettings = async () => {
 };
 
 export const updateCurrentSetId = async (setId: string) => {
-  await generalLib.timeout(constants.DynamoDBWriteTimeout);
+  await libGeneral.timeout(libGeneral.DynamoDBWriteTimeout);
   const item: DynamoDBItem = {
     PK: {
       S: "currentSetId",

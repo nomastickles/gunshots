@@ -24,6 +24,8 @@ export interface Incident {
   image?: string;
 
   /**
+   * id == <currentSetId>:<hash of db item>
+   *
    * we make this from a hash of the object
    * since source does not give us ids
    */

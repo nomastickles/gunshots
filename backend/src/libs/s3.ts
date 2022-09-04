@@ -6,7 +6,7 @@ const GRANT_PUBLIC_READ = "uri=http://acs.amazonaws.com/groups/global/AllUsers";
 
 /**
  **/
-export const fetchAllImages = async (
+export const fetchAllItems = async (
   token?: string
 ): Promise<AWS.S3.Object[]> => {
   const { Contents, NextContinuationToken } = await s3Client
@@ -20,16 +20,16 @@ export const fetchAllImages = async (
     return Contents;
   }
 
-  const rest = await fetchAllImages(NextContinuationToken);
+  const rest = await fetchAllItems(NextContinuationToken);
   return [...Contents, ...rest];
 };
 
-export const fetchAllImageKeys = async () => {
-  const items = await fetchAllImages();
+export const fetchAllItemKeys = async () => {
+  const items = await fetchAllItems();
   return items.map((i) => i.Key);
 };
 
-export async function uploadImage(key: string, data: Buffer | string) {
+export async function uploadItem(key: string, data: Buffer | string) {
   await s3Client
     .putObject({
       Bucket,
@@ -43,7 +43,7 @@ export async function uploadImage(key: string, data: Buffer | string) {
   console.log("🔼 🗺 uploaded image:", key);
 }
 
-export async function deleteImages(keys: string[]) {
+export async function deleteItems(keys: string[]) {
   await s3Client
     .deleteObjects({
       Bucket,

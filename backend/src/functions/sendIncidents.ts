@@ -2,7 +2,7 @@ import * as dynamodb from "@libs/dynamodb";
 import { middyfy } from "@libs/middy";
 import type { SNSHandler } from "aws-lambda";
 import { ApiGatewayManagementApi } from "aws-sdk";
-import * as constants from "@src/constants";
+import * as libGeneral from "@libs/general";
 
 const sendIncidents: SNSHandler = async (event) => {
   try {
@@ -19,7 +19,7 @@ const sendIncidents: SNSHandler = async (event) => {
       console.error("missing websocket!! ");
       return;
     }
-    if (incomingId === constants.SEND_TO_ALL_INDICATOR) {
+    if (incomingId === libGeneral.SEND_TO_ALL_INDICATOR) {
       const ids = await dynamodb.getAllConnectionsIds();
       connectionIds.push(...ids);
     } else {
@@ -37,7 +37,7 @@ const sendIncidents: SNSHandler = async (event) => {
      */
     const message = JSON.stringify(
       incidents.filter((i) =>
-        i.id.startsWith(`${currentSetId}${constants.DIVIDER}`)
+        i.id.startsWith(`${currentSetId}${libGeneral.DIVIDER}`)
       )
     );
 
