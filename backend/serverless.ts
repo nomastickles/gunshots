@@ -21,7 +21,7 @@ const serverlessConfiguration: AWS = {
     SNS_SEND_INCIDENTS_NAME: "${self:service}-send-${self:provider.stage}",
     SNS_SEND_INCIDENTS_ARN_PREFIX:
       "arn:aws:sns:${self:provider.region}:${self:custom.ACCOUNT_ID}",
-    SSM_PATH_GOOGLE_KEY: "/gunshots/dev/googleAPIKey",
+    SSM_PATH_GOOGLE_KEY: "/gunshots/googleAPIKey",
   },
   plugins: [
     "serverless-webpack",
@@ -114,7 +114,7 @@ const serverlessConfiguration: AWS = {
       maximumRetryAttempts: 0,
       handler: "src/functions/connectionManager.default",
       environment: {
-        SNS_SEND_INCIDENTS:
+        SNS_TOPIC_SEND_INCIDENTS:
           "${self:custom.SNS_SEND_INCIDENTS_ARN_PREFIX}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
       },
       events: [
@@ -213,7 +213,7 @@ const serverlessConfiguration: AWS = {
       maximumRetryAttempts: 0,
       timeout: 900,
       environment: {
-        SNS_SEND_INCIDENTS:
+        SNS_TOPIC_SEND_INCIDENTS:
           "${self:custom.SNS_SEND_INCIDENTS_ARN_PREFIX}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
         S3_NAME: "${self:custom.S3_NAME}",
         SSM_PATH_GOOGLE_KEY: "${self:custom.SSM_PATH_GOOGLE_KEY}",

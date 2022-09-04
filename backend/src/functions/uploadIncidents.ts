@@ -120,7 +120,7 @@ const uploadIncidents: SNSHandler = async (event) => {
    * tell the frontend clients to update
    */
   await sns.sendMessage(
-    process.env.SNS_SEND_INCIDENTS,
+    process.env.SNS_TOPIC_SEND_INCIDENTS,
     sns.SEND_TO_ALL_INDICATOR
   );
 

@@ -100,7 +100,9 @@ example websocket
 
 ```
 
-## 1. ADD ./backend/config.js
+## STEPS TO RUN
+
+### 1. ADD ./backend/config.js
 
 ```
 module.exports.aws = {
@@ -110,7 +112,7 @@ module.exports.aws = {
 };
 ```
 
-## 2. BACKEND DEPLOY
+### 2. BACKEND DEPLOY
 
 ```
 cd backend && yarn && yarn deploy:dev
@@ -125,7 +127,9 @@ Stack Outputs:
 
 ```
 
-## 3. DYNAMODB / CREATE WEBSOCKET SETTING
+### 3. DYNAMODB / CREATE WEBSOCKET SETTING
+
+In AWS DynamoDB console, manually add websocket as a setting item
 
 example:
 
@@ -146,14 +150,18 @@ example:
 }
 ```
 
-## 4. UPLOAD 72 HOUR CSV
+### 4. SAVE GOOGLE STREETVIEW API
+
+Add Google API key to AWS Systems Manager Parameter Store with path /gunshots/googleAPIKey
+
+### 5. UPLOAD 72 HOUR CSV
 
 - get csv from [https://www.gunviolencearchive.org/last-72-hours](https://www.gunviolencearchive.org/last-72-hours)
 - send csv data via sns through AWS console
 
 ![sns example](img/sns-example.png)
 
-## 5. FRONTEND DEPLOY
+### 6. FRONTEND DEPLOY
 
 ```sh
 cd frontend && yarn && yarn start

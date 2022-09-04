@@ -12,7 +12,7 @@ const connectionManager: Handler<APIGatewayRequestAuthorizerEvent> = async (
   if (event.requestContext.eventType === "CONNECT") {
     await dynamodb.addConnection(id);
 
-    await sns.sendMessage(process.env.SNS_SEND_INCIDENTS, id);
+    await sns.sendMessage(process.env.SNS_TOPIC_SEND_INCIDENTS, id);
   } else if (event.requestContext.eventType === "DISCONNECT") {
     await dynamodb.removeItemByPrimaryKey(id);
   }
