@@ -1,9 +1,10 @@
 import * as dynamodb from "@libs/dynamodb";
 import { middyfy } from "@libs/middy";
 import type { SNSHandler } from "aws-lambda";
-import { ApiGatewayManagementApi } from "aws-sdk";
+
 import * as libGeneral from "@libs/general";
 import * as libIncidents from "@libs/incidents";
+import { getApiGatewayManagementClient } from "@libs/apiGateway";
 
 const sendIncidents: SNSHandler = async (event) => {
   try {
@@ -27,10 +28,6 @@ const sendIncidents: SNSHandler = async (event) => {
       connectionIds.push(incomingId);
     }
 
-    const client = new ApiGatewayManagementApi({
-      endpoint: websocket.split("wss://").reverse()[0],
-    });
-
     const incidents = await dynamodb.getAllIncidents();
 
     /**
@@ -48,6 +45,7 @@ const sendIncidents: SNSHandler = async (event) => {
     const messageCalls = connectionIds.map(async (connectionId) => {
       try {
         const data = { ConnectionId: connectionId, Data: message };
+        const client = getApiGatewayManagementClient(websocket);
         await client.postToConnection(data).promise();
       } catch (err) {
         console.log("🙅🏻‍♀️ sendMessageToConnections", err);
