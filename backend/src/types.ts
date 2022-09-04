@@ -33,3 +33,34 @@ export interface Incident {
 
   metrics?: Metrics;
 }
+
+export interface DynamoDBItem extends Record<string, any> {
+  /**
+   * Partition Key
+   * (could be paired with Sort key and called a
+   * composite primary/partition key)
+   */
+  PK: {
+    S: string;
+  };
+  /**
+   * Global Secondary Partition key
+   * (paired with Global Secondary Sort key)
+   */
+  GSPK?: {
+    S: string;
+  };
+  /**
+   * Global Secondary Sort key
+   */
+  GSSK?: {
+    N: string;
+  };
+
+  /**
+   * storage for JSON
+   */
+  DATA?: {
+    S: string;
+  };
+}
