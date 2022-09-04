@@ -1,6 +1,5 @@
 import { IncidentIncoming, Incident } from "@src/types";
 import * as crypto from "crypto";
-import * as libGeneral from "@libs/general";
 import * as libIncidents from "@libs/incidents";
 import { Response } from "node-fetch";
 import * as google from "@libs/google";
@@ -85,7 +84,7 @@ export const createNewIncident = async (
 
   if (previousS3Key) {
     console.log("🗺 🔎 image found", previousS3Key);
-    newItem.image = `${libGeneral.S3BaseURL}${previousS3Key}`;
+    newItem.image = `${s3.S3BaseURL}${previousS3Key}`;
 
     return newItem;
   }
@@ -115,7 +114,7 @@ export const createNewIncident = async (
   const buffer = await googleResponse.buffer();
   const fileName = `${hashOfIncident}.jpeg`;
   await s3.uploadItem(fileName, buffer); // s3 uploads don't rate limit?
-  newItem.image = `${libGeneral.S3BaseURL}${fileName}`;
+  newItem.image = `${s3.S3BaseURL}${fileName}`;
 
   return newItem;
 };

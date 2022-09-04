@@ -3,6 +3,7 @@ import * as libGeneral from "@libs/general";
 import * as libIncidents from "@libs/incidents";
 import { middyfy } from "@libs/middy";
 import * as s3 from "@libs/s3";
+import * as google from "@libs/google";
 import * as sns from "@libs/sns";
 import * as ssm from "@libs/ssm";
 import { Incident, IncidentIncoming } from "@src/types";
@@ -61,7 +62,7 @@ const uploadIncidents: SNSHandler = async (event) => {
 
   for (const incidentsBatch of libGeneral.batchArray(
     incidentsIncoming,
-    libGeneral.GoogleBatchLimitPerSecond
+    google.GoogleBatchLimitPerSecond
   )) {
     const newIncidentsPromises = incidentsBatch.map(
       async (item: IncidentIncoming) => {
@@ -84,9 +85,9 @@ const uploadIncidents: SNSHandler = async (event) => {
 
     await Promise.all(newIncidentsPromises); // all at once
 
-    if (incidentsIncoming.length > libGeneral.GoogleBatchLimitPerSecond) {
+    if (incidentsIncoming.length > google.GoogleBatchLimitPerSecond) {
       // pausing since we can only do 500/second at a time
-      await libGeneral.timeout(libGeneral.GoogleBatchLimitPerSecond * 3);
+      await libGeneral.timeout(google.GoogleBatchLimitPerSecond * 3);
     }
   } // end of incident looping
 
@@ -120,7 +121,7 @@ const uploadIncidents: SNSHandler = async (event) => {
    */
   await sns.sendMessage(
     process.env.SNS_SEND_INCIDENTS,
-    libGeneral.SEND_TO_ALL_INDICATOR
+    sns.SEND_TO_ALL_INDICATOR
   );
 
   /**

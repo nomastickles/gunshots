@@ -2,7 +2,7 @@ import * as dynamodb from "@libs/dynamodb";
 import { middyfy } from "@libs/middy";
 import type { SNSHandler } from "aws-lambda";
 
-import * as libGeneral from "@libs/general";
+import * as sns from "@libs/sns";
 import * as libIncidents from "@libs/incidents";
 import { getApiGatewayManagementClient } from "@libs/apiGateway";
 
@@ -15,7 +15,7 @@ const sendIncidents: SNSHandler = async (event) => {
     throw new Error("missing data");
   }
 
-  if (incomingId === libGeneral.SEND_TO_ALL_INDICATOR) {
+  if (incomingId === sns.SEND_TO_ALL_INDICATOR) {
     const ids = await dynamodb.getAllConnectionsIds();
     connectionIds.push(...ids);
   } else {

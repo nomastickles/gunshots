@@ -1,6 +1,8 @@
 import * as AWS from "aws-sdk";
 const sns = new AWS.SNS();
 
+export const SEND_TO_ALL_INDICATOR = "*";
+
 export const sendMessage = async (
   topicArn: string,
   message: string

@@ -4,9 +4,11 @@ const s3Client = new AWS.S3();
 const Bucket = process.env.S3_NAME;
 const GRANT_PUBLIC_READ = "uri=http://acs.amazonaws.com/groups/global/AllUsers";
 
+export const S3BaseURL = `https://${process.env.S3_NAME}.s3.amazonaws.com/`;
+
 /**
  **/
-export const fetchAllItems = async (
+export const listAllObjects = async (
   token?: string
 ): Promise<AWS.S3.Object[]> => {
   const { Contents, NextContinuationToken } = await s3Client
@@ -20,12 +22,12 @@ export const fetchAllItems = async (
     return Contents;
   }
 
-  const rest = await fetchAllItems(NextContinuationToken);
+  const rest = await listAllObjects(NextContinuationToken);
   return [...Contents, ...rest];
 };
 
 export const fetchAllItemKeys = async () => {
-  const items = await fetchAllItems();
+  const items = await listAllObjects();
   return items.map((i) => i.Key);
 };
 

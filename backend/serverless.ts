@@ -1,5 +1,5 @@
 import type { AWS } from "@serverless/typescript";
-import * as constants from "./src/constants";
+import * as libDynamoDB from "./src/libs/dynamoDB";
 const serverlessConfiguration: AWS = {
   service: "gunshots",
   frameworkVersion: "3",
@@ -19,7 +19,7 @@ const serverlessConfiguration: AWS = {
       "${file(./config.js):aws.s3NamePrefix}-${self:service}-${self:provider.stage}", // public facing
     SNS_UPLOAD_NAME: "${self:service}-upload-${self:provider.stage}",
     SNS_SEND_INCIDENTS_NAME: "${self:service}-send-${self:provider.stage}",
-    SNS_SEND_INCIDENTS_ARN:
+    SNS_SEND_INCIDENTS_ARN_PREFIX:
       "arn:aws:sns:${self:provider.region}:${self:custom.ACCOUNT_ID}",
     SSM_PATH_GOOGLE_KEY: "/gunshots/dev/googleAPIKey",
   },
@@ -80,8 +80,8 @@ const serverlessConfiguration: AWS = {
             },
           ],
           ProvisionedThroughput: {
-            ReadCapacityUnits: constants.DynamoDBReadCapacityUnits,
-            WriteCapacityUnits: constants.DynamoDBWriteCapacityUnits,
+            ReadCapacityUnits: libDynamoDB.DynamoDBReadCapacityUnits,
+            WriteCapacityUnits: libDynamoDB.DynamoDBWriteCapacityUnits,
           },
           GlobalSecondaryIndexes: [
             {
@@ -90,8 +90,8 @@ const serverlessConfiguration: AWS = {
                 ProjectionType: "ALL",
               },
               ProvisionedThroughput: {
-                ReadCapacityUnits: constants.DynamoDBReadCapacityUnits,
-                WriteCapacityUnits: constants.DynamoDBWriteCapacityUnits,
+                ReadCapacityUnits: libDynamoDB.DynamoDBReadCapacityUnits,
+                WriteCapacityUnits: libDynamoDB.DynamoDBWriteCapacityUnits,
               },
               KeySchema: [
                 {
@@ -115,7 +115,7 @@ const serverlessConfiguration: AWS = {
       handler: "src/functions/connectionManager.default",
       environment: {
         SNS_SEND_INCIDENTS:
-          "${self:custom.SNS_SEND_INCIDENTS_ARN}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
+          "${self:custom.SNS_SEND_INCIDENTS_ARN_PREFIX}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
       },
       events: [
         {
@@ -154,7 +154,7 @@ const serverlessConfiguration: AWS = {
           Effect: "Allow",
           Action: ["sns:Publish"],
           Resource:
-            "${self:custom.SNS_SEND_INCIDENTS_ARN}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
+            "${self:custom.SNS_SEND_INCIDENTS_ARN_PREFIX}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
         },
       ],
     },
@@ -178,7 +178,7 @@ const serverlessConfiguration: AWS = {
           Effect: "Allow",
           Action: ["sns:Subscribe", "sns:GetTopicAttributes"],
           Resource:
-            "${self:custom.SNS_SEND_INCIDENTS_ARN}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
+            "${self:custom.SNS_SEND_INCIDENTS_ARN_PREFIX}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
         },
         {
           Effect: "Allow",
@@ -214,7 +214,7 @@ const serverlessConfiguration: AWS = {
       timeout: 900,
       environment: {
         SNS_SEND_INCIDENTS:
-          "${self:custom.SNS_SEND_INCIDENTS_ARN}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
+          "${self:custom.SNS_SEND_INCIDENTS_ARN_PREFIX}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
         S3_NAME: "${self:custom.S3_NAME}",
         SSM_PATH_GOOGLE_KEY: "${self:custom.SSM_PATH_GOOGLE_KEY}",
       },
@@ -271,7 +271,7 @@ const serverlessConfiguration: AWS = {
           Effect: "Allow",
           Action: ["sns:Publish"],
           Resource:
-            "${self:custom.SNS_SEND_INCIDENTS_ARN}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
+            "${self:custom.SNS_SEND_INCIDENTS_ARN_PREFIX}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
         },
         {
           Effect: "Allow",
