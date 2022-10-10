@@ -8,46 +8,31 @@ import * as sns from "@libs/sns";
 import * as ssm from "@libs/ssm";
 import { Incident, IncidentIncoming } from "@src/types";
 import { SNSHandler } from "aws-lambda";
-import papaparse from "papaparse";
 
 /**
  *
  * dynamoDB items saved with PK in form:
- * <currentSetId><divider><hash of item>
+ * <currentSetId><divider><id of item>
  * example:
- * go01z:e93da9ed60cf0220e76d6e24487888ee
+ * go01z:1231312
  *
  * s3 items images as
- * <hash of item>.jpg
+ * <item id>.jpeg
  * example:
- * e93da9ed60cf0220e76d6e24487888ee.jpg
+ * 1231312.jpeg
  *
  */
 const uploadIncidents: SNSHandler = async (event) => {
   const incomingRawData = event.Records[0]?.Sns?.Message;
-  const incidentsIncoming: IncidentIncoming[] = [];
   const incidentsToSave: Incident[] = [];
+  console.log({ incomingRawData });
 
   if (!incomingRawData) {
     throw new Error("no data");
   }
 
-  console.log({ incomingRawData });
-
-  try {
-    const parsedData = papaparse.parse(incomingRawData, {
-      header: true,
-    });
-
-    if (!parsedData.data) {
-      throw new Error("no parsedData.data");
-    }
-
-    incidentsIncoming.push(...(parsedData.data as IncidentIncoming[]));
-  } catch (err) {
-    console.error("parsing broke");
-    throw err;
-  }
+  const incidentsIncoming =
+    libIncidents.csvItemsToIncomingIncidents(incomingRawData);
 
   if (!incidentsIncoming.length) {
     console.warn("no incidentsIncoming");
@@ -87,7 +72,7 @@ const uploadIncidents: SNSHandler = async (event) => {
 
     if (incidentsIncoming.length > google.GoogleBatchLimitPerSecond) {
       // pausing since we can only do 500/second at a time
-      await libGeneral.timeout(google.GoogleBatchLimitPerSecond * 3);
+      await libGeneral.timeout(google.GoogleBatchLimitPerSecond * 2);
     }
   } // end of incident looping
 
@@ -99,9 +84,10 @@ const uploadIncidents: SNSHandler = async (event) => {
   }
 
   if (
-    libIncidents.getCombinedIncidentHashes(incidentsAllPrevious) ===
-    libIncidents.getCombinedIncidentHashes(incidentsToSave)
+    libIncidents.getCombinedIncidentIds(incidentsAllPrevious) ===
+    libIncidents.getCombinedIncidentIds(incidentsToSave)
   ) {
+    // just in case
     console.warn("🌕 duplicate data");
     return null;
   }
@@ -125,15 +111,18 @@ const uploadIncidents: SNSHandler = async (event) => {
   );
 
   /**
-   * find images with no known incoming hashes (to delete)
-   * remember: S3 files names: <hash of db item>.jpg
+   * now we need to start deleting the fold set items
+   * find images with no known incoming ids (to delete)
+   * remember: S3 files names: <item id>.jpeg
    */
   const S3KeysToDelete = allPreviousImageKeys.filter(
     (fileNameWithExtension) => {
-      const hashOfIncident = fileNameWithExtension.split(".")[0];
+      const idOfIncident = fileNameWithExtension.split(".")[0];
 
-      // incident id formed like <set id>:<hash>
-      return !incidentsToSave.find((i) => i.id?.endsWith(hashOfIncident));
+      // incident id formed like <set id>:<item id>
+      return !incidentsToSave.find((i) =>
+        i.id?.endsWith(`${libIncidents.SET_ID_DIVIDER}${idOfIncident}`)
+      );
     }
   );
 

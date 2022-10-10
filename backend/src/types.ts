@@ -2,15 +2,24 @@
  * pre formatted data
  */
 export interface IncidentIncoming {
-  ["# Injured"]: number;
-  ["# Killed"]: number;
+  "Incident ID": number;
   "Incident Date": string;
+  "# Injured": number;
+  "# Killed": number;
   State: string;
   "City Or County": string;
   Address: string;
+  Operations: string;
 }
 
+/**
+ * dynamoDB stored item
+ */
 export interface Incident {
+  /**
+   * 💥 the PK/id in the form of <currentSetId>:<id of CSV item>
+   */
+  id: string;
   date: string;
   state: string;
   city: string;
@@ -20,14 +29,6 @@ export interface Incident {
    * image S3 URL
    */
   image?: string;
-
-  /**
-   * id == <currentSetId>:<hash of db item>
-   *
-   * we make this from a hash of the object
-   * since source does not give us ids
-   */
-  id?: string;
 
   metrics?: Metrics;
 }

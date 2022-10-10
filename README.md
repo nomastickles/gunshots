@@ -40,14 +40,14 @@ DynamoDB holds three data structures: websocket connection ids, gunshot incident
 ### INCIDENTS
 
 ```
-// Primary Key "PK" is in the form of <currentSetId>:<hash of db item>
+// Primary Key "PK" is in the form of <currentSetId>:<item id>
 
 {
   "PK": {
-    "S": "sijzhh:4dd586e6424f29e30523efc4409584f3"
+    "S": "sijzhh:1231232"
   },
   "DATA": {
-    "S": "{"date":"September 13, 2021","state":"Illinois","city":"Chicago","address":"8700 block of S State","killed":0,"injured":1,"id":"sijzhh:4dd586e6424f29e30523efc4409584f3","image":"https://some-bucket.amazonaws.com/4dd586e6424f29e30523efc4409584f3.jpeg"}"
+    "S": "{"date":"September 13, 2021","state":"Illinois","city":"Chicago","address":"8700 block of S State","killed":0,"injured":1,"id":"sijzhh:1231232","image":"https://some-bucket.amazonaws.com/1231232.jpeg"}"
   },
   "GSPK": {
     "S": "incident"
@@ -153,6 +153,8 @@ example:
 ### 4. SAVE GOOGLE STREETVIEW API
 
 Add Google API key to AWS Systems Manager Parameter Store with path /gunshots/googleAPIKey
+
+Please see [https://developers.google.com/maps/documentation/streetview/usage-and-billing](https://developers.google.com/maps/documentation/streetview/usage-and-billing) for details on Google API usage and costs.
 
 ### 5. UPLOAD 72 HOUR CSV
 

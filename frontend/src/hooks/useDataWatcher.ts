@@ -36,7 +36,7 @@ const useDataWatcher = () => {
     }
     setTimeout(() => {
       dispatch(actions.setUSTerritoryData(localIncidents));
-    }, 1000);
+    }, 2000);
   }, [dispatch, isPublic]);
 
   useEffect(() => {

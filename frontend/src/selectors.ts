@@ -29,23 +29,27 @@ export const getStateNamesOrderedByTotal = (state: RootState) =>
 export const getOrderedIncidentIds = (state: RootState) =>
   state[AppSlice.name].orderedIncidentIds;
 
-export const getCurrentIncidentInfo = createSelector(
+export const getCurrentIncident = createSelector(
   getIncidents,
   getCurrentIncidentIndex,
-  getStateInfo,
   getOrderedIncidentIds,
-  (incidents, currentIncidentIndex, stateInfo, orderedIncidentIds) => {
+  (incidents, currentIncidentIndex, orderedIncidentIds) => {
     if (currentIncidentIndex === undefined) {
-      return {};
-    }
-
-    if (!incidents.length) {
-      return {};
+      return undefined;
     }
 
     const id = orderedIncidentIds[currentIncidentIndex];
     const item = incidents.find((i) => i.id === id);
 
+    return item;
+  }
+);
+
+export const getCurrentIncidentInfo = createSelector(
+  getCurrentIncident,
+  getIncidents,
+  getStateInfo,
+  (item, incidents, stateInfo) => {
     if (!item) {
       return {};
     }

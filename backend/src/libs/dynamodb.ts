@@ -43,10 +43,6 @@ export const addConnection = async (connectionId: string) => {
   console.log("🤝 addConnection");
 };
 
-/**
- * here we are using the image as a key since the name is already hashed
- * and we can add 'data' as the data store
- */
 export const addIncident = async (incident: Incident) => {
   await libGeneral.timeout(DynamoDBWriteTimeout);
   const item: DynamoDBItem = {

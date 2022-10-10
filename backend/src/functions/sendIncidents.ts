@@ -29,7 +29,7 @@ const sendIncidents: SNSHandler = async (event) => {
    */
   const message = JSON.stringify(
     incidents.filter((i) =>
-      i.id.startsWith(`${currentSetId}${libIncidents.SET_HASH_DIVIDER}`)
+      i.id.startsWith(`${currentSetId}${libIncidents.SET_ID_DIVIDER}`)
     )
   );
 

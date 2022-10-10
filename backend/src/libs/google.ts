@@ -2,6 +2,8 @@ import fetch from "node-fetch";
 
 /**
  * https://developers.google.com/maps/documentation/streetview/usage-and-billing
+ *
+ * 30,000 per minute / 60 seconds = 500 per second
  */
 export const GoogleBatchLimitPerSecond = 500;
 

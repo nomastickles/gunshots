@@ -1,15 +1,14 @@
 import { IncidentIncoming, Incident } from "@src/types";
-import * as crypto from "crypto";
-import * as libIncidents from "@libs/incidents";
 import { Response } from "node-fetch";
 import * as google from "@libs/google";
 import * as s3 from "@libs/s3";
+import papaparse from "papaparse";
 
-export const SET_HASH_DIVIDER = ":";
+export const SET_ID_DIVIDER = ":";
 
-export const getCombinedIncidentHashes = (items: Incident[]) =>
+export const getCombinedIncidentIds = (items: Incident[]) =>
   items
-    .map((i) => i.id.split(SET_HASH_DIVIDER)[1])
+    .map((i) => i.id.split(SET_ID_DIVIDER)[1])
     .sort()
     .join("");
 
@@ -19,10 +18,27 @@ export const getLocationStringFromIncident = (item: Incident) => {
   return location;
 };
 
+export const csvItemsToIncomingIncidents = (incomingRawData: string) => {
+  const results: IncidentIncoming[] = [];
+  try {
+    const parsedData = papaparse.parse(incomingRawData, {
+      header: true,
+    });
+
+    if (!parsedData.data) {
+      throw new Error("no parsedData.data");
+    }
+
+    results.push(...(parsedData.data as IncidentIncoming[]));
+  } catch (err) {
+    console.error("parsing broke");
+    throw err;
+  }
+
+  return results;
+};
+
 /**
- *
- *  newItem.id = `${currentSetId}${SET_HASH_DIVIDER}${hashOfIncident}`;
- *
  * @param currentSetId
  * @param item
  * @param allPreviousImagesKeys
@@ -36,6 +52,7 @@ export const createNewIncident = async (
   googleAPIKey?: string
 ) => {
   const newItem: Incident = {
+    id: `${newIncidentSetId}${SET_ID_DIVIDER}${item["Incident ID"]}`,
     date: item["Incident Date"],
     address: item.Address,
     city: item["City Or County"],
@@ -45,42 +62,16 @@ export const createNewIncident = async (
       injured: Number(item["# Injured"] || 0),
       killed: Number(item["# Killed"] || 0),
     },
-    id: null,
   };
 
-  const hashOfIncident = crypto
-    .createHash("md5")
-    .update(
-      JSON.stringify([
-        newItem.date,
-        newItem.address,
-        newItem.city,
-        newItem.metrics,
-      ])
-    )
-    .digest("hex");
-
-  if (!item.Address || !item.State || !item["City Or County"]) {
-    /**
-     * sanity validation checks
-     */
-    console.warn("initial validation", item);
-    return undefined;
-  }
-
-  /**
-   * 💥 the PK/id
-   */
-  newItem.id = `${newIncidentSetId}${SET_HASH_DIVIDER}${hashOfIncident}`;
+  const imageName = `${item["Incident ID"]}.jpeg`;
 
   if (newItem.address === "N/A") {
     console.log("🗺 🗄 🌕 no address to lookup", newItem);
     return newItem;
   }
 
-  const previousS3Key = allPreviousImageKeys?.find((key) =>
-    key.includes(hashOfIncident)
-  );
+  const previousS3Key = allPreviousImageKeys?.find((key) => key === imageName);
 
   if (previousS3Key) {
     console.log("🗺 🔎 image found", previousS3Key);
@@ -94,11 +85,11 @@ export const createNewIncident = async (
     return newItem;
   }
 
-  const location = libIncidents.getLocationStringFromIncident(newItem);
+  const location = getLocationStringFromIncident(newItem);
   let googleResponse: Response;
 
   try {
-    console.log("🗺 💰", hashOfIncident);
+    console.log("🗺 💰", newItem.id);
     googleResponse = await google.fetchImage(googleAPIKey, location);
   } catch (e) {
     console.error("google fetch", item, e);
@@ -112,9 +103,8 @@ export const createNewIncident = async (
   }
 
   const buffer = await googleResponse.buffer();
-  const fileName = `${hashOfIncident}.jpeg`;
-  await s3.uploadItem(fileName, buffer); // s3 uploads don't rate limit?
-  newItem.image = `${s3.S3BaseURL}${fileName}`;
+  await s3.uploadItem(imageName, buffer); // s3 uploads don't rate limit?
+  newItem.image = `${s3.S3BaseURL}${imageName}`;
 
   return newItem;
 };

@@ -8,8 +8,9 @@ import { AppSteps } from "../types";
 const useIncidentWatcher = () => {
   const dispatch = useDispatch();
   const stepMap = useSelector(selectors.getStepMap);
+  const incident = useSelector(selectors.getCurrentIncident);
   const startNextIncident = stepMap[AppSteps.INIT_NEXT_INCIDENT];
-
+  const delay = incident?.image ? DELAY_MS : DELAY_MS / 2;
   /**
    * system to loop through incidents
    */
