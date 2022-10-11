@@ -1,12 +1,6 @@
-import { Incident } from "../types";
+import { Incident, MonthProps } from "../types";
 
 function getDisplayDates(incidents: Incident[]) {
-  interface MonthProps {
-    firstDay: string;
-    lastDay?: string;
-    year: string;
-  }
-
   const temp: Record<string, MonthProps> = {};
 
   [...incidents].reverse().forEach((item) => {

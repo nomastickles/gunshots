@@ -11,8 +11,11 @@ const sendIncidents: SNSHandler = async (event) => {
   const connectionIds = [];
   const { currentSetId, websocket } = await dynamodb.getSettings();
 
-  if (!currentSetId || !websocket) {
-    throw new Error("missing data");
+  if (!currentSetId) {
+    throw new Error("missing data: currentSetId");
+  }
+  if (!websocket) {
+    throw new Error("missing data: websocket");
   }
 
   if (incomingId === sns.SEND_TO_ALL_INDICATOR) {

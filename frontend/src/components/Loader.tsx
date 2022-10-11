@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../actions";
-import { WEBSOCKET_ENDPOINT_KEY } from "../constants";
+import { IS_PUBLIC, WEBSOCKET_ENDPOINT_KEY } from "../constants";
 import useFadeClassHelper from "../hooks/useFadeClassHelper";
 import * as selectors from "../selectors";
 import { AppSteps } from "../types";
@@ -17,7 +17,6 @@ function Loader() {
     classEnd: "animate__fadeOut",
   });
   const showInput = stepMap[AppSteps.SHOW_INPUT];
-  const isPublic = !!stepMap[AppSteps.IS_PUBIC];
 
   /**
    * look for websocket on load
@@ -26,7 +25,7 @@ function Loader() {
    * this only happens once since dispatch is static
    */
   React.useEffect(() => {
-    if (isPublic) {
+    if (IS_PUBLIC) {
       return;
     }
 
@@ -36,7 +35,7 @@ function Loader() {
     }
 
     dispatch(actions.websocketUpdate(WEBSOCKET_ENDPOINT));
-  }, [dispatch, isPublic]);
+  }, [dispatch]);
 
   const onInputChange = React.useCallback(
     (text: string) => {

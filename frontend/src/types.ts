@@ -1,3 +1,9 @@
+export interface MonthProps {
+  firstDay: string;
+  lastDay?: string;
+  year: string;
+}
+
 export type Metrics = {
   injured: number;
   killed: number;
