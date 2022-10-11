@@ -9,7 +9,6 @@ import useDataWatcher from "./hooks/useDataWatcher";
 import useFadeClassHelper from "./hooks/useFadeClassHelper";
 
 function App() {
-  console.debug("AppApp");
   useDataWatcher();
   useIncidentWatcher();
   const fadeClass = useFadeClassHelper({

@@ -9,7 +9,6 @@ import { Incident } from "../types";
 const localIncidents = LOCAL_DATA.incidents as unknown as Incident[];
 
 const useDataWatcher = () => {
-  console.debug("useDataWatcher");
   const websocket = useSelector(selectors.getWebsocket);
   const websocketConnection: MutableRefObject<Sockette | undefined> = useRef();
   const dispatch = useDispatch();
