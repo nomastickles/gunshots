@@ -13,7 +13,6 @@ const useIncidentWatcher = () => {
    * system to loop through incidents
    */
   useEffect(() => {
-    // return;
     if (!startNextIncident) {
       return;
     }
