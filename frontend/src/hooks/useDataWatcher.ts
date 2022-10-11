@@ -9,6 +9,7 @@ import { Incident } from "../types";
 const localIncidents = LOCAL_DATA.incidents as unknown as Incident[];
 
 const useDataWatcher = () => {
+  console.debug("useDataWatcher");
   const websocket = useSelector(selectors.getWebsocket);
   const websocketConnection: MutableRefObject<Sockette | undefined> = useRef();
   const dispatch = useDispatch();
@@ -29,13 +30,11 @@ const useDataWatcher = () => {
     if (!IS_PUBLIC) {
       return;
     }
-    if (!localIncidents.length) {
-      return;
-    }
     setTimeout(() => {
       dispatch(actions.setUSTerritoryData(localIncidents));
     }, 2000);
-  }, [dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (IS_PUBLIC) {

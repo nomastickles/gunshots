@@ -9,6 +9,7 @@ import useDataWatcher from "./hooks/useDataWatcher";
 import useFadeClassHelper from "./hooks/useFadeClassHelper";
 
 function App() {
+  console.debug("AppApp");
   useDataWatcher();
   useIncidentWatcher();
   const fadeClass = useFadeClassHelper({
@@ -25,7 +26,9 @@ function App() {
       <USAMap />
       <div className="w-full fixed bottom-4 right-4 text-right animate__animated animate__fadeIn">
         <div className="md:flex flex-wrap md:h-4">
-          <div className={`pl-8 ${fadeClass}`}>{dates}</div>
+          <div className={`pl-8 ${fadeClass}`}>
+            <div>{dates}</div>
+          </div>
           <div className={`md:text-center flex-grow ml-20 ${fadeClass}`}>
             {dates && (
               <>
