@@ -67,7 +67,7 @@ export const addIncident = async (incident: Incident) => {
       // ConditionExpression: "attribute_not_exists(PK)", // leaving this out to overwrite
     })
   );
-  console.log("➕🤟 created Incident", item.id);
+  console.log("➕🤟 created Incident", incident.id);
 };
 
 export const updateCurrentSetId = async (setId: string) => {
