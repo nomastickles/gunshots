@@ -1,0 +1,19 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "EventVersion": "1.0",
+      "EventSubscriptionArn": "arn:aws:sns:us-east-1:xxx:message-gunshots-dev:9c47a47b-3d3c-440d-b629-ed3abbefac88",
+      "Sns": {
+        "Type": "Notification",
+        "MessageId": "610bed5c-40ea-5eeb-82ae-b4c7165a5ac0",
+        "TopicArn": "arn:aws:sns:us-east-1:xxx:message-gunshots-dev",
+        "Subject": null,
+        "Message": "*",
+        "Timestamp": "2021-08-21T19:30:56.394Z",
+        "SignatureVersion": "1",
+        "MessageAttributes": {}
+    }
+    }
+  ]
+}

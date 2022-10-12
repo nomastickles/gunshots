@@ -142,12 +142,13 @@ export const getSettings = async () => {
   let websocket: string = undefined;
 
   items?.forEach((item) => {
+    const data = item.DATA?.S;
     switch (item.PK.S) {
       case "currentSetId":
-        currentSetId = item.DATA?.S;
+        currentSetId = data;
         break;
       case "websocket":
-        websocket = item.DATA?.S;
+        websocket = data;
         break;
       default:
     }

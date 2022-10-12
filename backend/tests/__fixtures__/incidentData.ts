@@ -17,3 +17,16 @@ export const incomingIncident1 = {
   Operations: "N/A",
   State: "Ohio",
 };
+
+export const incident1 = {
+  address: "address",
+  city: "Cleveland",
+  date: "September 12, 2022",
+  id: "setId:2412750",
+  image: "https://S3_NAME.s3.amazonaws.com/2412750.jpeg",
+  metrics: {
+    injured: 1,
+    killed: 1,
+  },
+  state: "Ohio",
+};

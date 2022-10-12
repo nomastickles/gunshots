@@ -13,8 +13,6 @@ const useDataWatcher = () => {
   const websocket = useSelector(selectors.getWebsocket);
   const websocketConnection: MutableRefObject<Sockette | undefined> = useRef();
   const dispatch = useDispatch();
-  const stepMap = useSelector(selectors.getStepMap);
-  const showInput = stepMap[AppSteps.SHOW_INPUT];
 
   /**
    * look for websocket on load
@@ -31,12 +29,13 @@ const useDataWatcher = () => {
     }
 
     dispatch(actions.websocketUpdate(WEBSOCKET_ENDPOINT));
-  }, [dispatch, showInput]);
+  }, [dispatch]);
 
   useEffect(() => {
     if (!IS_PUBLIC) {
       return;
     }
+
     const temp = setTimeout(() => {
       dispatch(actions.setUSTerritoryData(localIncidents));
     }, 2000);

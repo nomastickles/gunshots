@@ -1,5 +1,5 @@
 import * as libIncidents from "../../src/libs/incidents";
-import { CSVData1, incomingIncident1 } from "../__fixtures__/incomingData";
+import { CSVData1, incomingIncident1 } from "../__fixtures__/incidentData";
 import * as libS3 from "../../src/libs/s3";
 import * as libGoogle from "../../src/libs/google";
 
@@ -75,7 +75,7 @@ describe("libIncidents", () => {
   "city": "Cleveland",
   "date": "September 12, 2022",
   "id": "setId:2412750",
-  "image": "https://test-s3-name.s3.amazonaws.com/2412750.jpeg",
+  "image": "https://S3_NAME.s3.amazonaws.com/2412750.jpeg",
   "metrics": {
     "injured": 1,
     "killed": 1,

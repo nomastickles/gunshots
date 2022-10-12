@@ -8,6 +8,7 @@ module.exports = {
 
   moduleNameMapper: {
     "^@libs/(.*)$": "<rootDir>/src/libs/$1",
+    "^@src/(.*)$": "<rootDir>/src/$1",
   },
   setupFiles: ["<rootDir>/tests/setEnvVars.js"],
 };

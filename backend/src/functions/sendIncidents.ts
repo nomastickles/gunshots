@@ -46,9 +46,7 @@ const sendIncidents: SNSHandler = async (event) => {
       await client.postToConnection(data).promise();
     } catch (err) {
       console.error("🙅🏻‍♀️ sendMessageToConnections", err);
-      if (err?.statusCode === 410) {
-        await dynamodb.removeItemByPrimaryKey(connectionId);
-      }
+      await dynamodb.removeItemByPrimaryKey(connectionId);
     }
   });
   await Promise.all(messageCalls);
