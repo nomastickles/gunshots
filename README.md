@@ -45,7 +45,7 @@ Item with PK "incidents" holds Incident[] in DATA
     "S": "incidents"
   },
   "DATA": {
-    "S": "[{"date":"September 13, 2021","state":"Illinois","city":"Chicago","address":"8700 block of S State","killed":0,"injured":1,"id":"sijzhh:1231232","image":"https://some-bucket.amazonaws.com/1231232.jpeg"}]"
+    "S": "[{\"date\":\"September 13, 2021\",\"state\":\"Illinois\",\"city\":\"Chicago\",\"address\":\"8700 block of S State\",\"killed\":0,\"injured\":1,\"id\":\"sijzhh:1231232\",\"image\":\"https://some-bucket.amazonaws.com/1231232.jpeg\"}]"
   },
   "GSPK": {
     "S": "data"
