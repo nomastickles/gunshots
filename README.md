@@ -35,13 +35,11 @@ This system is a teaching aid for a Udemy course that will also bring awareness 
 
 ## DYNAMODB STRUCTURE
 
-DynamoDB holds three data structures: websocket connection ids, gunshot incident records, and various settings .
+DynamoDB holds three data structures: websocket connections, gunshot incident records, and settings.
 
-### INCIDENTS
+Item with PK "incidents" holds Incident[] in DATA
 
-```
-// Item with PK "incidents" holds Incident[] in DATA
-
+```json
 {
   "PK": {
     "S": "incidents"
@@ -62,8 +60,7 @@ DynamoDB holds three data structures: websocket connection ids, gunshot incident
 
 example websocket setting
 
-```
-
+```json
 {
   "PK": {
     "S": "websocket"
@@ -84,17 +81,19 @@ example websocket setting
 
 ### 1. ADD ./backend/config.js
 
-```
+example:
+
+```js
 module.exports.aws = {
   accountId: "xxx",
   region: "us-east-x",
-  s3NamePrefix: "somePrefix"
+  s3NamePrefix: "somePrefix",
 };
 ```
 
 ### 2. BACKEND DEPLOY
 
-```
+```sh
 STAGE=dev cd backend && yarn && yarn deploy
 ```
 
@@ -129,4 +128,4 @@ for local upload see [backend/csv/README.md](backend/csv/README.md)
 cd frontend && yarn && yarn start
 ```
 
-- add ServiceEndpointWebsocket output to frontend input
+- Via UI add ServiceEndpointWebsocket output to frontend input
