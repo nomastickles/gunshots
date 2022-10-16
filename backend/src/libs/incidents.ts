@@ -1,14 +1,12 @@
-import { IncidentIncoming, Incident } from "@src/types";
+import { IncidentIncoming, Incident } from "../types";
 import { Response } from "node-fetch";
-import * as google from "@libs/google";
-import * as s3 from "@libs/s3";
+import * as google from "./google";
+import * as s3 from "./s3";
 import papaparse from "papaparse";
-
-export const SET_ID_DIVIDER = ":";
 
 export const getCombinedIncidentIds = (items: Incident[]) =>
   items
-    .map((i) => i.id.split(SET_ID_DIVIDER)[1])
+    .map((i) => i.id)
     .sort()
     .join("");
 
@@ -39,20 +37,19 @@ export const csvItemsToIncomingIncidents = (incomingRawData: string) => {
 };
 
 /**
- * @param currentSetId
  * @param item
  * @param allPreviousImagesKeys
  * @param googleAPIKey
  * @returns
  */
 export const createNewIncident = async (
-  newIncidentSetId: string,
   item: IncidentIncoming,
   allPreviousImageKeys: string[],
   googleAPIKey?: string
 ) => {
+  const id = `${item["Incident ID"]}`;
   const newItem: Incident = {
-    id: `${newIncidentSetId}${SET_ID_DIVIDER}${item["Incident ID"]}`,
+    id,
     date: item["Incident Date"],
     address: item.Address,
     city: item["City Or County"],
@@ -64,7 +61,7 @@ export const createNewIncident = async (
     },
   };
 
-  const imageName = `${item["Incident ID"]}.jpeg`;
+  const imageName = `${id}.jpeg`;
 
   if (newItem.address === "N/A") {
     console.log("🗺 🗄 🌕 no address to lookup", newItem);

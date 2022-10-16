@@ -1,21 +1,27 @@
-import { formatJSONResponse } from "@libs/apiGateway";
-import * as dynamodb from "@libs/dynamodb";
-import { middyfy } from "@libs/middy";
-import * as sns from "@libs/sns";
 import type { APIGatewayRequestAuthorizerEvent, Handler } from "aws-lambda";
+
+import { formatJSONResponse } from "../libs/apiGateway";
+import * as dynamodb from "../libs/dynamodb";
+import { middyfy } from "../libs/middy";
+import * as sns from "../libs/sns";
 
 const connectionManager: Handler<APIGatewayRequestAuthorizerEvent> = async (
   event
 ) => {
   const id = event.requestContext.connectionId;
-
-  if (event.requestContext.eventType === "CONNECT") {
-    await dynamodb.addConnection(id);
-
-    await sns.sendMessage(process.env.SNS_TOPIC_SEND_INCIDENTS, id);
-  } else if (event.requestContext.eventType === "DISCONNECT") {
-    await dynamodb.removeItemByPrimaryKey(id);
+  try {
+    if (event.requestContext.eventType === "CONNECT") {
+      await dynamodb.addConnection(id);
+      await sns.sendMessage(process.env.SNS_TOPIC_SEND_INCIDENTS, id);
+    } else if (event.requestContext.eventType === "DISCONNECT") {
+      await dynamodb.removeItemByPrimaryKey(id);
+    }
+  } catch (err) {
+    console.error(err, id);
+    // fake boom
+    throw Error("-");
   }
+
   return formatJSONResponse({
     message: "🟢",
   });

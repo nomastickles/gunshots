@@ -40,17 +40,17 @@ DynamoDB holds three data structures: websocket connection ids, gunshot incident
 ### INCIDENTS
 
 ```
-// Primary Key "PK" is in the form of <currentSetId>:<item id>
+// Item with PK "incidents" holds Incident[] in DATA
 
 {
   "PK": {
-    "S": "sijzhh:1231232"
+    "S": "incidents"
   },
   "DATA": {
-    "S": "{"date":"September 13, 2021","state":"Illinois","city":"Chicago","address":"8700 block of S State","killed":0,"injured":1,"id":"sijzhh:1231232","image":"https://some-bucket.amazonaws.com/1231232.jpeg"}"
+    "S": "[{"date":"September 13, 2021","state":"Illinois","city":"Chicago","address":"8700 block of S State","killed":0,"injured":1,"id":"sijzhh:1231232","image":"https://some-bucket.amazonaws.com/1231232.jpeg"}]"
   },
   "GSPK": {
-    "S": "incident"
+    "S": "data"
   },
   "GSSK": {
     "N": "1659837126612"
@@ -58,18 +58,18 @@ DynamoDB holds three data structures: websocket connection ids, gunshot incident
 }
 ```
 
-### APP SETTINGS
+### SETTINGS
 
-example currentSetId
+example websocket setting
 
 ```
 
 {
   "PK": {
-    "S": "currentSetId"
+    "S": "websocket"
   },
   "DATA": {
-    "S": "sijzhh"
+    "S": " wss://abcde.execute-api.us-east-1.amazonaws.com/dev1"
   },
   "GSPK": {
     "S": "setting"
@@ -80,26 +80,6 @@ example currentSetId
 }
 ```
 
-example websocket
-
-```
-{
-  "PK": {
-    "S": "websocket"
-  },
-  "DATA": {
-    "S": "wss://abc.execute-api.us-east-1.amazonaws.com/stage"
-  },
-  "GSPK": {
-    "S": "setting"
-  },
-  "GSSK": {
-    "N": "0"
-  }
-}
-
-```
-
 ## STEPS TO RUN
 
 ### 1. ADD ./backend/config.js
@@ -107,7 +87,7 @@ example websocket
 ```
 module.exports.aws = {
   accountId: "xxx",
-  region: "us-east-1",
+  region: "us-east-x",
   s3NamePrefix: "somePrefix"
 };
 ```
@@ -115,58 +95,38 @@ module.exports.aws = {
 ### 2. BACKEND DEPLOY
 
 ```
-cd backend && yarn && yarn deploy:dev
+STAGE=dev cd backend && yarn && yarn deploy
 ```
 
 example output:
 
 ```
-Stack Outputs:
-  ServiceEndpointWebsocket: wss://NEW-WEBSOCKET.execute-api.us-east-1.amazonaws.com/stage
-  ServerlessDeploymentBucketName: gunshots-stage-serverlessdeploymentbucket-1pld5fdsfvavo2a
+Stack Output:
+  ServiceEndpointWebsocket: wss://NEW-WEBSOCKET.execute-api.us-east-1.amazonaws.com/dev
 
 ```
 
-### 3. DYNAMODB / CREATE WEBSOCKET SETTING
-
-In AWS DynamoDB console, manually add websocket as a setting item
-
-example:
-
-```
-{
-  "PK": {
-    "S": "websocket"
-  },
-  "DATA": {
-    "S": "wss://NEW-WEBSOCKET.execute-api.us-east-1.amazonaws.com/dev"
-  },
-  "GSPK": {
-    "S": "setting"
-  },
-  "GSSK": {
-    "N": "0"
-  }
-}
-```
-
-### 4. SAVE GOOGLE STREETVIEW API
+### 3. SAVE GOOGLE STREETVIEW API
 
 Add Google API key to AWS Systems Manager Parameter Store with path /gunshots/googleAPIKey
 
 Please see [https://developers.google.com/maps/documentation/streetview/usage-and-billing](https://developers.google.com/maps/documentation/streetview/usage-and-billing) for details on Google API usage and costs.
 
-### 5. UPLOAD 72 HOUR CSV
+### 4. UPLOAD 72 HOUR CSV (two options)
 
 - get csv from [https://www.gunviolencearchive.org/last-72-hours](https://www.gunviolencearchive.org/last-72-hours)
 - send csv data via sns through AWS console
 
 ![sns example](img/sns-example.png)
 
-### 6. FRONTEND DEPLOY
+OR
+
+for local upload see [backend/csv/README.md](backend/csv/README.md)
+
+### 5. FRONTEND DEPLOY
 
 ```sh
 cd frontend && yarn && yarn start
 ```
 
-- add ServiceEndpointWebsocket to frontend input
+- add ServiceEndpointWebsocket output to frontend input

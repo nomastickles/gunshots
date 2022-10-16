@@ -3,10 +3,13 @@ import {
   DynamoDBClient,
   PutItemCommand,
   QueryCommand,
+  GetItemCommand,
+  AttributeValue,
 } from "@aws-sdk/client-dynamodb";
-import * as libGeneral from "@libs/general";
-import * as constants from "@src/constants";
-import { DynamoDBItem, DynamoDBItemName, Incident } from "@src/types";
+
+import * as libGeneral from "./general";
+import * as constants from "../constants";
+import { DynamoDBItem, Incident } from "../types";
 
 export const DynamoDBWriteTimeout = Math.round(
   (1 / constants.DynamoDBWriteCapacityUnits) * 1000
@@ -19,9 +22,12 @@ const dbClient = new DynamoDBClient({ region: process.env.AWS_REGION });
 const TableName = process.env.DB_NAME;
 const IndexName = process.env.DB_NAME_GSPK;
 
+let WEBSOCKET: string = undefined;
+let ALL_INCIDENTS: Incident[] = undefined;
+
 export const addConnection = async (connectionId: string) => {
   await libGeneral.timeout(DynamoDBWriteTimeout);
-  const item: DynamoDBItem = {
+  const item = {
     PK: {
       S: connectionId,
     },
@@ -43,47 +49,20 @@ export const addConnection = async (connectionId: string) => {
   console.log("🤝 addConnection");
 };
 
-export const addIncident = async (incident: Incident) => {
+export const addAllIncidents = async (incidents: Incident[]) => {
   await libGeneral.timeout(DynamoDBWriteTimeout);
-  const item: DynamoDBItem = {
+  const item = {
     PK: {
-      S: incident.id,
+      S: "incidents",
     },
     GSPK: {
-      S: "incident",
+      S: "data",
     },
     GSSK: {
       N: `${Date.now()}`,
     },
     DATA: {
-      S: JSON.stringify(incident),
-    },
-  };
-
-  await dbClient.send(
-    new PutItemCommand({
-      TableName,
-      Item: item,
-      // ConditionExpression: "attribute_not_exists(PK)", // leaving this out to overwrite
-    })
-  );
-  console.log("➕🤟 created Incident", incident.id);
-};
-
-export const updateCurrentSetId = async (setId: string) => {
-  await libGeneral.timeout(DynamoDBWriteTimeout);
-  const item: DynamoDBItem = {
-    PK: {
-      S: "currentSetId",
-    },
-    GSPK: {
-      S: "setting",
-    },
-    GSSK: {
-      N: `${Date.now()}`,
-    },
-    DATA: {
-      S: setId,
+      S: JSON.stringify(incidents),
     },
   };
 
@@ -93,14 +72,36 @@ export const updateCurrentSetId = async (setId: string) => {
       Item: item,
     })
   );
-  console.log("👌 updateSettings", item);
+  console.log("➕ # saved incidents:", addAllIncidents.length);
 };
 
+async function getItemByPK(
+  pk: string
+): Promise<Record<string, AttributeValue>> {
+  await libGeneral.timeout(DynamoDBReadTimeout);
+  const data = await dbClient.send(
+    new GetItemCommand({
+      TableName,
+      Key: {
+        PK: { S: pk },
+      },
+    })
+  );
+
+  console.log("⚡️ getItemByPK", { pk });
+  const results = data?.Item || undefined;
+  return results;
+}
+
+/**
+ * used to get all connections
+ */
 async function getAllItemsByGSPK(
-  itemName: DynamoDBItemName,
+  itemName: string,
   exclusiveStartKey?: any
 ): Promise<DynamoDBItem[]> {
   await libGeneral.timeout(DynamoDBReadTimeout);
+
   const { Items, LastEvaluatedKey } = await dbClient.send(
     new QueryCommand({
       TableName,
@@ -125,41 +126,6 @@ async function getAllItemsByGSPK(
   return [...results, ...rest];
 }
 
-export const getAllConnectionsIds = async () => {
-  const items = await getAllItemsByGSPK("connection");
-  return items.map((i) => i.PK.S);
-};
-
-export const getAllIncidents = async () => {
-  const items = await getAllItemsByGSPK("incident");
-  return items.map((i) => JSON.parse(i.DATA.S) as Incident);
-};
-
-export const getSettings = async () => {
-  const items = await getAllItemsByGSPK("setting");
-
-  let currentSetId: string = undefined;
-  let websocket: string = undefined;
-
-  items?.forEach((item) => {
-    const data = item.DATA?.S;
-    switch (item.PK.S) {
-      case "currentSetId":
-        currentSetId = data;
-        break;
-      case "websocket":
-        websocket = data;
-        break;
-      default:
-    }
-  });
-
-  return {
-    currentSetId,
-    websocket,
-  };
-};
-
 export const removeItemByPrimaryKey = async (id: string) => {
   await libGeneral.timeout(DynamoDBWriteTimeout);
   await dbClient.send(
@@ -173,4 +139,45 @@ export const removeItemByPrimaryKey = async (id: string) => {
     })
   );
   console.log("🔥🤲 removeItemByPrimaryKey", id);
+};
+
+export const getAllConnectionsIds = async () => {
+  const items = await getAllItemsByGSPK("connection");
+  return items.map((i) => i.PK.S);
+};
+
+export const getAllIncidents = async () => {
+  if (ALL_INCIDENTS) {
+    // cached
+    return ALL_INCIDENTS;
+  }
+  const dbItem = await getItemByPK("incidents");
+  const dataRaw = dbItem?.DATA?.S;
+
+  if (dataRaw) {
+    // cache and
+    // only set this if we have it
+    ALL_INCIDENTS = JSON.parse(dataRaw);
+  }
+  return ALL_INCIDENTS || [];
+};
+
+export const getSettings = async () => {
+  if (WEBSOCKET) {
+    // cached
+    return {
+      websocket: WEBSOCKET,
+    };
+  }
+
+  const item = await getItemByPK("websocket");
+
+  if (item) {
+    // only set this if we have it
+    WEBSOCKET = item?.DATA?.S;
+  }
+
+  return {
+    websocket: WEBSOCKET,
+  };
 };

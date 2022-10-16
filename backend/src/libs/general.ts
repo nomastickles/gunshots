@@ -10,6 +10,3 @@ export function batchArray(arr: any[], batchSize: number) {
 export const timeout = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
-
-export const getNewRandomWord = () =>
-  (Math.random() + 1).toString(36).substring(7);

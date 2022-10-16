@@ -1,31 +1,18 @@
-import * as dynamodb from "@libs/dynamodb";
-import * as libGeneral from "@libs/general";
-import * as libIncidents from "@libs/incidents";
-import { middyfy } from "@libs/middy";
-import * as s3 from "@libs/s3";
-import * as google from "@libs/google";
-import * as sns from "@libs/sns";
-import * as ssm from "@libs/ssm";
-import { Incident, IncidentIncoming } from "@src/types";
 import { SNSHandler } from "aws-lambda";
 
-/**
- *
- * dynamoDB items saved with PK in form:
- * <currentSetId><divider><id of item>
- * example:
- * go01z:1231312
- *
- * s3 items images as
- * <item id>.jpeg
- * example:
- * 1231312.jpeg
- *
- */
+import * as dynamodb from "../libs/dynamodb";
+import * as libGeneral from "../libs/general";
+import * as libIncidents from "../libs/incidents";
+import { middyfy } from "../libs/middy";
+import * as s3 from "../libs/s3";
+import * as google from "../libs/google";
+import * as sns from "../libs/sns";
+import * as ssm from "../libs/ssm";
+import { Incident, IncidentIncoming } from "../types";
+
 const uploadIncidents: SNSHandler = async (event) => {
   const incomingRawData = event.Records[0]?.Sns?.Message;
   const incidentsToSave: Incident[] = [];
-  console.log({ incomingRawData });
 
   if (!incomingRawData) {
     throw new Error("no data");
@@ -34,12 +21,10 @@ const uploadIncidents: SNSHandler = async (event) => {
   const incidentsIncoming =
     libIncidents.csvItemsToIncomingIncidents(incomingRawData);
 
-  if (!incidentsIncoming.length) {
+  if (!incidentsIncoming?.length) {
     console.warn("no incidentsIncoming");
     return null;
   }
-
-  const newIncidentSetId = libGeneral.getNewRandomWord();
 
   const googleAPIKey = await ssm.getParameter(process.env.SSM_PATH_GOOGLE_KEY);
   const incidentsAllPrevious = await dynamodb.getAllIncidents();
@@ -53,7 +38,6 @@ const uploadIncidents: SNSHandler = async (event) => {
       async (item: IncidentIncoming) => {
         try {
           const newIncidentResults = await libIncidents.createNewIncident(
-            newIncidentSetId,
             item,
             allPreviousImageKeys,
             googleAPIKey
@@ -79,7 +63,7 @@ const uploadIncidents: SNSHandler = async (event) => {
   console.log("🙏 incidentsToSave", incidentsToSave);
 
   if (!incidentsToSave.length) {
-    console.log("🌕 nothing to saved");
+    console.log("🌕 nothing to save");
     return null;
   }
 
@@ -91,19 +75,10 @@ const uploadIncidents: SNSHandler = async (event) => {
     console.warn("🌕 duplicate data");
     return null;
   }
-
-  for (const item of incidentsToSave) {
-    await dynamodb.addIncident(item);
-  }
+  await dynamodb.addAllIncidents(incidentsToSave);
 
   /**
-   * now that we've created all the dynamodb items with a new set id
-   * we need to update our settings with new set id
-   */
-  await dynamodb.updateCurrentSetId(newIncidentSetId);
-
-  /**
-   * tell the frontend clients to update
+   * initiate update for all frontend clients
    */
   await sns.sendMessage(
     process.env.SNS_TOPIC_SEND_INCIDENTS,
@@ -119,10 +94,7 @@ const uploadIncidents: SNSHandler = async (event) => {
     (fileNameWithExtension) => {
       const idOfIncident = fileNameWithExtension.split(".")[0];
 
-      // incident id formed like <set id>:<item id>
-      return !incidentsToSave.find((i) =>
-        i.id?.endsWith(`${libIncidents.SET_ID_DIVIDER}${idOfIncident}`)
-      );
+      return !incidentsToSave.find((i) => i.id == idOfIncident);
     }
   );
 
@@ -131,12 +103,8 @@ const uploadIncidents: SNSHandler = async (event) => {
     await s3.deleteItems(S3KeysToDelete);
   }
 
-  /**
-   * let's delete all the incidents with old incident set value
-   */
-  for (const item of incidentsAllPrevious) {
-    await dynamodb.removeItemByPrimaryKey(item.id);
-  }
+  console.log("🟢 finished");
+
   return null;
 };
 

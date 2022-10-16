@@ -1,3 +1,5 @@
+import { AttributeValue } from "@aws-sdk/client-dynamodb";
+
 /**
  * pre formatted data
  */
@@ -16,9 +18,6 @@ export interface IncidentIncoming {
  * dynamoDB stored item
  */
 export interface Incident {
-  /**
-   * 💥 the PK/id in the form of <currentSetId>:<id of CSV item>
-   */
   id: string;
   date: string;
   state: string;
@@ -38,23 +37,21 @@ export type Metrics = {
   killed: number;
 };
 
-export type DynamoDBItemName = "connection" | "incident" | "setting";
-
-export interface DynamoDBItem extends Record<string, any> {
+export interface DynamoDBItem extends Record<string, AttributeValue> {
   /**
    * Partition Key
    * (could be paired with Sort key and called a
    * composite primary/partition key)
    */
   PK: {
-    S: string;
+    S: string; // could be <connectionId> or 'incidents' or 'websocket'
   };
   /**
    * Global Secondary Partition key
    * (paired with Global Secondary Sort key)
    */
   GSPK?: {
-    S: DynamoDBItemName;
+    S: string;
   };
   /**
    * Global Secondary Sort key

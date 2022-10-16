@@ -4,6 +4,9 @@ const serverlessConfiguration: AWS = {
   service: "gunshots",
   frameworkVersion: "3",
   custom: {
+    output: {
+      handler: "scripts/stackOutput.handler",
+    },
     webpack: {
       webpackConfig: "./webpack.config.js",
       includeModules: {
@@ -19,7 +22,11 @@ const serverlessConfiguration: AWS = {
       "arn:aws:sns:${self:provider.region}:${self:custom.ACCOUNT_ID}",
     SSM_PATH_GOOGLE_KEY: "/gunshots/googleAPIKey",
   },
-  plugins: ["serverless-webpack", "serverless-iam-roles-per-function"],
+  plugins: [
+    "serverless-webpack",
+    "serverless-iam-roles-per-function",
+    "serverless-stack-output",
+  ],
   provider: {
     name: "aws",
     runtime: "nodejs16.x",
@@ -179,7 +186,7 @@ const serverlessConfiguration: AWS = {
             "dynamodb:DeleteItem",
             "dynamodb:GetItem",
             // "dynamodb:UpdateItem"
-            "dynamodb:Query",
+            // "dynamodb:Query",
             // "dynamodb:Scan"
           ],
           Resource:
@@ -227,27 +234,14 @@ const serverlessConfiguration: AWS = {
           Effect: "Allow",
           Action: [
             "dynamodb:PutItem",
-            "dynamodb:DeleteItem",
-            // "dynamodb:GetItem",
+            // "dynamodb:DeleteItem",
+            "dynamodb:GetItem",
             // "dynamodb:UpdateItem"
             // "dynamodb:Query",
             // "dynamodb:Scan"
           ],
           Resource:
             "arn:aws:dynamodb:${self:provider.region}:${self:custom.ACCOUNT_ID}:table/${self:provider.environment.DB_NAME}",
-        },
-        {
-          Effect: "Allow",
-          Action: [
-            // "dynamodb:PutItem",
-            // "dynamodb:DeleteItem",
-            // "dynamodb:GetItem",
-            // "dynamodb:UpdateItem"
-            "dynamodb:Query",
-            // "dynamodb:Scan"
-          ],
-          Resource:
-            "arn:aws:dynamodb:${self:provider.region}:${self:custom.ACCOUNT_ID}:table/${self:provider.environment.DB_NAME}/index/${self:provider.environment.DB_NAME_GSPK}",
         },
         {
           Effect: "Allow",

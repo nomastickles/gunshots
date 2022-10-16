@@ -4,14 +4,13 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "deploy:dev": "node_modules/.bin/serverless deploy --verbose --stage dev1",
-    "destroy:dev": "node_modules/.bin/serverless remove --stage dev1",
-    "deploy:boom": "node_modules/.bin/serverless deploy --verbose --stage boom",
-    "destroy:boom": "node_modules/.bin/serverless remove --stage boom",
+    "deploy": "yarn test && node_modules/.bin/serverless deploy --verbose --stage $STAGE",
+    "destroy": "node_modules/.bin/serverless remove --stage $STAGE",
     "serverless:metrics": "node_modules/.bin/serverless metrics",
     "serverless:info": "node_modules/.bin/serverless info",
     "test": "jest",
-    "test:watch": "yarn test -- --watch"
+    "test:watch": "yarn test -- --watch",
+    "scripts:upload": "ARN=$ARN node scripts/uploadCSVwithSNS.js"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.142.0",
@@ -31,6 +30,7 @@
     "jest": "^29.1.2",
     "serverless": "3.21.0",
     "serverless-iam-roles-per-function": "^3.2.0",
+    "serverless-stack-output": "^0.2.3",
     "serverless-webpack": "^5.8.0",
     "ts-jest": "^29.0.3",
     "ts-loader": "^9.3.1",
