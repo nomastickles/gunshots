@@ -39,7 +39,7 @@ DynamoDB holds three data structures: websocket connections, gunshot incident re
 
 example websocket connection
 
-````json
+```json
 {
   "PK": {
     "S": "298dJsl3="
@@ -51,6 +51,7 @@ example websocket connection
     "N": "1659837127120"
   }
 }
+```
 
 example item with PK "incidents" holding incident array in DATA
 
@@ -69,7 +70,7 @@ example item with PK "incidents" holding incident array in DATA
     "N": "1659837126612"
   }
 }
-````
+```
 
 example setting
 
