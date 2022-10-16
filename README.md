@@ -16,13 +16,13 @@ This system is a teaching aid for a Udemy course that will also bring awareness 
 
 ## BACKEND
 
-- Serverless Framework + Typescript + Tests
+- Serverless Framework + Typescript + Jest tests
 - AWS IAM, Lambda, API Gateway Websockets, DynamoDb, SNS, S3, SSM
 - Google Street View Images API
 
 ## FRONTEND
 
-- React + Redux Toolkit + Typescript + Tests
+- React + Redux Toolkit + Typescript + Jest tests
 - Tailwind CSS Responsive Design, Animate.css
 
 ## DATA UPLOAD
