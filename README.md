@@ -37,7 +37,22 @@ This system is a teaching aid for a Udemy course that will also bring awareness 
 
 DynamoDB holds three data structures: websocket connections, gunshot incident records, and settings.
 
-Item with PK "incidents" holds Incident[] in DATA
+example websocket connection
+
+````json
+{
+  "PK": {
+    "S": "298dJsl3="
+  },
+  "GSPK": {
+    "S": "connection"
+  },
+  "GSSK": {
+    "N": "1659837127120"
+  }
+}
+
+example item with PK "incidents" holding incident array in DATA
 
 ```json
 {
@@ -54,11 +69,9 @@ Item with PK "incidents" holds Incident[] in DATA
     "N": "1659837126612"
   }
 }
-```
+````
 
-### SETTINGS
-
-example websocket setting
+example setting
 
 ```json
 {
