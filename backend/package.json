@@ -7,7 +7,7 @@
     "deploy": "yarn test && node_modules/.bin/serverless deploy --verbose --stage $STAGE",
     "destroy": "node_modules/.bin/serverless remove --stage $STAGE",
     "serverless:metrics": "node_modules/.bin/serverless metrics",
-    "serverless:info": "node_modules/.bin/serverless info",
+    "serverless:doctor": "node_modules/.bin/serverless doctor",
     "test": "jest",
     "test:watch": "yarn test -- --watch",
     "scripts:upload": "ARN=$ARN node scripts/uploadCSVwithSNS.js"

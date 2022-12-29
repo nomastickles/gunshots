@@ -8,6 +8,8 @@ import event1 from "../__fixtures__/SNSSendIncidents1.json";
 import event2 from "../__fixtures__/SNSSendIncidents2.json";
 import { incident1 } from "../__fixtures__/incidentData";
 
+// this is the best thing
+
 jest.mock("../../src/libs/dynamodb");
 const mockLibDynamodbGetAllConnectionsIds = jest.spyOn(
   libDynamodb,
@@ -26,6 +28,8 @@ let mockGetApiGatewayManagementClient = jest.spyOn(
   "getApiGatewayManagementClient"
 );
 const mockAPIGatewayPostToConnection = jest.fn();
+
+// a new things 🎬 and something else!!
 
 describe("sendIncidents lambda", () => {
   beforeEach(() => {
