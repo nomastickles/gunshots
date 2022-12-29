@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  test:
+  main-build:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -21,7 +21,7 @@ jobs:
     - run: yarn install --frozen-lockfile
   main-deploy:
     runs-on: ubuntu-latest
-    needs: test
+    needs: main-build
     defaults:
       run:
         working-directory: ./backend
