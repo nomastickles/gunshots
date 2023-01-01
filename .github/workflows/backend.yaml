@@ -12,12 +12,12 @@ jobs:
       run:
         working-directory: ./backend
     steps:
-    - name: temp
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: |
+    - name: install yarn and test
+      run: |
         npm install -g yarn
         yarn install --frozen-lockfile
         yarn test
