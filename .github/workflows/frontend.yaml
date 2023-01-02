@@ -10,7 +10,7 @@ on:
 
 
 jobs:
-  main-deploy:
+  deploy:
     runs-on: ubuntu-latest
     env:
       REACT_APP_WEBSOCKET: ${{ github.event.inputs.websocket }}
@@ -26,4 +26,5 @@ jobs:
       run: |
         npm install -g yarn
         yarn install --frozen-lockfile
-        yarn deploy
+        yarn test
+        gh-pages -d build -u 'github-actions-bot <support+actions@github.com>'
