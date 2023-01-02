@@ -41,6 +41,27 @@ function Incident() {
     title = "";
   }
 
+  let stateInfo = "";
+
+  if (currentIncidentInfo?.stateTotals?.killed) {
+    stateInfo += `${currentIncidentInfo?.stateTotals?.killed} killed`;
+  }
+
+  if (
+    currentIncidentInfo?.stateTotals?.killed &&
+    currentIncidentInfo?.stateTotals?.injured
+  ) {
+    stateInfo += " + ";
+  }
+
+  if (currentIncidentInfo?.stateTotals?.injured) {
+    stateInfo += `${currentIncidentInfo?.stateTotals?.injured} injured`;
+  }
+
+  if (stateInfo) {
+    stateInfo += `in ${incident?.state}`;
+  }
+
   return (
     <div
       data-testid="incident"
@@ -68,11 +89,7 @@ function Incident() {
             {title && <h2 className="text-red-500">{title || " "}</h2>}
             {!title && <p>&nbsp;</p>}
             <p className="text-sm">&nbsp;</p>
-            <p className="text-xs text-gray-500">
-              {currentIncidentInfo?.stateTotals?.killed} killed +{" "}
-              {currentIncidentInfo?.stateTotals?.injured} injured in{" "}
-              {incident?.state}
-            </p>
+            <p className="text-xs text-gray-500">{stateInfo}</p>
           </div>
         </div>
       </div>
