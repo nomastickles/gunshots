@@ -32,7 +32,7 @@
     "test:Watch": "react-scripts test",
     "test": "react-scripts test --watchAll=false",
     "predeploy": "npm run build",
-    "deploy": "yarn test && gh-pages -d build"
+    "deploy": "yarn test && gh-pages -d build -u 'github-actions-bot <support+actions@github.com>'"
   },
   "eslintConfig": {
     "extends": "react-app"
