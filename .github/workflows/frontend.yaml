@@ -21,9 +21,8 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - name: install yarn, test, and deploy
+    - name: test and deploy
       run: |
         yarn install --frozen-lockfile
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-        echo "websocket: ${{ github.event.inputs.websocket }}"
         export REACT_APP_WEBSOCKET="${{ github.event.inputs.websocket }}" && yarn deploy

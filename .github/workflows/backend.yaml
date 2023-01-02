@@ -23,7 +23,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - name: install yarn, test, and deploy
+    - name: test and deploy
       run: |
         yarn install --frozen-lockfile
         yarn deploy --stage dev
