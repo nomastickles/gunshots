@@ -69,7 +69,7 @@ export const addAllIncidents = async (incidents: Incident[]) => {
       Item: item,
     })
   );
-  console.log("➕ # saved incidents:", addAllIncidents.length);
+  console.log("➕ # saved incidents:", incidents.length);
 };
 
 async function getItemByPK(

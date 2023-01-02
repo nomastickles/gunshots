@@ -95,25 +95,32 @@ example setting
 
 ## STEPS TO RUN
 
-### 1. ADD ./backend/config.js
+### 1. ADD GITHUB REPO SECRETS
 
 example:
 
-```js
-module.exports.aws = {
-  accountId: "xxx",
-  region: "us-east-x",
-  s3NamePrefix: "somePrefix",
-};
-```
-
-### 2. BACKEND DEPLOY
-
 ```sh
-STAGE=dev cd backend && yarn && yarn deploy
+AWS_ACCOUNT_ID
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+AWS_DEFAULT_REGION
+S3_NAME # unique s3 prefix
 ```
 
-example output:
+### 2. SAVE GOOGLE STREETVIEW API
+
+Add Google API key to AWS Systems Manager Parameter Store with path /gunshots/googleAPIKey
+
+Please see [https://developers.google.com/maps/documentation/streetview/usage-and-billing](https://developers.google.com/maps/documentation/streetview/usage-and-billing) for details on Google API usage and costs.
+
+### 3. UPLOAD 72 HOUR CSV
+
+- get csv from [https://www.gunviolencearchive.org/last-72-hours](https://www.gunviolencearchive.org/last-72-hours)
+- add csv to ./backend/csv
+
+### 4. MERGE TO MAIN (BACKEND DEPLOY)
+
+example output from ./.github/workflows/backend.yaml
 
 ```
 Stack Output:
@@ -121,27 +128,6 @@ Stack Output:
 
 ```
 
-### 3. SAVE GOOGLE STREETVIEW API
-
-Add Google API key to AWS Systems Manager Parameter Store with path /gunshots/googleAPIKey
-
-Please see [https://developers.google.com/maps/documentation/streetview/usage-and-billing](https://developers.google.com/maps/documentation/streetview/usage-and-billing) for details on Google API usage and costs.
-
-### 4. UPLOAD 72 HOUR CSV (two options)
-
-- get csv from [https://www.gunviolencearchive.org/last-72-hours](https://www.gunviolencearchive.org/last-72-hours)
-- send csv data via sns through AWS console
-
-![sns example](img/sns-example.png)
-
-OR
-
-for local upload see [backend/csv/README.md](backend/csv/README.md)
-
 ### 5. FRONTEND DEPLOY
 
-```sh
-cd frontend && yarn && yarn start
-```
-
-- Via UI add ServiceEndpointWebsocket output to frontend input
+- Manually run Frontend Github Action with websocket from backend deployment
