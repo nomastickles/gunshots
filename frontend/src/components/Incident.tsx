@@ -28,11 +28,11 @@ function Incident() {
   }, [hide]);
 
   let title = "";
-  if (metrics?.killed !== undefined) {
+  if (metrics?.killed) {
     title = `${metrics?.killed} KILLED`;
   }
 
-  if (metrics?.injured !== undefined) {
+  if (metrics?.injured) {
     const spacing = title ? " + " : "";
     title += `${spacing}${metrics?.injured} INJURED`;
   }
