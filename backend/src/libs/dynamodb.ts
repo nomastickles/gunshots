@@ -146,8 +146,12 @@ export const getAllConnectionsIds = async () => {
 export const getAllIncidents = async () => {
   const dbItem = await getItemByPK("incidents");
   const dataRaw = dbItem?.DATA?.S;
-  const allIncidents = JSON.parse(dataRaw);
-  return allIncidents || [];
+  try {
+    const allIncidents = JSON.parse(dataRaw);
+    return allIncidents;
+  } catch (_e) {
+    return [];
+  }
 };
 
 export const getSettings = async () => {
