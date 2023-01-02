@@ -1,0 +1,29 @@
+name: frontend
+
+on:
+  workflow_dispatch:
+    inputs:
+      websocket:
+        description: 'wss output from backend deployment'
+        required: true 
+        type: string
+
+
+jobs:
+  main-deploy:
+    runs-on: ubuntu-latest
+    env:
+      REACT_APP_WEBSOCKET: ${{ github.event.inputs.websocket }}
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: install yarn, test, and deploy
+      run: |
+        npm install -g yarn
+        yarn install --frozen-lockfile
+        yarn deploy
