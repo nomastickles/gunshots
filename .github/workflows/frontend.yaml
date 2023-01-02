@@ -1,4 +1,4 @@
-name: frontend
+name: Frontend
 
 on:
   workflow_dispatch:
@@ -11,6 +11,7 @@ on:
 
 jobs:
   deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     env:
       REACT_APP_WEBSOCKET: ${{ github.event.inputs.websocket }}
@@ -26,5 +27,4 @@ jobs:
       run: |
         npm install -g yarn
         yarn install --frozen-lockfile
-        yarn test
-        gh-pages -d build -u 'github-actions-bot <support+actions@github.com>'
+        yarn deploy

@@ -29,9 +29,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test:Watch": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "yarn test && gh-pages -d build -u 'github-actions-bot <support+actions@github.com>'"
   },
   "eslintConfig": {
     "extends": "react-app"
