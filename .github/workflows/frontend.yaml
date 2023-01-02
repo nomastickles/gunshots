@@ -13,8 +13,6 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    env:
-      REACT_APP_WEBSOCKET: ${{ github.event.inputs.websocket }}
     defaults:
       run:
         working-directory: ./frontend
@@ -28,4 +26,4 @@ jobs:
         npm install -g yarn
         yarn install --frozen-lockfile
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-        yarn deploy
+        export REACT_APP_WEBSOCKET="${{ github.event.inputs.websocket }}" && yarn deploy
