@@ -25,13 +25,13 @@ This system is a teaching aid for a Udemy course that will also bring awareness 
 - React + Redux Toolkit + Typescript + Jest tests
 - Tailwind CSS Responsive Design, Animate.css
 
-## DATA UPLOAD
-
-![cloud-design-upload](img/cloud-design-upload.png)
-
-## WEBSOCKET CONNECTIONS
+## BROWSER / WEBSOCKET CONNECTIONS
 
 ![cloud-design-browsers](img/cloud-design-browsers.png)
+
+## DATA UPLOAD VIA AWS CONSOLE
+
+![cloud-design-upload](img/cloud-design-upload.png)
 
 ## DYNAMODB STRUCTURE
 

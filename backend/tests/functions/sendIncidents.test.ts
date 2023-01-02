@@ -33,7 +33,7 @@ const mockAPIGatewayPostToConnection = jest.fn();
 
 describe("sendIncidents lambda", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    jest.resetAllMocks();
     mockAPIGatewayPostToConnection.mockReturnValue({
       promise: jest.fn(),
     });
@@ -77,7 +77,7 @@ describe("sendIncidents lambda", () => {
     await lambdaFunction(event2, context);
 
     expect(mockLibDynamodbGetAllConnectionsIds).toHaveBeenCalled();
-    expect(mockLibDynamodbGetAllIncidents).toHaveBeenCalled();
+    expect(mockLibDynamodbGetAllIncidents).not.toHaveBeenCalled(); // cached
     expect(mockGetApiGatewayManagementClient).toHaveBeenCalledWith("websocket");
     expect(mockAPIGatewayPostToConnection).toHaveBeenCalledTimes(2);
   });

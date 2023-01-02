@@ -22,9 +22,6 @@ const dbClient = new DynamoDBClient({ region: process.env.AWS_REGION });
 const TableName = process.env.DB_NAME;
 const IndexName = process.env.DB_NAME_GSPK;
 
-let WEBSOCKET: string = undefined;
-let ALL_INCIDENTS: Incident[] = undefined;
-
 export const addConnection = async (connectionId: string) => {
   await libGeneral.timeout(DynamoDBWriteTimeout);
   const item = {
@@ -147,37 +144,16 @@ export const getAllConnectionsIds = async () => {
 };
 
 export const getAllIncidents = async () => {
-  if (ALL_INCIDENTS) {
-    // cached
-    return ALL_INCIDENTS;
-  }
   const dbItem = await getItemByPK("incidents");
   const dataRaw = dbItem?.DATA?.S;
-
-  if (dataRaw) {
-    // cache and
-    // only set this if we have it
-    ALL_INCIDENTS = JSON.parse(dataRaw);
-  }
-  return ALL_INCIDENTS || [];
+  const allIncidents = JSON.parse(dataRaw);
+  return allIncidents || [];
 };
 
 export const getSettings = async () => {
-  if (WEBSOCKET) {
-    // cached
-    return {
-      websocket: WEBSOCKET,
-    };
-  }
-
   const item = await getItemByPK("websocket");
 
-  if (item) {
-    // only set this if we have it
-    WEBSOCKET = item?.DATA?.S;
-  }
-
   return {
-    websocket: WEBSOCKET,
+    websocket: item?.DATA?.S,
   };
 };
