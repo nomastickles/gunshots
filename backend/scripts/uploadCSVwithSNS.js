@@ -8,6 +8,7 @@ const config = require("../config");
  * STAGE=dev1 yarn scripts:upload
  */
 (async () => {
+  console.log("💥 uploadCSVwithSNS");
   const dir = `${__dirname}/../csv`;
   const { file } = getMostRecentFile(dir);
   const { region, accountId } = config.aws;

@@ -1,6 +1,7 @@
 const dynamoDB = require("@aws-sdk/client-dynamodb");
 
 async function updateWebsocket(region, websocket) {
+  console.log("💥 updateWebsocket");
   const dbNameSuffix = websocket.split("/").reverse()[0];
   const dbName = `gunshots-${dbNameSuffix}`;
 
