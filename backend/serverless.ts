@@ -13,9 +13,8 @@ const serverlessConfiguration: AWS = {
         forceExclude: ["aws-sdk"],
       },
     },
-    ACCOUNT_ID: "${file(./config.js):aws.accountId}",
-    S3_NAME:
-      "${file(./config.js):aws.s3NamePrefix}-${self:service}-${self:provider.stage}", // public facing
+    ACCOUNT_ID: "${env:ACCOUNT_ID}",
+    S3_NAME: "${env:S3_NAME}-${self:service}-${self:provider.stage}", // public facing
     SNS_UPLOAD_NAME: "${self:service}-upload-${self:provider.stage}",
     SNS_SEND_INCIDENTS_NAME: "${self:service}-send-${self:provider.stage}",
     SNS_SEND_INCIDENTS_ARN_PREFIX:
@@ -31,7 +30,7 @@ const serverlessConfiguration: AWS = {
     name: "aws",
     runtime: "nodejs16.x",
     stage: "${opt:stage, 'dev'}",
-    region: "${file(./config.js):aws.region}" as any,
+    region: "${env:AWS_DEFAULT_REGION}" as any,
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
