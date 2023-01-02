@@ -25,7 +25,6 @@ jobs:
         node-version: 16
     - name: install yarn, test, and deploy
       run: |
-        npm install -g yarn
         yarn install --frozen-lockfile
         yarn deploy --stage dev
   
