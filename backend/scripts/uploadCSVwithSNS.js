@@ -2,8 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const AWS = require("aws-sdk");
 
-const config = require("../config");
-
 /**
  * STAGE=dev1 yarn scripts:upload
  */
