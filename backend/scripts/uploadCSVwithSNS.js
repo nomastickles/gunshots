@@ -11,8 +11,9 @@ const config = require("../config");
   console.log("💥 uploadCSVwithSNS");
   const dir = `${__dirname}/../csv`;
   const { file } = getMostRecentFile(dir);
-  const { region, accountId } = config.aws;
-  const stage = process.env.STAGE;
+  const region = process.env.AWS_DEFAULT_REGION;
+  const accountId = process.env.ACCOUNT_ID;
+  const stage = process.env.STAGE || "dev";
 
   if (!file) {
     console.error("missing csv");
@@ -23,6 +24,8 @@ const config = require("../config");
     console.error("missing stage");
     return;
   }
+
+  console.log("file", file);
 
   const data = fs.readFileSync(`${dir}/${file}`, "utf8");
   const topicArn = `arn:aws:sns:${region}:${accountId}:gunshots-upload-${stage}`;

@@ -10,7 +10,7 @@
     "serverless:doctor": "node_modules/.bin/serverless doctor",
     "test": "jest",
     "test:watch": "yarn test -- --watch",
-    "scripts:upload": "ARN=$ARN node scripts/uploadCSVwithSNS.js"
+    "scripts:upload": "node scripts/uploadCSVwithSNS.js"
   },
   "resolutions": {
     "json5": "2.2.2",

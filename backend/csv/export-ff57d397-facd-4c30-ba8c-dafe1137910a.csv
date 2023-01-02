@@ -1,0 +1,310 @@
+"Incident ID","Incident Date",State,"City Or County",Address,"# Killed","# Injured",Operations
+2434400,"October 10, 2022",Michigan,Detroit,"N Green St and Chatfield St",0,1,N/A
+2434377,"October 10, 2022",Indiana,"Indianapolis (Lawrence)","4600 block of Richardt Ave",0,2,N/A
+2434391,"October 10, 2022",Indiana,Indianapolis,"2100 block of Braeburn East Dr",0,1,N/A
+2434365,"October 10, 2022",Maryland,Baltimore,"4200 block of Curtis Ave",0,1,N/A
+2434361,"October 10, 2022",Maryland,Baltimore,"2600 block of E Chase St",1,0,N/A
+2434347,"October 10, 2022",California,Lancaster,"43500 block of 17th St W",1,0,N/A
+2434339,"October 10, 2022","District of Columbia",Washington,"14th St NW and Columbia Rd NW",0,2,N/A
+2434335,"October 10, 2022",Louisiana,"Baton Rouge","1457 Terrace Ave",1,0,N/A
+2434332,"October 10, 2022","District of Columbia",Washington,"Otis Pl NW and Warder St NW",0,1,N/A
+2434328,"October 10, 2022","North Carolina",Raleigh,"1321 Park Glen Dr",0,1,N/A
+2434326,"October 10, 2022",Arkansas,Jacksonville,"300 block of Marshall Rd",1,0,N/A
+2434323,"October 10, 2022",Louisiana,"Baton Rouge","1873 W Muriel Dr",0,2,N/A
+2434301,"October 10, 2022",Louisiana,"Baton Rouge","S 15th St and Terrace Ave",1,0,N/A
+2434287,"October 10, 2022","North Carolina",Waxhaw,"1400 Cuthbertson Rd",0,0,N/A
+2434284,"October 10, 2022",Pennsylvania,Finleyville,"PA-88 and Washington Ave",1,0,N/A
+2434138,"October 10, 2022",Maryland,"Takoma Park","726 Fairview Ave",0,2,N/A
+2434243,"October 10, 2022",Georgia,Augusta,"2822 Peach Orchard Rd",1,0,N/A
+2434201,"October 10, 2022",Minnesota,Minneapolis,"2900 block of Oliver Ave N",0,1,N/A
+2434197,"October 10, 2022",Michigan,Detroit,"Bennett St and Fenton St",1,1,N/A
+2434223,"October 10, 2022",Illinois,Chicago,"4300 block of S Wood Ave",0,1,N/A
+2434215,"October 10, 2022",Illinois,Chicago,"7800 block of S State St",0,1,N/A
+2434193,"October 10, 2022",Illinois,Chicago,"5700 block of S Maryland Ave",0,1,N/A
+2434189,"October 10, 2022",Illinois,Chicago,N/A,0,1,N/A
+2434164,"October 10, 2022",Michigan,Detroit,"Alcoy Ave and Bringard Dr",0,1,N/A
+2434142,"October 10, 2022",Illinois,Chicago,"6000 block of N Leader Ave",0,1,N/A
+2434111,"October 10, 2022",Illinois,Chicago,"2800 block of S Homan Ave",0,1,N/A
+2434105,"October 10, 2022",Illinois,Chicago,"I-90 and W Ohio St",0,3,N/A
+2434019,"October 9, 2022","New York",Bronx,"1880 Valentine Ave",0,1,N/A
+2434008,"October 9, 2022",Louisiana,"New Orleans","1800 block of Port St",1,0,N/A
+2434006,"October 9, 2022","South Carolina",Lexington,"809 E Main St",0,1,N/A
+2433608,"October 9, 2022",Louisiana,Hammond,"St Paul Loop",1,0,N/A
+2433961,"October 9, 2022","New York",Brooklyn,"267 Osborn St",0,1,N/A
+2433934,"October 9, 2022","New York",Brooklyn,"Schermerhorn St",0,1,N/A
+2433566,"October 9, 2022",Texas,"San Antonio","2929 Rigsby Ave",2,1,N/A
+2433925,"October 9, 2022",Texas,"San Antonio","5400 block of Military Dr",0,1,N/A
+2433918,"October 9, 2022",Minnesota,Minneapolis,"3100 block of N Morgan Ave",0,1,N/A
+2433910,"October 9, 2022",Texas,Odessa,TX-338,1,0,N/A
+2433889,"October 9, 2022","New York",Brooklyn,"2957 Avenue W",0,1,N/A
+2433898,"October 9, 2022",Texas,Lubbock,"1900 block of 66th St",0,1,N/A
+2433895,"October 9, 2022","New York",Shirley,"58 St George Dr W",0,2,N/A
+2433887,"October 9, 2022","New York",Bronx,"500 E 134th St",0,1,N/A
+2433551,"October 9, 2022",Texas,"Prairie View","20500 block of Pine Island Rd",0,3,N/A
+2433868,"October 9, 2022",Pennsylvania,Pittsburgh,"Brushton Ave and Frankstown Ave",0,1,N/A
+2433863,"October 9, 2022",Texas,Plano,"Medalist Dr and Alma Dr",0,1,N/A
+2433850,"October 9, 2022","North Carolina",Charlotte,"Starmount Dr and South Blvd",0,1,N/A
+2433848,"October 9, 2022",Texas,Killeen,"200 block of Evergreen Dr",1,0,N/A
+2433841,"October 9, 2022","North Carolina",Wilmington,"300 block of Williamson Dr",1,2,N/A
+2433813,"October 9, 2022","North Carolina",Greensboro,"E Florida St and S O Henry Blvd",1,0,N/A
+2433831,"October 9, 2022","North Carolina",Kinston,"1225 W New Bern Rd",0,1,N/A
+2433827,"October 9, 2022",Colorado,"Grand Junction","756 North Ave",0,2,N/A
+2433824,"October 9, 2022",Maryland,Baltimore,"200 block of S Augusta Ave",0,1,N/A
+2433817,"October 9, 2022","North Carolina",Lexington,"Spruce St",0,1,N/A
+2433810,"October 9, 2022",Colorado,Aurora,"S Buckley Rd and E Mississippi Ave",0,2,N/A
+2433806,"October 9, 2022",Maryland,Fairwood,"4600 block of Dr Beans Legacy Cir",1,0,N/A
+2433780,"October 9, 2022","North Carolina",Charlotte,"1905 Eastway Dr",1,0,N/A
+2433766,"October 9, 2022",Missouri,"Maryland Heights","11700 block of Dunlap Industrial Blvd",0,1,N/A
+2433756,"October 9, 2022",Virginia,Richmond,"1900 block of Q St",1,0,N/A
+2433734,"October 9, 2022",Illinois,Chicago,"N Kildare Ave and W Kamerling Ave",0,1,N/A
+2433743,"October 9, 2022",Nevada,Reno,"Museum Dr",1,0,N/A
+2433731,"October 9, 2022",Pennsylvania,Philadelphia,"400 block of E Allegheny Ave",0,1,N/A
+2433671,"October 9, 2022",Pennsylvania,Philadelphia,"W Courtland St and 4th St",0,1,N/A
+2433655,"October 9, 2022",Pennsylvania,Philadelphia,"3100 block of Kensington Ave",0,1,N/A
+2433721,"October 9, 2022",Pennsylvania,Philadelphia,"5200 block of Sydenham St",1,0,N/A
+2433719,"October 9, 2022",Virginia,Suffolk,"US-58 W and Pitchkettle Rd",0,1,N/A
+2433633,"October 9, 2022",Michigan,Detroit,"15400 block of Mark Twain St",0,1,N/A
+2433692,"October 9, 2022",Georgia,Athens,"200 block of W Clayton St",0,2,N/A
+2433685,"October 9, 2022",Tennessee,Memphis,"4770 Riverdale Rd",1,0,N/A
+2433650,"October 9, 2022",Indiana,Anderson,"2200 block of Fulton St",1,0,N/A
+2434393,"October 9, 2022",Illinois,Peoria,"900 block of W. Lincoln Ave",0,1,N/A
+2433680,"October 9, 2022",Georgia,"Warner Robins","Todd Cir",1,0,N/A
+2433839,"October 9, 2022",Pennsylvania,Spangler,"100 block of Herk Kline Ln",0,1,N/A
+2433555,"October 9, 2022",Indiana,Indianapolis,"100 block of N Euclid Ave",1,0,N/A
+2434133,"October 9, 2022",Indiana,Camby,"8543 E Landersdale Rd",2,0,N/A
+2434371,"October 9, 2022",Indiana,Evansville,"Hatfield Dr",0,1,N/A
+2433657,"October 9, 2022",Florida,Tampa,"E 7th Ave",0,1,N/A
+2433877,"October 9, 2022",Texas,Houston,"4100 block of Rain Willow Ct",2,0,N/A
+2433624,"October 9, 2022",Michigan,Detroit,"Meyers Rd and Wadsworth Ave",2,0,N/A
+2434351,"October 9, 2022",Maryland,Severn,"8200 block of Consett Ct",0,1,N/A
+2434345,"October 9, 2022",Pennsylvania,Chester,"2100 block of S Williams Cir",1,0,N/A
+2434341,"October 9, 2022","North Carolina",Durham,"4801 Danube Ln",0,1,N/A
+2434337,"October 9, 2022",Louisiana,"La Place (Laplace)","1400 block of Van Arpel Dr",1,0,N/A
+2433613,"October 9, 2022",Arkansas,"Little Rock","200 block of W 4th St",1,0,N/A
+2433603,"October 9, 2022",Alabama,"Birmingham (Ensley)","1900 block of 28th St",1,0,N/A
+2434308,"October 9, 2022",Pennsylvania,Reading,N/A,0,1,N/A
+2433615,"October 9, 2022",Alabama,Decatur,"1200 block of Pennylane",1,0,N/A
+2434310,"October 9, 2022","North Carolina","Winston Salem (Winston-salem)","Cole Rd and Tara Ct",0,1,N/A
+2434303,"October 9, 2022",Kansas,Leawood,"11540 Cherokee Ct",0,1,N/A
+2433595,"October 9, 2022",Indiana,"Fort Wayne","905 E Washington Blvd",0,1,N/A
+2434291,"October 9, 2022",Illinois,"Rock Island","1500 block of 8th St",1,0,N/A
+2434289,"October 9, 2022",Delaware,"Cedar Rapids","2200 Block of C St SW",0,1,N/A
+2433588,"October 9, 2022",Florida,Jacksonville,"McCormick Rd and Kernan Blvd",0,1,N/A
+2434279,"October 9, 2022",Delaware,Wilmington,"300 block of N Harrison St",1,1,N/A
+2434277,"October 9, 2022",Delaware,Dover,"1057 Walker Rd",0,1,N/A
+2433581,"October 9, 2022",Indiana,Angola,"400 block of N Elizabeth St",3,0,N/A
+2433537,"October 9, 2022",Maryland,Baltimore,"1700 E Cold Spring Ln",0,1,N/A
+2434247,"October 9, 2022","South Carolina",Inman,"Bobo Dr",5,0,N/A
+2434245,"October 9, 2022","District of Columbia",Washington,"100 block of Michigan Ave NE",0,1,N/A
+2433559,"October 9, 2022",Texas,Houston,"9900 block of North Fwy",0,1,N/A
+2434241,"October 9, 2022",Wisconsin,Milwaukee,"S 20th St and W Hayes Ave",0,1,N/A
+2433622,"October 9, 2022",Wisconsin,Milwaukee,"3122 N 6th St",0,1,N/A
+2433787,"October 9, 2022","District of Columbia",Washington,"1401 7th St NW",0,3,N/A
+2434232,"October 9, 2022",Pennsylvania,Philadelphia,"I-95 and I-76",0,1,N/A
+2434218,"October 9, 2022",Washington,Tacoma,"Pacific Ave and S 80th St",1,0,N/A
+2434203,"October 9, 2022",Washington,Tacoma,"5200 block of S M St",1,1,N/A
+2433791,"October 9, 2022","District of Columbia",Washington,"3400 block of Stanton Rd SE",0,1,N/A
+2433795,"October 9, 2022","District of Columbia",Washington,"2600 block of Birney Pl SE",0,1,N/A
+2433539,"October 9, 2022",Florida,Tampa,"908 N Franklin St",1,6,N/A
+2433533,"October 9, 2022",Tennessee,Memphis,"4855 American Way",1,2,N/A
+2433777,"October 9, 2022",Michigan,Detroit,"Binder St and W 7 Mile Rd",1,0,N/A
+2434191,"October 9, 2022","South Carolina",Greenwood,"Taggart Ave and New Market St",1,0,N/A
+2433912,"October 9, 2022",Minnesota,"Saint Paul","1800 block of Summit Ave",0,1,N/A
+2434176,"October 9, 2022",Minnesota,Minneapolis,"400 block of N Oliver Ave",0,1,N/A
+2434173,"October 9, 2022","South Carolina",Columbia,"400 block of Greensprings Dr",2,0,N/A
+2434062,"October 9, 2022",Texas,Beaumont,"2550 I-10 Frontage Rd",0,5,N/A
+2434149,"October 9, 2022","South Carolina",Bluffton,"4921 Bluffton Pkwy",0,1,N/A
+2434144,"October 9, 2022","South Carolina",Ridgeland,"Grays Hwy",0,1,N/A
+2434080,"October 9, 2022",Tennessee,Nashville,"3220 Vailview Dr",2,0,N/A
+2434136,"October 9, 2022",Maryland,Bladensburg,"5100 block of 57th Ave",0,1,N/A
+2434128,"October 9, 2022",Florida,Miami,"500 block of NE 150th St",1,3,N/A
+2433793,"October 9, 2022","District of Columbia",Washington,"15th St SE and Massachusetts Ave SE",0,1,N/A
+2434124,"October 9, 2022",Illinois,Chicago,"1500 block of E 65th St",0,1,N/A
+2434118,"October 9, 2022",California,Salinas,"1100 block of San Ysidro Way",1,0,N/A
+2434113,"October 9, 2022",Illinois,Chicago,"1400 block of W Leland Ave",0,1,N/A
+2434109,"October 9, 2022",Maine,Auburn,"92 Mary Carroll St",0,1,N/A
+2433510,"October 9, 2022",Illinois,Chicago,"400 block of S Wells St",1,0,N/A
+2433506,"October 9, 2022",Illinois,Chicago,"4300 block of N Ashland Ave",0,1,N/A
+2434103,"October 9, 2022",Massachusetts,Boston,"428 Hyde Park Ave",0,1,N/A
+2434094,"October 9, 2022",California,"Valley Springs","7000 block of Gabor Rd",0,1,N/A
+2433610,"October 9, 2022",Arkansas,"Little Rock","400 block of President Clinton Ave",0,2,N/A
+2434078,"October 9, 2022",Illinois,Rockford,"1200 block of West St",0,1,N/A
+2434075,"October 9, 2022",Illinois,Rockford,"1800 block of Huffman Blvd",0,2,N/A
+2434073,"October 9, 2022",Illinois,Rockford,"700 block of Kent St",0,1,N/A
+2434059,"October 9, 2022",Massachusetts,Kingston,"257 Elm St",2,0,N/A
+2434039,"October 9, 2022",California,Fresno,"2500 block of S Walnut Ave",0,2,N/A
+2434046,"October 9, 2022","New Jersey",Trenton,"Cross St and Kersey Alley",1,0,N/A
+2434044,"October 9, 2022",Alabama,Birmingham,"9th St",1,0,N/A
+2434037,"October 9, 2022",Louisiana,Shreveport,"1758 E 70th St",0,1,N/A
+2434030,"October 9, 2022",California,Orosi,"12600 block of Ira Ave",0,3,N/A
+2434028,"October 9, 2022",Louisiana,Shreveport,"1900 block of Downing St",0,1,N/A
+2434024,"October 8, 2022","New Jersey",Newark,"S 8th St and S Orange Ave",0,1,N/A
+2434022,"October 8, 2022",Louisiana,Shreveport,"3700 block of Baxter St",0,1,N/A
+2433352,"October 8, 2022",California,Berkeley,"Durant Ave and Telegraph Ave",1,3,N/A
+2434016,"October 8, 2022","South Carolina",Lexington,"1036 S Lake Dr",0,2,N/A
+2434014,"October 8, 2022","New Jersey",Paterson,"N 9th St and Belmont Ave",0,1,N/A
+2433337,"October 8, 2022",Illinois,Chicago,"12400 block of S Emerald Ave",0,1,N/A
+2433459,"October 8, 2022",Louisiana,"Baton Rouge","5151 Highland Rd",0,1,N/A
+2433332,"October 8, 2022",Illinois,Chicago,"8400 block of S Kingston Ave",0,1,N/A
+2433980,"October 8, 2022",Louisiana,"New Orleans","2300 block of Desire St",0,1,N/A
+2433327,"October 8, 2022",Alabama,Montgomery,"2400 block of E South Blvd",0,1,N/A
+2433941,"October 8, 2022",Mississippi,Natchez,"320 N Dr Martin Luther King Junior St",1,1,N/A
+2433321,"October 8, 2022",California,Lynwood,"10000 block of Long Beach Blvd",1,0,N/A
+2433316,"October 8, 2022",California,Lancaster,"44400 block of Division St",0,1,N/A
+2433313,"October 8, 2022",Illinois,Chicago,"7600 block of S Green St",0,1,N/A
+2433311,"October 8, 2022",Georgia,Columbus,"4200 block of 3rd Ave",0,1,N/A
+2433309,"October 8, 2022",Tennessee,Memphis,"1200 block of Union Ave",1,0,N/A
+2433956,"October 8, 2022","South Carolina",Charleston,"108 N Romney St",0,1,N/A
+2433958,"October 8, 2022","South Carolina",Charleston,"America St and South St",0,1,N/A
+2433263,"October 8, 2022",Tennessee,Chattanooga,"2514 Amnicola Hwy",0,1,N/A
+2433948,"October 8, 2022",Louisiana,Shreveport,"1758 E 70th St",0,1,N/A
+2433236,"October 8, 2022",Virginia,Henrico,"9400 block of Windy Cove Ct",0,1,N/A
+2433246,"October 8, 2022",Virginia,"Newport News","53 Colony Square Ct",1,0,N/A
+2433797,"October 8, 2022","North Carolina",Fayetteville,"1900 block of North St",1,1,N/A
+2433213,"October 8, 2022",Tennessee,Knoxville,"2800 block of Linden Ave",1,0,N/A
+2433250,"October 8, 2022",Virginia,Norfolk,"3100 block of Illinois Ave",1,0,N/A
+2433252,"October 8, 2022",Virginia,Suffolk,"1600 block of US-58",0,1,N/A
+2433217,"October 8, 2022",Virginia,Roanoke,"2700 block of Hoover St NW",1,0,N/A
+2433891,"October 8, 2022","North Carolina","Southern Pines","1300 Central Dr",1,0,N/A
+2433874,"October 8, 2022","North Carolina",Raleigh,"5000 block of Dorcas St",0,1,N/A
+2433871,"October 8, 2022",Texas,"La Marque","5500 block of the Gulf Fwy",1,1,N/A
+2433866,"October 8, 2022","North Carolina","Scotland Neck","600 block of E 12th St",0,1,N/A
+2433160,"October 8, 2022","North Carolina","Fuquay Varina","1885 Broad St",0,1,N/A
+2433783,"October 8, 2022",Wisconsin,Milwaukee,"N 35th St and W Florist Ave",0,1,N/A
+2433858,"October 8, 2022",Texas,Dallas,"1900 block of Main St",1,0,N/A
+2433819,"October 8, 2022","North Carolina",Lexington,"Cotton Grove Rd",0,2,N/A
+2433815,"October 8, 2022",Colorado,"Denver (Edgewater)","2600 block of Kendall St",0,1,N/A
+2433288,"October 8, 2022","District of Columbia",Washington,"3900 block of S Capitol St SW",0,1,N/A
+2433220,"October 8, 2022",Connecticut,Bridgeport,"Broad St and Fairfield Ave",1,2,N/A
+2433774,"October 8, 2022",Michigan,Saginaw,"100 block of Charles St",0,1,N/A
+2433764,"October 8, 2022",Georgia,Atlanta,"261 19th St NW",0,1,N/A
+2433760,"October 8, 2022",Missouri,"Saint Louis","6000 block of Lucille Ave",0,1,N/A
+2433758,"October 8, 2022",Missouri,"Saint Louis","1400 block of Chouteau Ave",0,1,N/A
+2433749,"October 8, 2022",Nevada,Reno,"4000 block of Mira Loma Dr",0,1,N/A
+2433745,"October 8, 2022",Pennsylvania,Philadelphia,"100 block of Hansberry St",0,1,N/A
+2433741,"October 8, 2022",Pennsylvania,Philadelphia,"Sheffield Ave and Jackson St",0,1,N/A
+2433736,"October 8, 2022",Pennsylvania,Philadelphia,"Philip St and Westmoreland St",0,1,N/A
+2433700,"October 8, 2022",Georgia,Atlanta,"855 Oak St SW",0,1,N/A
+2433716,"October 8, 2022",Pennsylvania,Philadelphia,"800 block of E Chelten Ave",1,0,N/A
+2433712,"October 8, 2022",Georgia,Lagrange,"201 Brown St",1,0,N/A
+2433710,"October 8, 2022",Virginia,Roanoke,"2300 block of Mountain View Terrace SW",0,1,N/A
+2433260,"October 8, 2022",Virginia,Suffolk,"820 W Constance Rd",1,0,N/A
+2433702,"October 8, 2022",Georgia,Atlanta,"1400 block of Cerro Vista Dr",0,1,N/A
+2433698,"October 8, 2022",Georgia,Marietta,"Frances Ave and Church St",0,1,N/A
+2433687,"October 8, 2022",Nebraska,"North Platte","E 4th St and Eastman Ave",0,1,N/A
+2433557,"October 8, 2022",Indiana,Indianapolis,"2815 N Olney St",1,0,N/A
+2433682,"October 8, 2022",Georgia,Macon,"Bailey Ave",1,1,N/A
+2434388,"October 8, 2022",Louisiana,Opelousas,"Leo St and Larry St",0,2,N/A
+2433676,"October 8, 2022",Georgia,Vienna,"Holiday St",0,1,N/A
+2433673,"October 8, 2022",Arizona,Tucson,"N 4th Ave and E 6th St",0,1,N/A
+2433668,"October 8, 2022",Georgia,Byron,"Mosely Rd",1,0,N/A
+2433665,"October 8, 2022",Arizona,Avondale,"Elwood St and El Mirage Rd",1,0,N/A
+2433661,"October 8, 2022",Tennessee,Nashville,"Dr DB Todd Jr Blvd and Cockrill St",1,0,N/A
+2433652,"October 8, 2022",Arizona,Phoenix,"Central Ave and Dobbins Rd",0,2,N/A
+2433169,"October 8, 2022",Illinois,Chicago,"9500 block of S Constance Ave",0,1,N/A
+2433646,"October 8, 2022",Florida,Sarasota,"1600 block of 23rd St",0,3,N/A
+2433151,"October 8, 2022",Kansas,Topeka,"1300 block of SW Polk St",0,1,N/A
+2433637,"October 8, 2022",Michigan,Detroit,"8000 block of Senator St",0,1,N/A
+2433147,"October 8, 2022",Ohio,Columbus,"1800 block of Bruck St",0,1,N/A
+2433324,"October 8, 2022",California,"Hawaiian Gardens","Norwalk Blvd and 226th St",1,1,N/A
+2433145,"October 8, 2022",Illinois,Chicago,"900 block of N Keeler Ave",0,1,N/A
+2433635,"October 8, 2022",Michigan,Detroit,"9000 block of Ashton Ave",0,1,N/A
+2433629,"October 8, 2022",Florida,"Fort Lauderdale (Tamarac)","Hampton Hills Blvd",0,2,N/A
+2433620,"October 8, 2022",Florida,Miami,"NW 20th St and NW 12th Ave",0,1,N/A
+2433135,"October 8, 2022",Illinois,Chicago,"300 block of S Springfield Ave",1,0,N/A
+2433617,"October 8, 2022",Pennsylvania,Philadelphia,"1600 block of S Taney St",0,2,N/A
+2433127,"October 8, 2022","North Carolina",Lumberton,"207 S Rozier St",1,0,N/A
+2433124,"October 8, 2022","North Carolina",Greensboro,"S Eugene St and Gate City Blvd",1,0,N/A
+2433463,"October 8, 2022",Louisiana,"Baton Rouge",I-12,1,1,N/A
+2433348,"October 8, 2022",Alabama,Tuscaloosa,"3000 block of 20th St",2,0,N/A
+2433690,"October 8, 2022",Nebraska,Omaha,"Vinton St and S 12th St",0,1,N/A
+2433822,"October 8, 2022","North Carolina",Trinity,"Roy Farlow Rd and Archdale Rd",0,1,N/A
+2433111,"October 8, 2022",Georgia,Atlanta,"Campbellton Rd",0,1,N/A
+2434315,"October 8, 2022",Kansas,"Arkansas City","500 block of N 3rd St",0,1,N/A
+2433108,"October 8, 2022",Georgia,Athens,"Pulaski St and W Clayton St",0,1,N/A
+2434299,"October 8, 2022","North Carolina","New Bern","600 block of First Ave",0,1,N/A
+2433105,"October 8, 2022",Georgia,Columbus,"Meade St",0,1,N/A
+2433590,"October 8, 2022",Iowa,Bellevue,"31821 US-52",1,0,N/A
+2433585,"October 8, 2022",Minnesota,Minneapolis,"2500 block of Golden Valley Rd",0,0,N/A
+2433579,"October 8, 2022",Florida,Naples,"9118 Strada Pl",0,1,N/A
+2434275,"October 8, 2022",Delaware,Smyrna,N/A,0,1,N/A
+2432916,"October 8, 2022",Pennsylvania,Southampton,"606 Second Street Pike",1,0,N/A
+2434268,"October 8, 2022",Delaware,Seaford,"Perkins St",0,2,N/A
+2433563,"October 8, 2022",Texas,Houston,"10012 Cullen Blvd",1,0,N/A
+2433549,"October 8, 2022",Ohio,"Cincinnati (Finneytown)","Springdew Dr and Galbraith Rd",0,1,N/A
+2433528,"October 8, 2022",Ohio,Hamilton,"1940 Fairgrove Ave",2,0,N/A
+2433531,"October 8, 2022",Texas,Lubbock,"2300 block of 143rd St",1,0,N/A
+2433023,"October 8, 2022",Florida,Jacksonville,"6099 Youngerman Cir",0,3,N/A
+2434181,"October 8, 2022","South Carolina",Cayce,"1206 N Eden Dr",0,1,N/A
+2433008,"October 8, 2022","District of Columbia",Washington,"7500 block of Georgia Ave NW",0,1,N/A
+2434011,"October 8, 2022","South Carolina",Columbia,"S Lake Dr",1,1,N/A
+2434151,"October 8, 2022",Missouri,"Saint Joseph","302 Illinois Ave",0,4,N/A
+2432987,"October 8, 2022",Indiana,Indianapolis,"E Pleasant Run Pkwy Dr N and S Linwood Ave",0,1,N/A
+2433292,"October 8, 2022","District of Columbia",Washington,"Astor Pl SE and 51st St SE",0,1,N/A
+2432982,"October 8, 2022",Indiana,Indianapolis,"1500 block of Tacoma Ave",0,1,N/A
+2432979,"October 8, 2022",Indiana,Indianapolis,"3749 W Washington St",0,2,N/A
+2432976,"October 8, 2022",Indiana,Indianapolis,"3200 block of W 10th St",0,2,N/A
+2432966,"October 8, 2022",Illinois,Chicago,"300 block of S Cicero Ave",0,1,N/A
+2432964,"October 8, 2022",Illinois,Chicago,"7100 block of S Bennett Ave",0,1,N/A
+2433513,"October 8, 2022",Illinois,Chicago,"700 block of N Pulaski Rd",0,1,N/A
+2433508,"October 8, 2022",Illinois,Chicago,"5300 block of S Cottage Grove Ave",0,1,N/A
+2432902,"October 8, 2022",Ohio,Columbus,"1100 block of Duxberry Ave",0,1,N/A
+2434100,"October 8, 2022",California,Solvang,"1000 block of Jason Way",1,0,N/A
+2434098,"October 8, 2022",Connecticut,Hartford,"53 Nepaug St",0,1,N/A
+2434089,"October 8, 2022",California,Perris,"19600 block of Seaton Ave",1,0,N/A
+2432908,"October 8, 2022","New Jersey",Newark,"11 Brenner St",1,1,N/A
+2433478,"October 8, 2022","New Jersey",Newark,"600 block of Broadway",1,0,N/A
+2433475,"October 8, 2022","New Jersey",Trenton,"900 block of Genesee St",0,2,N/A
+2434085,"October 8, 2022",California,Antioch,"2600 block of Belmont Ln",1,0,N/A
+2433467,"October 8, 2022",Louisiana,Shreveport,"6500 Kennedy Dr",0,1,N/A
+2433453,"October 8, 2022",Arkansas,"West Memphis","Garden Ln and Scottwood St",1,0,N/A
+2433379,"October 8, 2022","New York","New York (Manhattan)","2569 Adam Clayton Powell Blvd",0,2,N/A
+2433428,"October 8, 2022",Maryland,Baltimore,"4300 block of Hillen Rd",0,1,N/A
+2433192,"October 8, 2022",Pennsylvania,Philadelphia,"2000 block of Napfle Ave",1,0,N/A
+2433363,"October 8, 2022",California,Merced,"655 W 18th St",1,3,N/A
+2433382,"October 8, 2022",Missouri,"Saint Louis","4500 block of S Broadway",0,1,N/A
+2432949,"October 8, 2022","New York",Brooklyn,"760 Eldert Ln",0,1,N/A
+2433375,"October 7, 2022",California,Oakland,"1600 block of 45th Ave",1,1,N/A
+2434026,"October 7, 2022","New Jersey",Elizabeth,"Elizabeth Ave and Smith St",0,1,N/A
+2433372,"October 7, 2022",Alabama,Mobile,"6000 block of Lorena Dr",0,1,N/A
+2432836,"October 7, 2022",Missouri,"Kansas City","6700 block of S Benton Ave",2,0,N/A
+2432830,"October 7, 2022",Louisiana,"New Orleans","400 N Carrollton Ave",1,0,N/A
+2432825,"October 7, 2022",Michigan,Kalamazoo,"1100 block of Lake St",0,1,N/A
+2432823,"October 7, 2022",Illinois,"East Saint Louis","3059 State St",0,1,N/A
+2432814,"October 7, 2022",Missouri,"Saint Louis","Cass Ave and N 16th St",0,1,N/A
+2432807,"October 7, 2022",Maryland,Baltimore,"1100 block of Webb Ct",0,1,N/A
+2432792,"October 7, 2022",Michigan,Detroit,"19100 Kelly Rd",0,1,N/A
+2432779,"October 7, 2022",Michigan,Detroit,"Pembroke Ave and Evergreen Rd",0,1,N/A
+2432772,"October 7, 2022",Oregon,Portland,"SE 92nd Ave and Powell Blvd",0,4,N/A
+2432762,"October 7, 2022",Oregon,Portland,"SW 4th Ave and SW Washington St",1,0,N/A
+2432753,"October 7, 2022",Delaware,Wilmington,"1800 block of W 8th St",0,1,N/A
+2432275,"October 7, 2022",Oklahoma,"Oklahoma City","8201 N Rockwell Ave",1,0,N/A
+2433318,"October 7, 2022",Georgia,Rome,"116 Hosea St",1,0,N/A
+2433963,"October 7, 2022",Texas,Weatherford,"1800 block of S Main St",0,1,N/A
+2433297,"October 7, 2022",Kentucky,Hopkinsville,"2850 Greenville Rd",0,2,N/A
+2432998,"October 7, 2022","New York",Rochester,"E Main St and Railroad St",1,0,N/A
+2432611,"October 7, 2022",Alabama,Huntsville,"Pulaski Pk and Carmichael Ave",0,1,N/A
+2433215,"October 7, 2022",Tennessee,Antioch,"1100 block of Bell Rd",1,0,N/A
+2432864,"October 7, 2022","New York",Brooklyn,"Albemarle Rd and Bedford Ave",1,0,N/A
+2433230,"October 7, 2022",Virginia,Richmond,"5700 block of Hull Street Rd",0,1,N/A
+2433138,"October 7, 2022","North Carolina",Battleboro,"6953 NC-4",0,1,N/A
+2433239,"October 7, 2022",Virginia,Franklin,"32000 block of Beaton Rd",0,1,N/A
+2432581,"October 7, 2022","New York",Bronx,"1208 Southern Blvd",0,1,N/A
+2433751,"October 7, 2022",Michigan,"Battle Creek","62 Champion St",0,0,N/A
+2433158,"October 7, 2022","North Carolina",Durham,"1907 Cheek Rd",1,0,N/A
+2433852,"October 7, 2022",Texas,"Corpus Christi","900 block of S Staples St",1,0,N/A
+2433268,"October 7, 2022",Virginia,Meherrin,N/A,1,0,N/A
+2432543,"October 7, 2022",Wisconsin,Milwaukee,"W National Ave and S 14th St",0,1,N/A
+2432540,"October 7, 2022",Illinois,Chicago,"8534 S Carpenter St",0,2,N/A
+2432536,"October 7, 2022",Texas,Lubbock,"800 block of University Ave",0,1,N/A
+2432533,"October 7, 2022",Virginia,"Virginia Beach","3800 block of Lasalle Dr",0,1,N/A
+2433257,"October 7, 2022",Massachusetts,Worcester,"Oxford St and Austin St",0,2,N/A
+2433254,"October 7, 2022",Tennessee,Memphis,"3000 block of Goodwyn Cir",1,0,N/A
+2432457,"October 7, 2022",Maine,Lewiston,"32 Bartlett St",0,1,N/A
+2432505,"October 7, 2022",Tennessee,Nashville,"Blank St",0,1,N/A
+2432493,"October 7, 2022",Illinois,Chicago,"800 block of Poplar Ln",1,0,N/A
+2432100,"October 7, 2022",Connecticut,"New Haven","Chapel St and Blatchley Ave",0,1,N/A
+2433762,"October 7, 2022",Pennsylvania,Bethlehem,"600 block of Linden St",0,1,N/A
+2433739,"October 7, 2022",Nevada,"Las Vegas","Mel Torme Way and Sammy Davis Jr Dr",0,1,N/A
+2432809,"October 7, 2022",Michigan,Detroit,"21500 Fenkell Ave",1,0,N/A
+2432796,"October 7, 2022",Michigan,Detroit,"14700 8 Mile Rd",1,0,N/A

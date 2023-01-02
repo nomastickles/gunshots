@@ -1,0 +1,322 @@
+"Incident ID","Incident Date",State,"City Or County",Address,"# Killed","# Injured",Operations
+2492791,"January 1, 2023",Illinois,"Orland Park","8500 block of 145th Pl",2,0,N/A
+2492848,"January 1, 2023",California,Modesto,"1300 block of Ricardo Way",0,1,N/A
+2492844,"January 1, 2023",Missouri,"Saint Louis (Jennings)","8800 block of Blewett Ave",1,0,N/A
+2492835,"January 1, 2023",Missouri,Independence,"9013 E US Hwy 40",1,0,N/A
+2492317,"January 1, 2023",Illinois,Chicago,"2123 W Division St",1,1,N/A
+2492490,"January 1, 2023",Iowa,"Des Moines","3720 Martin Luther King Jr Pkwy",0,3,N/A
+2492818,"January 1, 2023","New Jersey",Newark,"100 block of Rose Terrace",1,0,N/A
+2492820,"January 1, 2023",Maryland,"Silver Spring","8502 16th St",0,1,N/A
+2492807,"January 1, 2023",Maryland,"Hyattsville (Adelphi)","9200 New Hampshire Ave",0,1,N/A
+2492796,"January 1, 2023","North Carolina",Charlotte,"3500 block of W Tyvola Rd",1,0,N/A
+2492794,"January 1, 2023",Tennessee,Memphis,"2900 block of Airways Blvd",0,1,N/A
+2492771,"January 1, 2023",Mississippi,Vicksburg,"MacArthur Dr",0,1,N/A
+2492601,"January 1, 2023",Illinois,Chicago,"300 block of E 57th St",1,3,N/A
+2492427,"January 1, 2023",Michigan,Lawrence,"57000 block of 60th Ave",2,0,N/A
+2492751,"January 1, 2023",Virginia,Roanoke,"3600 block of Williamson Rd NE",0,1,N/A
+2492726,"January 1, 2023","North Carolina",Greensboro,"Cridland Rd and E Wendover Ave",1,0,N/A
+2492744,"January 1, 2023",Illinois,Champaign,"1500 block of Kings Way",0,1,N/A
+2492742,"January 1, 2023",Ohio,Cleveland,"E 76th Pl and Superior Ave",0,1,N/A
+2492740,"January 1, 2023",Virginia,Norfolk,"700 block of A Ave",0,1,N/A
+2492738,"January 1, 2023",Virginia,Norfolk,"500 block of Walker Ave",0,1,N/A
+2492732,"January 1, 2023","North Carolina","Winston Salem (Winston-salem)","2700 Gilmer Ave NE",0,1,N/A
+2492516,"January 1, 2023",Minnesota,Minneapolis,"4430 N Lyndale Ave",1,1,N/A
+2492722,"January 1, 2023","North Carolina","Winston Salem (Winston-salem)","100 Capitol Lodging Ct",1,0,N/A
+2492702,"January 1, 2023",Indiana,Kokomo,"2300 block of Walton Lake Dr",0,1,N/A
+2492715,"January 1, 2023",Ohio,Springfield,"100 block of S Race St",0,2,N/A
+2492686,"January 1, 2023","North Carolina","Gastonia (Ranlo)","Burlington Ave",1,0,N/A
+2492707,"January 1, 2023",Ohio,Columbus,"1300 block of E 26th Ave",0,1,N/A
+2492705,"January 1, 2023","North Carolina",Charlotte,"900 block of Moretz Ave",1,0,N/A
+2492694,"January 1, 2023","North Carolina",Charlotte,"300 block of Blackhawk Rd",1,0,N/A
+2492696,"January 1, 2023",Virginia,Hayes,"7800 block of Guinea Rd",1,1,N/A
+2492684,"January 1, 2023",Minnesota,Minneapolis,"4000 block of 22nd Ave S",0,1,N/A
+2492611,"January 1, 2023","North Carolina",Durham,"1000 N Miami Blvd",0,5,N/A
+2492477,"January 1, 2023",Florida,"Milton (Pace)","3900 block of Deerwood Cir",1,0,N/A
+2492633,"January 1, 2023",Tennessee,Nashville,"1000 block of Wedgewood Ave",0,1,N/A
+2492627,"January 1, 2023",Tennessee,Memphis,"6135 Mt Moriah Rd",0,3,N/A
+2492623,"January 1, 2023",Ohio,Cincinnati,"11000 block of Quaildridge Ct",0,1,N/A
+2492620,"January 1, 2023",Tennessee,Memphis,"Harvest Knoll Ln",0,2,N/A
+2492608,"January 1, 2023",Ohio,Cincinnati,"700 block of Purcell Ave",1,1,N/A
+2492579,"January 1, 2023",Pennsylvania,Philadelphia,N/A,0,1,N/A
+2492592,"January 1, 2023",Pennsylvania,Philadelphia,"4100 block of North Broad St",0,1,N/A
+2492590,"January 1, 2023",Pennsylvania,Philadelphia,"2500 block of Ridge Drive",0,1,N/A
+2492314,"January 1, 2023",Ohio,Columbus,"2830 Johnstown Rd",1,4,N/A
+2492583,"January 1, 2023",Pennsylvania,Philadelphia,"2800 block of North Lawrence St",0,1,N/A
+2492557,"January 1, 2023",Pennsylvania,Philadelphia,"1900 block of North 3rd St",0,2,N/A
+2492560,"January 1, 2023",Pennsylvania,Philadelphia,"3300 block of Ridge Ave",0,1,N/A
+2492576,"January 1, 2023",Minnesota,"Saint Paul","281 5th St E",0,1,N/A
+2492217,"January 1, 2023",Pennsylvania,Philadelphia,"3400 block of Salmon St",0,1,N/A
+2492567,"January 1, 2023",Arizona,Phoenix,"I-10 and E University Dr",1,1,N/A
+2492564,"January 1, 2023",Pennsylvania,Philadelphia,"3000 block of Clifford St",1,1,N/A
+2492540,"January 1, 2023",Pennsylvania,Philadelphia,"4800 block of Tackawanna St",0,1,N/A
+2492553,"January 1, 2023",Minnesota,Minneapolis,"W 26th St and Pleasant Ave",0,1,N/A
+2492549,"January 1, 2023",Florida,Orlando,"7500 block of Fordham Creek Ln",2,1,N/A
+2492535,"January 1, 2023",Wisconsin,Milwaukee,"626 S 5th St",0,2,N/A
+2492532,"January 1, 2023",Wisconsin,Milwaukee,"S 16th St and W Grant St",0,1,N/A
+2492530,"January 1, 2023",Florida,"Miami (North Miami)","I-95 and NW 119th St",0,1,N/A
+2492527,"January 1, 2023",Wisconsin,Racine,"1111 Washington Ave",2,0,N/A
+2492496,"January 1, 2023",Florida,Naples,"3824 Tollhouse Dr",0,1,N/A
+2492494,"January 1, 2023",Michigan,Detroit,"2900 block of Fullerton Ave",0,1,N/A
+2492487,"January 1, 2023",Michigan,Detroit,"7700 block of Central Ave",0,2,N/A
+2492465,"January 1, 2023",Michigan,Detroit,"E Warren Ave and Outer Dr E",1,2,N/A
+2492480,"January 1, 2023",Florida,Pensacola,"9th Ave and Blount St",0,1,N/A
+2492475,"January 1, 2023",Nevada,Reno,"133 N Virginia St",0,1,N/A
+2492470,"January 1, 2023",Massachusetts,Mattapan,"1601 Blue Hill Ave",1,1,N/A
+2492455,"January 1, 2023",Michigan,"Grand Rapids","Weston St SW and Division Ave S",0,1,N/A
+2492448,"January 1, 2023",Florida,Ocala,"SW 5th St",2,4,N/A
+2492445,"January 1, 2023",Michigan,"Grand Rapids",N/A,0,1,N/A
+2492443,"January 1, 2023",Michigan,"Grand Rapids","Neland Ave SE and Thomas St SE",0,1,N/A
+2492441,"January 1, 2023",Michigan,"Grand Rapids","Division Ave S and Rose St SW",0,1,N/A
+2492439,"January 1, 2023",Michigan,"Grand Rapids","Blaine Ave SE and Boston St SE",1,0,N/A
+2492418,"January 1, 2023",Indiana,Indianapolis,"2400 block of Centennial St",0,1,N/A
+2492416,"January 1, 2023",Delaware,Wilmington,"700 block of N Monroe St",0,1,N/A
+2492412,"January 1, 2023",Indiana,Indianapolis,"2215 Pleasant St",0,1,N/A
+2492328,"January 1, 2023",Maryland,Clinton,"2500 block of Lazy Acres Rd",2,2,N/A
+2492402,"January 1, 2023",Indiana,Indianapolis,"1510 E Naomi St",0,1,N/A
+2492397,"January 1, 2023",Indiana,Indianapolis,"1019 Denison St",0,1,N/A
+2492395,"January 1, 2023",Indiana,Indianapolis,"917 N Grant Ave",0,1,N/A
+2492373,"January 1, 2023",Kentucky,Lexington,"600 block of Tennessee Ave",0,3,N/A
+2492351,"January 1, 2023",Georgia,Atlanta,"Peachtree St and Wall St",0,1,N/A
+2492348,"January 1, 2023",Maryland,Baltimore,"700 block of N Glover St",1,1,N/A
+2492342,"January 1, 2023",Illinois,Chicago,"6500 block of S Paulina St",0,1,N/A
+2492242,"January 1, 2023",Illinois,Chicago,"4804 W Madison St",0,1,N/A
+2492339,"January 1, 2023",Illinois,Chicago,"5200 block of S May St",0,1,N/A
+2492333,"January 1, 2023",Illinois,Chicago,"3800 block of S Wallace Ave",1,0,N/A
+2492286,"January 1, 2023",Oklahoma,"Oklahoma City","421 NW 10th St",1,3,N/A
+2492248,"January 1, 2023",Illinois,Chicago,"1306 S Independence Blvd",0,1,N/A
+2492246,"January 1, 2023",Illinois,Chicago,"W 114th Pl and S Racine Ave",0,1,N/A
+2492244,"January 1, 2023",Illinois,Chicago,N/A,0,1,N/A
+2492240,"January 1, 2023",Illinois,Chicago,N/A,0,1,N/A
+2492207,"January 1, 2023","New York",Rochester,"Clifford Ave",0,1,N/A
+2492191,"December 31, 2022",Wisconsin,Milwaukee,"4119 N 56th St",0,1,N/A
+2492140,"December 31, 2022",Wisconsin,Milwaukee,"5103 N 51st Blvd",0,1,N/A
+2492171,"December 31, 2022",California,Turlock,"N Tegner Rd and Fulkerth Rd",1,1,N/A
+2492144,"December 31, 2022",California,"Los Angeles","Vermont Ave and W Gage Ave",0,1,N/A
+2491951,"December 31, 2022",Virginia,Portsmouth,"1700 block of Atlanta Ave",1,0,N/A
+2491984,"December 31, 2022",Virginia,Petersburg,"I-85 and Squirrel Level Rd",0,1,N/A
+2492122,"December 31, 2022",Ohio,Columbus,"1200 block of E 26th Ave",0,1,N/A
+2492118,"December 31, 2022",Virginia,Norfolk,"5671 E Virginia Beach Blvd",0,1,N/A
+2492113,"December 31, 2022",Virginia,Richmond,"9600 block of US-1",0,1,N/A
+2492104,"December 31, 2022",Virginia,"Newport News","1100 block of Jebs Pl",0,1,N/A
+2492006,"December 31, 2022",Virginia,Hampton,"2000 block of W Mercury Blvd",0,1,N/A
+2492842,"December 31, 2022",Kentucky,Louisville,N/A,0,1,N/A
+2492840,"December 31, 2022",Kansas,Olathe,"900 block of E Oakview St",1,0,N/A
+2492004,"December 31, 2022",Arizona,Phoenix,"102nd Ave and Payson Rd",1,0,N/A
+2491656,"December 31, 2022",Arizona,Phoenix,"4201 N 19th Ave",0,9,N/A
+2491991,"December 31, 2022",Michigan,Detroit,"Whitlock Ave and Auburn St",0,1,N/A
+2492253,"December 31, 2022",Alabama,Mobile,"200 block of Dauphin St",1,8,N/A
+2492767,"December 31, 2022","New Jersey","Pine Brook","55 US-46",1,0,N/A
+2492324,"December 31, 2022",Indiana,Indianapolis,"4700 block of S Ada St",0,1,N/A
+2492763,"December 31, 2022","North Carolina",Raleigh,"Demille Pl and Schenley Dr",0,1,N/A
+2492756,"December 31, 2022",Illinois,Decatur,"1000 block of E Pearl St",1,0,N/A
+2492748,"December 31, 2022",Ohio,Cleveland,"E 30th St and Central Ave",0,2,N/A
+2492734,"December 31, 2022",Mississippi,Vicksburg,"402 Locust St",0,1,N/A
+2492718,"December 31, 2022",Virginia,Lynchburg,"2100 block of Memorial Ave",0,1,N/A
+2492712,"December 31, 2022",Virginia,Roanoke,"2800 block of Melrose Ave NW",0,2,N/A
+2492677,"December 31, 2022","North Carolina",Asheville,"100 block of New Leicester Hwy",0,1,N/A
+2492675,"December 31, 2022",Ohio,Columbus,"4653 Refugee Rd",1,0,N/A
+2492667,"December 31, 2022",Ohio,Columbus,"1200 block of Atcheson St",1,0,N/A
+2491953,"December 31, 2022","District of Columbia",Washington,"Southern Ave SE and Bass Pl SE",0,1,N/A
+2492661,"December 31, 2022",Ohio,Cleveland,"530 Euclid Ave",0,1,N/A
+2492645,"December 31, 2022",Ohio,Chillicothe,"100 block of N High St",0,1,N/A
+2491946,"December 31, 2022",Maryland,"Windsor Mill","50 block of Radbourn Ct",1,0,N/A
+2492631,"December 31, 2022",Wisconsin,Milwaukee,"N 39th St and W Hampton Ave",0,1,N/A
+2492625,"December 31, 2022",Wisconsin,Milwaukee,"N 53rd St and W Fairmount Ave",0,1,N/A
+2492617,"December 31, 2022",Florida,"Land O Lakes (Land O' Lakes)","6472 Land O Lakes Blvd",0,1,N/A
+2492606,"December 31, 2022",Ohio,Akron,"1200 block of Louisiana Ave",1,0,N/A
+2492598,"December 31, 2022",Tennessee,Chattanooga,"4600 block of Highland Ave",0,1,N/A
+2492595,"December 31, 2022",Ohio,Akron,"1300 block of Brittain Rd",1,1,N/A
+2491930,"December 31, 2022",Michigan,"Grand Rapids",N/A,0,1,N/A
+2491923,"December 31, 2022",Maryland,"Capitol Heights","20 block of Chamber Ave",1,0,N/A
+2491713,"December 31, 2022",Florida,"Daytona Beach","1184 N Nova Rd",0,3,N/A
+2492201,"December 31, 2022","New York","New York (Manhattan)","52nd St and 8th Ave",0,1,N/A
+2491909,"December 31, 2022",Kentucky,Louisville,"937 Phillips Lane",0,2,N/A
+2492511,"December 31, 2022",Indiana,Evansville,"4200 N 3rd Ave",1,0,N/A
+2492504,"December 31, 2022",Florida,Jacksonville,"E 10th St and N Main St",0,1,N/A
+2492507,"December 31, 2022",Florida,Jacksonville,"Mark Ave",1,0,N/A
+2492079,"December 31, 2022",Kentucky,Guthrie,"Locust St",1,0,N/A
+2492498,"December 31, 2022",Michigan,Lansing,"2722 E Michigan Ave",1,1,N/A
+2491886,"December 31, 2022",Missouri,Hannibal,"600 block of Broadway",0,1,N/A
+2491884,"December 31, 2022",Pennsylvania,Pittsburgh,"400 block of Hochberg Rd",1,0,N/A
+2491873,"December 31, 2022",Pennsylvania,"Pittsburgh (Penn Hills)","3100 block of Hebron Dr",0,1,N/A
+2491839,"December 31, 2022",Michigan,Detroit,"5777 Southfield Fwy",1,0,N/A
+2491870,"December 31, 2022",Louisiana,"New Orleans","401 N Carrollton Ave",1,0,N/A
+2491768,"December 31, 2022",Texas,"San Antonio","2317 Houston St",0,1,N/A
+2491760,"December 31, 2022",Texas,"San Antonio","5100 block of UTSA Blvd",0,1,N/A
+2491763,"December 31, 2022",Texas,"San Antonio","8306 Marbach Rd",0,1,N/A
+2492468,"December 31, 2022",Nevada,"Las Vegas","W Bonanza Rd and Clarkway Dr",1,0,N/A
+2492463,"December 31, 2022",Nevada,"Las Vegas","7100 block of Topeka Dr",1,0,N/A
+2491849,"December 31, 2022",Texas,"San Antonio",I-37,0,1,N/A
+2492460,"December 31, 2022",Michigan,Detroit,"14500 block of Evanston St",0,1,N/A
+2491834,"December 31, 2022",Wisconsin,Milwaukee,"3700 block of W Melvina St",0,1,N/A
+2491818,"December 31, 2022",Wisconsin,Milwaukee,"N Anita Ave and E Hampton Rd",1,0,N/A
+2492434,"December 31, 2022",Utah,"Salt Lake City","W Wright Cir and 500 S",0,2,N/A
+2491816,"December 31, 2022",Wisconsin,Milwaukee,"3885 N Sherman Blvd",0,1,N/A
+2491790,"December 31, 2022",Iowa,Waterloo,"319 Jefferson St",0,2,N/A
+2491693,"December 31, 2022",Indiana,Indianapolis,"3600 block of N Oxford St",0,1,N/A
+2492150,"December 31, 2022",California,"Los Angeles","S Spring St and 7th St",0,1,N/A
+2492404,"December 31, 2022",California,"Long Beach","2300 block of Locust Ave",0,1,N/A
+2491948,"December 31, 2022",Maryland,"La Plata","6705 Crain Hwy",1,0,N/A
+2492387,"December 31, 2022",Virginia,Danville,"Glen Oak Dr",2,0,N/A
+2492380,"December 31, 2022",Georgia,Macon,"4378 Log Cabin Dr",0,1,N/A
+2491748,"December 31, 2022","North Carolina",Charlotte,"Watson Dr",0,1,N/A
+2492361,"December 31, 2022",Indiana,Indianapolis,"7700 Newport Way",1,0,N/A
+2492358,"December 31, 2022",Georgia,Decatur,"577 DeKalb Industrial Way",1,0,N/A
+2491717,"December 31, 2022",Florida,Orlando,"5210 Silver Star Rd",0,3,N/A
+2492344,"December 31, 2022",California,Bakersfield,"2200 block of Wilshire Alley",0,1,N/A
+2491710,"December 31, 2022",Oklahoma,Tulsa,"4161 E Admiral Pl",1,0,N/A
+2492250,"December 31, 2022",Illinois,Chicago,"4756 S Ada St",0,1,N/A
+2491638,"December 31, 2022",Illinois,Chicago,"2741 W Touhy Ave",0,1,N/A
+2492056,"December 31, 2022",Illinois,Chicago,"12600 block of S Stewart Ave",0,1,N/A
+2492322,"December 31, 2022",Washington,Seattle,"Duwamish River Tr and Highland Park Way SW",0,1,N/A
+2492320,"December 31, 2022",Virginia,Lorton,"9500 block of Unity Ln",1,0,N/A
+2491631,"December 31, 2022",Illinois,Chicago,"900 block of N Lawler Ave",0,2,N/A
+2491597,"December 31, 2022",Illinois,Chicago,"1400 block of N Honore St",0,3,N/A
+2492311,"December 31, 2022",Oregon,Jacksonville,"400 block of China Gulch Rd",0,1,N/A
+2492284,"December 31, 2022",Alabama,"Mobile (Prichard)","600 block of Grant Ave",1,0,N/A
+2492059,"December 31, 2022",Illinois,Chicago,"78 E 103rd St",0,1,N/A
+2492234,"December 31, 2022",Louisiana,Shreveport,"2920 Round Grove Ln",0,1,N/A
+2492232,"December 31, 2022","District of Columbia",Washington,"14th St NW and U St NW",0,1,N/A
+2492230,"December 31, 2022",Pennsylvania,York,"300 block of Jackson St",0,1,N/A
+2492228,"December 31, 2022","District of Columbia",Washington,"50th St SE and Call Pl SE",0,1,N/A
+2492226,"December 31, 2022",Louisiana,Shreveport,"3200 block of Knight St",1,0,N/A
+2492224,"December 31, 2022","District of Columbia",Washington,"First St SE and Atlantic St SE",0,1,N/A
+2492222,"December 31, 2022",Louisiana,"New Orleans","Conti St and David St",1,0,N/A
+2492215,"December 31, 2022",Maryland,Baltimore,"900 block of Harlem Ave",0,1,N/A
+2492209,"December 31, 2022","New York",Rochester,N/A,0,1,N/A
+2491091,"December 30, 2022","New Mexico","Santa Fe","2911 Rufina St",1,0,N/A
+2490902,"December 30, 2022",Michigan,Sturgis,"1700 block of S Centerville Rd",1,0,N/A
+2491434,"December 30, 2022",Maryland,Baltimore,"2100 block of Presbury St",1,0,N/A
+2491424,"December 30, 2022",Ohio,Toledo,"Berdan Ave and Watson Ave",1,0,N/A
+2491024,"December 30, 2022",Tennessee,Memphis,"1900 block of Edward Cove",0,1,N/A
+2491418,"December 30, 2022",Virginia,Richmond,"Henry St and Broad St",0,1,N/A
+2491407,"December 30, 2022","New York",Syracuse,"800 block of Highland St",0,1,N/A
+2491725,"December 30, 2022",Texas,Dallas,"5550 W Lovers Ln",0,1,N/A
+2491054,"December 30, 2022",Tennessee,Memphis,"E Brooks Rd",1,3,N/A
+2491363,"December 30, 2022","New York",Ithaca,"100 block of Chestnut St",0,1,N/A
+2491394,"December 30, 2022",Virginia,Portsmouth,"4200 block of Greenwood Dr",1,0,N/A
+2491348,"December 30, 2022",Minnesota,Minneapolis,"Nicollet Ave and E 16th St",0,1,N/A
+2491383,"December 30, 2022",Virginia,Norfolk,"800 block of E 25th St",0,3,N/A
+2492116,"December 30, 2022",California,Fresno,"E Turner Ave and N Jackson Ave",1,0,N/A
+2492111,"December 30, 2022",California,Bakersfield,"Pesante Rd and Mesa Dr",1,0,N/A
+2491322,"December 30, 2022",Kansas,"Kansas City","Parallel Pkwy and N 94th St",1,0,N/A
+2492094,"December 30, 2022",Tennessee,Knoxville,"12564 Kingston Pike",0,3,N/A
+2491314,"December 30, 2022",Illinois,Chicago,"4711 W Le Moyne St",0,1,N/A
+2491298,"December 30, 2022",Texas,Houston,"8100 block of Marcy Dr",0,1,N/A
+2491285,"December 30, 2022",Illinois,Chicago,"3954 W 46th St",0,1,N/A
+2492077,"December 30, 2022","New Hampshire",Manchester,"830 S Willow St",0,1,N/A
+2491130,"December 30, 2022","New York",Bronx,"1441 Webster Ave",0,1,N/A
+2491388,"December 30, 2022",Kentucky,Lexington,"433 Bradley Ct",1,2,N/A
+2492036,"December 30, 2022","New Jersey",Oceanport,"Gosselin Ave",1,0,N/A
+2491245,"December 30, 2022","North Carolina",Thomasville,"Cox Ave and Morton St",0,1,N/A
+2492029,"December 30, 2022","New Jersey",Newark,"Longfellow Ave and S Orange Ave",0,1,N/A
+2492015,"December 30, 2022",Arizona,Maricopa,"41433 Honeycutt Rd",0,1,N/A
+2491223,"December 30, 2022",Kentucky,Louisville,"937 Phillips Ln",0,1,N/A
+2491214,"December 30, 2022",Texas,"San Antonio","500 block of N San Gabriel Ave",1,1,N/A
+2491218,"December 30, 2022",Texas,"San Antonio","400 block of Amaya St",0,1,N/A
+2491178,"December 30, 2022",Virginia,Hampton,"3818 Kecoughtan Rd",0,2,N/A
+2491193,"December 30, 2022",Virginia,Norfolk,"6200 block of Alexander St",0,1,N/A
+2491583,"December 30, 2022",Ohio,Cleveland,"11200 block of Parklawn Dr",1,0,N/A
+2491134,"December 30, 2022","New York",Rochester,"300 block of Portland Ave",0,0,N/A
+2491978,"December 30, 2022",Wisconsin,"Fond Du Lac","800 block of Security Dr",0,1,N/A
+2491126,"December 30, 2022","New York","New York (Manhattan)","W 144th St and Amsterdam Ave",0,1,N/A
+2491107,"December 30, 2022",Florida,Kissimmee,"Seabreeze Cir",0,2,N/A
+2491976,"December 30, 2022","New York",Bronx,"Puritan Ave and E Tremont Ave",0,1,N/A
+2491973,"December 30, 2022",Kansas,"Junction City","Humboldt Creek Rd",0,1,N/A
+2491261,"December 30, 2022","New York",Brooklyn,"2201 Caton Ave",1,0,N/A
+2491499,"December 30, 2022",Minnesota,Minneapolis,"601 Chicago Ave",1,0,N/A
+2491111,"December 30, 2022",Nevada,"Las Vegas","Colusa Cir and Sacramento Dr",1,0,N/A
+2491970,"December 30, 2022",Illinois,Alton,"1637 Washington Ave",0,1,N/A
+2491964,"December 30, 2022",Massachusetts,Boston,"Dorchester Ave and Southampton St,",0,1,N/A
+2491962,"December 30, 2022",Nevada,"Las Vegas","10500 block of Angel Dreams Ave",1,0,N/A
+2491097,"December 30, 2022",Florida,Orlando,"7000 block of Southland Blvd",1,1,N/A
+2491132,"December 30, 2022",Virginia,Hopewell,"2300 block of Freeman St",1,0,N/A
+2491828,"December 30, 2022",Wisconsin,Milwaukee,"7730 W Bender Ave",1,0,N/A
+2491290,"December 30, 2022",Wisconsin,Milwaukee,"4039 N 26th St",1,0,N/A
+2491046,"December 30, 2022",Florida,Nocatee,"100 block of Bucktail Ave",2,0,N/A
+2491943,"December 30, 2022",Colorado,Pueblo,"100 block of Vision Ln",0,1,N/A
+2491939,"December 30, 2022",Maryland,Baltimore,"1200 block of N Carey St",1,2,N/A
+2491934,"December 30, 2022",Delaware,Wilmington,"2200 block of Jessup St",0,1,N/A
+2491035,"December 30, 2022",Texas,Houston,"Deerfield St and Fulton St",0,1,N/A
+2490910,"December 30, 2022","District of Columbia",Washington,"2400 block of 15th St NW",1,0,N/A
+2491019,"December 30, 2022",Tennessee,Memphis,N/A,0,1,N/A
+2491807,"December 30, 2022",Texas,Jasper,"1820 S Bowie St",0,1,N/A
+2492562,"December 30, 2022",Florida,Orlando,"Orange Blossom Trail and Silver Star Rd",0,1,N/A
+2491925,"December 30, 2022",Missouri,"Saint Louis","4500 block of Michigan Ave",0,1,N/A
+2491921,"December 30, 2022",Connecticut,"New Haven","Ferry St and Chatham St",0,1,N/A
+2491917,"December 30, 2022","District of Columbia",Washington,"900 block of 12th St SE",1,0,N/A
+2490986,"December 30, 2022",Florida,"Port Saint Lucie","800 block of SW Duncan Terrace",0,1,N/A
+2491876,"December 30, 2022",Pennsylvania,Pittsburgh,"7100 block of Race St",0,2,N/A
+2491787,"December 30, 2022",Nebraska,"David City","1107 N 4th St",2,0,N/A
+2491896,"December 30, 2022",Michigan,Kalamazoo,"Parsons St and N Burdick St",1,0,N/A
+2491889,"December 30, 2022",California,Lakeside,"13594 Hwy 8 Business",3,0,N/A
+2492501,"December 30, 2022","New Mexico",Roswell,"2700 W 2nd St",1,0,N/A
+2491879,"December 30, 2022",Alabama,Montgomery,"410 block of Carmichael Rd",1,0,N/A
+2491487,"December 30, 2022",Pennsylvania,Danville,"100 N Academy Ave",1,0,N/A
+2491858,"December 30, 2022",Texas,"San Antonio","Blue Ridge Dr",1,0,N/A
+2491836,"December 30, 2022",California,Stockton,"200 block of E Church St",0,1,N/A
+2490970,"December 30, 2022",Texas,Dallas,"11368 Emerald St",1,1,N/A
+2490925,"December 30, 2022",Texas,Humble,"4800 block of Park Square Ln",2,3,N/A
+2491294,"December 30, 2022","South Carolina",Anderson,"Winston Dr",1,0,N/A
+2491695,"December 30, 2022",Arkansas,Arkadelphia,"Lark Pl",2,0,N/A
+2491774,"December 30, 2022",Texas,Katy,"5502 N Fry Rd",1,0,N/A
+2491772,"December 30, 2022","South Carolina",Georgetown,"Dusenberry St",0,1,N/A
+2491766,"December 30, 2022",Indiana,Anderson,"Madison Ave and W 17th St",0,1,N/A
+2491292,"December 30, 2022",Texas,Houston,"14600 block of Longview St",1,0,N/A
+2491700,"December 30, 2022",Arkansas,"Pulaski (county)","3525 Tony Rd",1,0,N/A
+2492369,"December 30, 2022",Georgia,Columbus,"Winston Rd and Harbison Dr",0,3,N/A
+2491744,"December 30, 2022","North Carolina",Durham,"Holloway St",1,0,N/A
+2490944,"December 30, 2022",Texas,"Fort Worth","2800 Bledsoe St",1,0,N/A
+2491730,"December 30, 2022",Texas,Dallas,"3300 block of Mundy St",0,1,N/A
+2491727,"December 30, 2022",Washington,Othello,"Rainier Rd",0,1,N/A
+2491721,"December 30, 2022",Washington,Tacoma,"E 57th St and McKinley Ave",1,0,N/A
+2491626,"December 30, 2022",Georgia,Atlanta,"1100 Kipling St SE",1,1,N/A
+2491624,"December 30, 2022",Illinois,Chicago,"4700 block of W West End Ave",0,1,N/A
+2490830,"December 30, 2022",Illinois,Chicago,"800 block of W 78th St",0,1,N/A
+2490820,"December 30, 2022",Illinois,"Prospect Heights","800 block of Piper Ln",0,1,N/A
+2491606,"December 30, 2022",Illinois,Chicago,"759 Burr Oak Ln",1,2,N/A
+2490824,"December 30, 2022",Illinois,Chicago,"1900 block of E 72nd St",0,1,N/A
+2490822,"December 30, 2022",Illinois,Chicago,"9100 block of S Ashland Ave",0,1,N/A
+2491601,"December 30, 2022",Illinois,Chicago,"8600 block of S Constance Ave",2,0,N/A
+2491085,"December 30, 2022",Illinois,Chicago,"8700 block of S Burley Ave",0,1,N/A
+2490814,"December 30, 2022","North Carolina",Durham,"200 block of Laurel Ave",0,1,N/A
+2491592,"December 30, 2022",Ohio,Dayton,"900 block of Danner Ave",0,1,N/A
+2491356,"December 30, 2022","North Dakota",Minot,"200 16th St SW",1,0,N/A
+2492304,"December 30, 2022",Montana,Kalispell,"859 W Reserve Dr",0,1,N/A
+2491562,"December 30, 2022",Louisiana,Lafayette,"600 block of Goldman St",0,1,N/A
+2492238,"December 30, 2022",Pennsylvania,Williamsport,"100 block of West 4th St",1,0,N/A
+2491532,"December 30, 2022",Oklahoma,Spencer,"9800 Jones Spencer Rd",0,2,N/A
+2491530,"December 30, 2022",Illinois,Alton,"1637 Washington Ave",0,1,N/A
+2491515,"December 30, 2022",Missouri,"Kansas City","Winchester Ave and E 17th St",1,0,N/A
+2491450,"December 30, 2022",Mississippi,Verona,"4960 N Raymond Ave",0,1,N/A
+2492219,"December 30, 2022",Pennsylvania,Philadelphia,N/A,0,1,N/A
+2491497,"December 30, 2022",Minnesota,Minneapolis,"N 33rd Ave and N Morgan Ave",0,1,N/A
+2492211,"December 30, 2022",Pennsylvania,"Pittston (Exeter)","237 N Prospect St",0,1,N/A
+2491467,"December 30, 2022",Michigan,Detroit,"1600 block of Central Ave",0,1,N/A
+2491461,"December 30, 2022",Ohio,Bethel,"Smith Rd",0,1,N/A
+2491451,"December 30, 2022",Louisiana,Shreveport,"120 Texas St",0,1,N/A
+2490611,"December 29, 2022",Ohio,Campbell,"100 block of Jean St",0,1,N/A
+2490922,"December 29, 2022",Texas,Bryan,"Wayside Dr and Avondale Ave",0,3,N/A
+2490576,"December 29, 2022",Georgia,Atlanta,"3930 Peachtree Rd",0,1,N/A
+2490568,"December 29, 2022",Kentucky,Louisville,"3800 block of Jewell Ave",0,1,N/A
+2490560,"December 29, 2022",Kentucky,Louisville,"8702 National Turnpike",0,1,N/A
+2491378,"December 29, 2022",Mississippi,Greenwood,"US-82 E",0,1,N/A
+2490787,"December 29, 2022",Mississippi,Pearl,"356 S Sweet Home Church Rd",0,1,N/A
+2490887,"December 29, 2022",California,Compton,"1700 block of N Long Beach Blvd",1,0,N/A
+2490490,"December 29, 2022",Colorado,Aurora,"1600 block of Alton St",1,0,N/A
+2491337,"December 29, 2022",Ohio,Lima,"643 E 4th St",1,0,N/A
+2490879,"December 29, 2022",California,"Los Angeles","Denker Ave and W Martin Luther King Jr Blvd",1,0,N/A
+2491122,"December 29, 2022",Virginia,Hopewell,"1300 block of New York Ave",0,1,N/A
+2490474,"December 29, 2022","South Carolina","Port Royal","Ribault Rd",0,1,N/A
+2490472,"December 29, 2022",Virginia,Clintwood,"Cowpath Rd",0,1,N/A
+2491316,"December 29, 2022",Mississippi,Flora,"1153 Pocahontas Rd",0,1,N/A
+2490453,"December 29, 2022",Georgia,Albany,"2415 Dawson Rd",0,2,N/A
+2491301,"December 29, 2022","South Carolina",Longs,"Jefferson Rd",1,0,N/A
+2490832,"December 29, 2022","South Carolina",Anderson,"1101 Williamston Rd",1,2,N/A
+2491278,"December 29, 2022","South Carolina",Conway,"Forest Loop Rd",0,1,N/A
+2490378,"December 29, 2022",Michigan,Southgate,"12000 block of Cunningham St",1,0,N/A
+2491273,"December 29, 2022","South Carolina","Little River",N/A,0,2,N/A
+2490409,"December 29, 2022",Michigan,"Muskegon (Norton Shores)","E Columbia Ave and Continental St",1,1,N/A
+2491022,"December 29, 2022",Hawaii,Kahului,"Puukani St and S Puunene Ave",1,0,N/A
+2490341,"December 29, 2022",Georgia,Decatur,"2532 Wesley Chapel Dr",0,2,N/A
+2490339,"December 29, 2022","New York",Bronx,"E 167th St and Park Ave",1,0,N/A
