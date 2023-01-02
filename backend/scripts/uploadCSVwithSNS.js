@@ -11,7 +11,7 @@ const AWS = require("aws-sdk");
   const { file } = getMostRecentFile(dir);
   const region = process.env.AWS_DEFAULT_REGION;
   const accountId = process.env.ACCOUNT_ID;
-  const stage = process.env.STAGE || "dev";
+  const stage = process.env.STAGE;
 
   if (!file) {
     console.error("missing csv");
@@ -23,10 +23,13 @@ const AWS = require("aws-sdk");
     return;
   }
 
-  console.log("file", file);
-
   const data = fs.readFileSync(`${dir}/${file}`, "utf8");
   const topicArn = `arn:aws:sns:${region}:${accountId}:gunshots-upload-${stage}`;
+
+  console.log({
+    file,
+    topicArn,
+  });
 
   const sns = new AWS.SNS({
     region,

@@ -33,14 +33,12 @@ export enum AppSteps {
   INIT_NEXT_INCIDENT = "INIT_NEXT_INCIDENT",
   SHOW_INCIDENT = "SHOW_INCIDENT",
   HIDE_INCIDENT = "HIDE_INCIDENT",
-  SHOW_INPUT = "SHOW_INPUT",
   IS_PUBIC = "IS_PUBIC",
 }
 
 export type AppState = {
   incidents: Incident[];
   stepMap: Partial<Record<AppSteps, number>>;
-  websocket?: string;
   /**
    * array with names of states
    * ordered by total number of incidents

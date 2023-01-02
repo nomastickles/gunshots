@@ -5,9 +5,6 @@ import { Incident } from "./types";
 
 export const getStepMap = (state: RootState) => state[AppSlice.name].stepMap;
 
-export const getWebsocket = (state: RootState) =>
-  state[AppSlice.name].websocket || "";
-
 export const getIncidents = (state: RootState): Incident[] =>
   state[AppSlice.name].incidents;
 

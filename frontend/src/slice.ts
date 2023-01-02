@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import * as actions from "./actions";
-import { WEBSOCKET_ENDPOINT_KEY } from "./constants";
 import getDisplayDates from "./libs/getDisplayDates";
 import orderStatesByTotals from "./libs/orderStatesByTotals";
 import shuffleArray from "./libs/shuffleArray";
 import { AppState, AppSteps, Metrics } from "./types";
 
 export const initialState: AppState = {
-  websocket: undefined,
   incidents: [],
   stepMap: {},
   orderedStateNames: [],
@@ -26,15 +24,6 @@ export const AppSlice = createSlice({
     builder.addCase(actions.setStepValue, (state, { payload }) => {
       const newValue = payload.clear ? undefined : Date.now();
       state.stepMap[payload.step] = newValue;
-    });
-
-    builder.addCase(actions.websocketUpdate, (sliceState, { payload }) => {
-      sliceState.websocket = payload;
-      if (payload === undefined) {
-        localStorage.removeItem(WEBSOCKET_ENDPOINT_KEY);
-      } else {
-        localStorage.setItem(WEBSOCKET_ENDPOINT_KEY, payload);
-      }
     });
 
     builder.addCase(

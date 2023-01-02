@@ -55,7 +55,10 @@ const USAMap = () => {
   );
 
   return (
-    <div className="flex justify-center items-center w-full">
+    <div
+      data-testid="USAMap"
+      className="flex justify-center items-center w-full"
+    >
       <div className="mt-5 w-11/12 md:w-3/4 lg:w-3/4 xl:w-2/3">
         <SVGMap map={USA} locationClassName={getLocationClassName} />
       </div>

@@ -15,8 +15,4 @@ export const setUSTerritoryData =
 
 export const selectNextUSTerritory = createAction("selectNextUSTerritory");
 
-export const websocketUpdate = createAction<string | undefined>(
-  "websocketUpdate"
-);
-
 export const selectNextIncident = createAction("selectNextIncident");

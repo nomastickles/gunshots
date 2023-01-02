@@ -43,6 +43,7 @@ function Incident() {
 
   return (
     <div
+      data-testid="incident"
       className={`mt-2 lg:mt-20 xl:mt-28 text-base sm:text-2xl flex mt-6 p-3 w-full mx-auto absolute animate__animated animate__slow ${visibleClass}`}
     >
       <div className="rounded flex flex-col h-full mx-auto p-3 shadow-lg bg-zinc-100 max-w-2xl w-full">

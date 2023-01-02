@@ -1,47 +1,17 @@
 import { MutableRefObject, useCallback, useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Sockette from "sockette";
 import * as actions from "../actions";
-import { IS_PUBLIC, LOCAL_DATA, WEBSOCKET_ENDPOINT_KEY } from "../constants";
-import * as selectors from "../selectors";
-import { AppSteps, Incident } from "../types";
+import { LOCAL_DATA } from "../constants";
+import { Incident } from "../types";
 
 const localIncidents = LOCAL_DATA.incidents as unknown as Incident[];
-const WEBSOCKET_ENDPOINT = localStorage.getItem(WEBSOCKET_ENDPOINT_KEY);
+const IS_LOCAL = !!localIncidents?.length;
+const WEBSOCKET = process.env.REACT_APP_WEBSOCKET || "";
 
 const useDataWatcher = () => {
-  const websocket = useSelector(selectors.getWebsocket);
   const websocketConnection: MutableRefObject<Sockette | undefined> = useRef();
   const dispatch = useDispatch();
-
-  /**
-   * look for websocket on load
-   * if we don't have it then show an input field
-   */
-  useEffect(() => {
-    if (IS_PUBLIC) {
-      return;
-    }
-
-    if (!WEBSOCKET_ENDPOINT) {
-      dispatch(actions.setStepValue({ step: AppSteps.SHOW_INPUT }));
-      return;
-    }
-
-    dispatch(actions.websocketUpdate(WEBSOCKET_ENDPOINT));
-  }, [dispatch]);
-
-  useEffect(() => {
-    if (!IS_PUBLIC) {
-      return;
-    }
-
-    const temp = setTimeout(() => {
-      dispatch(actions.setUSTerritoryData(localIncidents));
-    }, 2000);
-
-    return () => clearTimeout(temp);
-  }, [dispatch]);
 
   const onWebhookMessageReceived = useCallback(
     ({ data }: { data: string }) => {
@@ -55,11 +25,27 @@ const useDataWatcher = () => {
     [dispatch]
   );
 
+  /**
+   * IS_LOCAL
+   */
   useEffect(() => {
-    if (IS_PUBLIC) {
+    if (!IS_LOCAL) {
       return;
     }
-    if (!websocket) {
+
+    const temp = setTimeout(() => {
+      dispatch(actions.setUSTerritoryData(localIncidents));
+    }, 2000);
+
+    return () => clearTimeout(temp);
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (IS_LOCAL) {
+      return;
+    }
+    if (!WEBSOCKET) {
+      console.log("🔌 NO WEBSOCKET FOUND");
       return;
     }
     if (websocketConnection.current) {
@@ -68,27 +54,12 @@ const useDataWatcher = () => {
     }
 
     try {
-      const url = `wss://${websocket.split("wss://").reverse()[0]}`;
+      const url = `wss://${WEBSOCKET.split("wss://").reverse()[0]}`;
       websocketConnection.current = new Sockette(url, {
         timeout: 2000,
         // maxAttempts: 10,
         onmessage: (e) => onWebhookMessageReceived(e),
         onopen: (e) => console.debug("connected:", e),
-        onreconnect: (e) => console.debug("onmaximum", e),
-        onmaximum: (e) => console.debug("onmaximum", e),
-        onclose: (e) => {
-          console.debug("onclose", e);
-          window.location.reload();
-        },
-        onerror: (e) => {
-          console.debug("onerror", e);
-          websocketConnection.current = undefined;
-          /**
-           * setting websocket as undefined so that the input
-           * form will be present to the user
-           */
-          dispatch(actions.websocketUpdate(undefined));
-        },
       });
     } catch (e) {
       console.debug("connection error", e);
@@ -98,7 +69,7 @@ const useDataWatcher = () => {
       websocketConnection.current?.close();
       websocketConnection.current = undefined;
     };
-  }, [dispatch, onWebhookMessageReceived, websocket]);
+  }, [dispatch, onWebhookMessageReceived]);
 };
 
 export default useDataWatcher;
