@@ -72,7 +72,7 @@ const uploadIncidents: SNSHandler = async (event) => {
     libIncidents.getCombinedIncidentIds(incidentsToSave)
   ) {
     // just in case
-    console.warn("🌕 duplicate data");
+    console.warn("🌕🌕 duplicate data");
     return null;
   }
   await dynamodb.addAllIncidents(incidentsToSave);
