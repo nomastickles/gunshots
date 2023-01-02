@@ -1,11 +1,10 @@
 import React from "react";
 
-import USA from "./svgPathData";
-import * as selectors from "../../selectors";
+import { useAppState } from "../../hooks/useAppState";
 import { AppSteps } from "../../types";
-import { useSelector } from "react-redux";
-import SVGMap from "./svg-map";
 import "./styles.scss";
+import SVGMap from "./svg-map";
+import USA from "./svgPathData";
 
 const heatMapBuckets = [
   [39, 50],
@@ -15,11 +14,8 @@ const heatMapBuckets = [
 ];
 
 const USAMap = () => {
-  const StateNamesOrderedByTotal = useSelector(
-    selectors.getStateNamesOrderedByTotal
-  );
-  const { incident } = useSelector(selectors.getCurrentIncidentInfo);
-  const stepMap = useSelector(selectors.getStepMap);
+  const { stepMap, orderedStateNames, getCurrentIncidentInfo } = useAppState();
+  const { incident } = getCurrentIncidentInfo();
 
   const currentUSTerritory = incident?.state || "";
   const isolateState = !!stepMap[AppSteps.ISOLATE_US_TERRITORY];
@@ -27,9 +23,7 @@ const USAMap = () => {
   const getLocationClassName = React.useCallback(
     (location: { name: string }) => {
       const stateName = location.name;
-      const sortIndex = StateNamesOrderedByTotal.findIndex(
-        (i) => i === stateName
-      );
+      const sortIndex = orderedStateNames.findIndex((i) => i === stateName);
       let heatMapValue = "";
 
       heatMapBuckets.forEach((bucket, index) => {
@@ -51,7 +45,7 @@ const USAMap = () => {
 
       return classes + ` ${USTerritoryCurrentIndicator}`;
     },
-    [currentUSTerritory, isolateState, StateNamesOrderedByTotal]
+    [currentUSTerritory, isolateState, orderedStateNames]
   );
 
   return (

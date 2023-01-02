@@ -1,18 +1,12 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Provider } from "react-redux";
-import { store } from "../index";
 import App from "../App";
 
-describe("App tests", () => {
-  test("initial page load", () => {
-    render(
-      <Provider store={store}>
-        <App />
-      </Provider>
-    );
+test("initial page load", () => {
+  render(<App />);
 
-    expect(screen.getByTestId(/loader/i)).toBeTruthy();
-    expect(screen.getByText(/Gun Violence/i)).toBeTruthy();
-  });
+  expect(screen.getByTestId(/loader/i)).toBeTruthy();
+  expect(screen.getByTestId(/USAMap/i)).toBeTruthy();
+  expect(screen.getByTestId(/incident/i)).toBeTruthy();
+  expect(screen.getByText(/Gun Violence/i)).toBeTruthy();
 });

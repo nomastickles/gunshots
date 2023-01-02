@@ -1,9 +1,9 @@
 import { MutableRefObject, useCallback, useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
 import Sockette from "sockette";
 import * as actions from "../actions";
 import { LOCAL_DATA } from "../constants";
 import { Incident } from "../types";
+import { useAppDispatch } from "./useAppDispatch";
 
 const localIncidents = LOCAL_DATA.incidents as unknown as Incident[];
 const IS_LOCAL = !!localIncidents?.length;
@@ -11,7 +11,7 @@ const WEBSOCKET = process.env.REACT_APP_WEBSOCKET || "";
 
 const useDataWatcher = () => {
   const websocketConnection: MutableRefObject<Sockette | undefined> = useRef();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const onWebhookMessageReceived = useCallback(
     ({ data }: { data: string }) => {

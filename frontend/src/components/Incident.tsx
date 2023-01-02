@@ -1,15 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useAppState } from "../hooks/useAppState";
 import getCityStateString from "../libs/getCityStateString";
-import * as selectors from "../selectors";
 import { AppSteps } from "../types";
 
 function Incident() {
+  const { stepMap, getCurrentIncidentInfo } = useAppState();
   const [visibleClass, setVisibleClass] = React.useState("invisible");
-  const currentIncidentInfo = useSelector(selectors.getCurrentIncidentInfo);
+  const currentIncidentInfo = getCurrentIncidentInfo();
   const incident = currentIncidentInfo?.incident;
   const metrics = currentIncidentInfo?.incident?.metrics;
-  const stepMap = useSelector(selectors.getStepMap);
   const show = stepMap[AppSteps.SHOW_INCIDENT];
   const hide = stepMap[AppSteps.HIDE_INCIDENT];
   const hideIncidentTotals = metrics?.killed === 0 && metrics?.injured === 0;

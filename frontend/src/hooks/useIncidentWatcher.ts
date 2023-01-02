@@ -1,14 +1,15 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../actions";
 import { DELAY_MS } from "../constants";
-import * as selectors from "../selectors";
 import { AppSteps } from "../types";
+import { useAppDispatch } from "./useAppDispatch";
+import { useAppState } from "./useAppState";
 
 const useIncidentWatcher = () => {
-  const dispatch = useDispatch();
-  const stepMap = useSelector(selectors.getStepMap);
+  const dispatch = useAppDispatch();
+  const { stepMap } = useAppState();
   const startNextIncident = stepMap[AppSteps.INIT_NEXT_INCIDENT];
+
   /**
    * system to loop through incidents
    */

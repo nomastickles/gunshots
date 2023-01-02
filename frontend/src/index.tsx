@@ -1,20 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
+import { ContextProvider } from "./context";
 import App from "./App";
-import { Provider } from "react-redux";
-
-import { configureStore } from "@reduxjs/toolkit";
-import { AppSlice } from "./slice";
-
-export const store = configureStore({
-  reducer: {
-    [AppSlice.name]: AppSlice.reducer,
-    // [OtherSlice.name]: OtherSlice.reducer,
-  },
-});
-
-export type RootState = ReturnType<typeof store.getState>;
+import "./index.css";
 
 const container =
   document.getElementById("root")! || document.createElement("div")!; // for testing purposes;
@@ -22,8 +10,8 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <ContextProvider>
       <App />
-    </Provider>
+    </ContextProvider>
   </React.StrictMode>
 );

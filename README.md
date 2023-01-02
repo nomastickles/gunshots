@@ -25,7 +25,7 @@ This system is a teaching aid for a Udemy course that will also bring awareness 
 
 - React + Redux Toolkit + Typescript + Jest tests
 - Tailwind CSS Responsive Design, Animate.css
-- Github Action Deployment
+- Github Action + Github Pages Deployment
 
 ## BROWSER / WEBSOCKET CONNECTIONS
 
@@ -95,6 +95,8 @@ example setting
 
 ## STEPS TO RUN
 
+### 0. FORK THE REPO
+
 ### 1. ADD GITHUB REPO SECRETS
 
 example:
@@ -120,7 +122,9 @@ Please see [https://developers.google.com/maps/documentation/streetview/usage-an
 
 ### 4. MERGE TO MAIN (BACKEND DEPLOY)
 
-example output from ./.github/workflows/backend.yaml
+After the "backend" github action workflow from ./.github/workflows/backend.yaml we should now have a new websocket wss:// address. We'll use this when deploying the frontend.
+
+Example:
 
 ```
 Stack Output:
@@ -130,4 +134,4 @@ Stack Output:
 
 ### 5. FRONTEND DEPLOY
 
-- Manually run Frontend Github Action with websocket from backend deployment
+(Note this only once per unique websocket.) Manually run "Frontend" Github action using new websocket address. Github pages will be employed to host the app using the websocket address.

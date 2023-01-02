@@ -1,12 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import * as selectors from "./selectors";
-import Loader from "./components/Loader";
 import Incident from "./components/Incident";
+import Loader from "./components/Loader";
 import USAMap from "./components/USAMap/USAMap";
-import useIncidentWatcher from "./hooks/useIncidentWatcher";
+import { useAppState } from "./hooks/useAppState";
 import useDataWatcher from "./hooks/useDataWatcher";
 import useFadeClassHelper from "./hooks/useFadeClassHelper";
+import useIncidentWatcher from "./hooks/useIncidentWatcher";
 
 function App() {
   useDataWatcher();
@@ -15,8 +14,7 @@ function App() {
     classStart: "invisible",
     classEnd: "animate__fadeIn",
   });
-  const metricsTotal = useSelector(selectors.getMeticsAll);
-  const dates = useSelector(selectors.getTextDateRange);
+  const { textDateRange, metricsAll } = useAppState();
 
   return (
     <div className="text-gray-100 uppercase">
@@ -26,14 +24,14 @@ function App() {
       <div className="w-full fixed bottom-4 right-4 text-right animate__animated animate__fadeIn">
         <div className="md:flex flex-wrap md:h-4">
           <div className={`pl-8 ${fadeClass}`}>
-            <div>{dates}</div>
+            <div>{textDateRange}</div>
           </div>
           <div className={`md:text-center flex-grow ml-20 ${fadeClass}`}>
-            {dates && (
+            {textDateRange && (
               <>
-                {metricsTotal?.killed} Killed
+                {metricsAll?.killed} Killed
                 <span className="mr-2 ml-2"> + </span>
-                {metricsTotal?.injured} Injured
+                {metricsAll?.injured} Injured
               </>
             )}
           </div>
