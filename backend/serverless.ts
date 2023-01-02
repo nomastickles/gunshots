@@ -13,12 +13,12 @@ const serverlessConfiguration: AWS = {
         forceExclude: ["aws-sdk"],
       },
     },
-    ACCOUNT_ID: "${env:ACCOUNT_ID}",
+    AWS_ACCOUNT_ID: "${env:AWS_ACCOUNT_ID}",
     S3_NAME: "${env:S3_NAME}-${self:service}-${self:provider.stage}", // public facing
     SNS_UPLOAD_NAME: "${self:service}-upload-${self:provider.stage}",
     SNS_SEND_INCIDENTS_NAME: "${self:service}-send-${self:provider.stage}",
     SNS_SEND_INCIDENTS_ARN_PREFIX:
-      "arn:aws:sns:${self:provider.region}:${self:custom.ACCOUNT_ID}",
+      "arn:aws:sns:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}",
     SSM_PATH_GOOGLE_KEY: "/gunshots/googleAPIKey",
   },
   plugins: [
@@ -133,7 +133,7 @@ const serverlessConfiguration: AWS = {
           Effect: "Allow",
           Action: ["execute-api:ManageConnections"],
           Resource:
-            "arn:aws:execute-api:${self:provider.region}:${self:custom.ACCOUNT_ID}:*/@connections/*",
+            "arn:aws:execute-api:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}:*/@connections/*",
         },
         {
           Effect: "Allow",
@@ -146,7 +146,7 @@ const serverlessConfiguration: AWS = {
             // "dynamodb:Scan"
           ],
           Resource:
-            "arn:aws:dynamodb:${self:provider.region}:${self:custom.ACCOUNT_ID}:table/${self:provider.environment.DB_NAME}",
+            "arn:aws:dynamodb:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}:table/${self:provider.environment.DB_NAME}",
         },
         {
           Effect: "Allow",
@@ -170,7 +170,7 @@ const serverlessConfiguration: AWS = {
           Effect: "Allow",
           Action: ["execute-api:ManageConnections"],
           Resource:
-            "arn:aws:execute-api:${self:provider.region}:${self:custom.ACCOUNT_ID}:*/@connections/*",
+            "arn:aws:execute-api:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}:*/@connections/*",
         },
         {
           Effect: "Allow",
@@ -189,7 +189,7 @@ const serverlessConfiguration: AWS = {
             // "dynamodb:Scan"
           ],
           Resource:
-            "arn:aws:dynamodb:${self:provider.region}:${self:custom.ACCOUNT_ID}:table/${self:provider.environment.DB_NAME}",
+            "arn:aws:dynamodb:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}:table/${self:provider.environment.DB_NAME}",
         },
         {
           Effect: "Allow",
@@ -202,7 +202,7 @@ const serverlessConfiguration: AWS = {
             // "dynamodb:Scan"
           ],
           Resource:
-            "arn:aws:dynamodb:${self:provider.region}:${self:custom.ACCOUNT_ID}:table/${self:provider.environment.DB_NAME}/index/${self:provider.environment.DB_NAME_GSPK}",
+            "arn:aws:dynamodb:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}:table/${self:provider.environment.DB_NAME}/index/${self:provider.environment.DB_NAME_GSPK}",
         },
       ],
     },
@@ -227,7 +227,7 @@ const serverlessConfiguration: AWS = {
           Effect: "Allow",
           Action: ["sns:Subscribe", "sns:GetTopicAttributes"],
           Resource:
-            "arn:aws:sns::${self:custom.ACCOUNT_ID}:${self:custom.SNS_UPLOAD_NAME}",
+            "arn:aws:sns::${self:custom.AWS_ACCOUNT_ID}:${self:custom.SNS_UPLOAD_NAME}",
         },
         {
           Effect: "Allow",
@@ -240,7 +240,7 @@ const serverlessConfiguration: AWS = {
             // "dynamodb:Scan"
           ],
           Resource:
-            "arn:aws:dynamodb:${self:provider.region}:${self:custom.ACCOUNT_ID}:table/${self:provider.environment.DB_NAME}",
+            "arn:aws:dynamodb:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}:table/${self:provider.environment.DB_NAME}",
         },
         {
           Effect: "Allow",
@@ -262,7 +262,7 @@ const serverlessConfiguration: AWS = {
           Effect: "Allow",
           Action: ["ssm:GetParameter"],
           Resource:
-            "arn:aws:ssm:${self:provider.region}:${self:custom.ACCOUNT_ID}:parameter${self:custom.SSM_PATH_GOOGLE_KEY}",
+            "arn:aws:ssm:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}:parameter${self:custom.SSM_PATH_GOOGLE_KEY}",
         },
       ],
     },

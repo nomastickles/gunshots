@@ -6,11 +6,3 @@
 ### 2. MERGE TO MAIN
 
 Github actions workflow will update incidents from latest file in ./csv
-
-### 3. (OPTIONAL) MANUALLY RUN UPLOAD
-
-from /backend folder:
-
-```sh
-STAGE=dev yarn scripts:upload
-```

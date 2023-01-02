@@ -10,7 +10,7 @@ const AWS = require("aws-sdk");
   const dir = `${__dirname}/../csv`;
   const { file } = getMostRecentFile(dir);
   const region = process.env.AWS_DEFAULT_REGION;
-  const accountId = process.env.ACCOUNT_ID;
+  const accountId = process.env.AWS_ACCOUNT_ID;
   const stage = process.env.STAGE;
 
   if (!file) {
