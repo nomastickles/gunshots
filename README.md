@@ -29,7 +29,7 @@ This system is a teaching aid for a Udemy course that will also bring awareness 
 
 ![cloud-design-browsers](img/cloud-design-browsers.png)
 
-## DATA UPLOAD VIA AWS CONSOLE
+## DATA UPLOAD
 
 ![cloud-design-upload](img/cloud-design-upload.png)
 
