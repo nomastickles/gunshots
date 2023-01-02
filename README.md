@@ -19,11 +19,13 @@ This system is a teaching aid for a Udemy course that will also bring awareness 
 - Serverless Framework + Typescript + Jest tests
 - AWS IAM, Lambda, API Gateway Websockets, DynamoDb, SNS, S3, SSM
 - Google Street View Images API
+- Github Action Deployment
 
 ## FRONTEND
 
 - React + Redux Toolkit + Typescript + Jest tests
 - Tailwind CSS Responsive Design, Animate.css
+- Github Action Deployment
 
 ## BROWSER / WEBSOCKET CONNECTIONS
 
