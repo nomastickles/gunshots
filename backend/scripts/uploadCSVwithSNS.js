@@ -28,11 +28,6 @@ const dynamoDB = require("@aws-sdk/client-dynamodb");
   const data = fs.readFileSync(`${dir}/${file}`, "utf8");
   const topicArn = `arn:aws:sns:${region}:${accountId}:gunshots-upload-${stage}`;
 
-  console.log({
-    file,
-    topicArn,
-  });
-
   const dbClient = new dynamoDB.DynamoDBClient({
     region,
   });
@@ -45,8 +40,6 @@ const dynamoDB = require("@aws-sdk/client-dynamodb");
       },
     })
   );
-
-  console.log("dynamoDB.GetItemCommand", result?.Item);
 
   if (result?.Item?.DATA.S === file) {
     console.warn("🛑 data already sent");
