@@ -21,6 +21,7 @@ jobs:
       AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
       S3_NAME: ${{ secrets.S3_NAME }}
+      STAGE: ${{ github.event.inputs.stage }}
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -29,6 +30,6 @@ jobs:
     - name: destroy
       run: |
         yarn install --frozen-lockfile
-        yarn destroy --stage ${{ github.event.inputs.stage }}
+        yarn destroy --stage $STAGE
 
         
