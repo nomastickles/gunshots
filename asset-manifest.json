@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gunshots/static/css/main.2f1ee40c.css",
+    "main.js": "/gunshots/static/js/main.8a5a9fff.js",
+    "static/js/787.a3350b3c.chunk.js": "/gunshots/static/js/787.a3350b3c.chunk.js",
+    "index.html": "/gunshots/index.html",
+    "main.2f1ee40c.css.map": "/gunshots/static/css/main.2f1ee40c.css.map",
+    "main.8a5a9fff.js.map": "/gunshots/static/js/main.8a5a9fff.js.map",
+    "787.a3350b3c.chunk.js.map": "/gunshots/static/js/787.a3350b3c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f1ee40c.css",
+    "static/js/main.8a5a9fff.js"
+  ]
+}
