@@ -37,13 +37,13 @@ const useIncidentWatcher = () => {
       );
     }, DELAY_MS * 6);
 
-    // setTimeout(() => {
-    //   dispatch(actions.setStepValue({ step: AppSteps.HIDE_INCIDENT }));
-    // }, DELAY_MS * 7);
+    setTimeout(() => {
+      dispatch(actions.setStepValue({ step: AppSteps.HIDE_INCIDENT }));
+    }, DELAY_MS * 7);
 
-    // setTimeout(() => {
-    //   dispatch(actions.setStepValue({ step: AppSteps.INIT_NEXT_INCIDENT }));
-    // }, DELAY_MS * 7 + 2500);
+    setTimeout(() => {
+      dispatch(actions.setStepValue({ step: AppSteps.INIT_NEXT_INCIDENT }));
+    }, DELAY_MS * 7 + 2500);
   }, [dispatch, startNextIncident]);
 };
 

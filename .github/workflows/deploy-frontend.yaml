@@ -18,6 +18,7 @@ jobs:
         working-directory: ./frontend
     env:
       GENERATE_SOURCEMAP: false
+      REACT_APP_WEBSOCKET: ${{ github.event.inputs.websocket }}
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -27,4 +28,4 @@ jobs:
       run: |
         yarn install
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-        export REACT_APP_WEBSOCKET="${{ github.event.inputs.websocket }}" && yarn deploy
+        yarn deploy
