@@ -57,7 +57,7 @@ function Incident() {
   }
 
   if (stateInfo) {
-    stateInfo += `in ${incident?.state}`;
+    stateInfo += ` in ${incident?.state}`;
   }
 
   return (
