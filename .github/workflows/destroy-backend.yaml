@@ -1,0 +1,28 @@
+name: Destroy Backend
+
+on:
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: 'stage to destroy'
+        required: true 
+        type: string
+
+jobs:
+  deploy:
+    name: Destroy
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: destroy
+      run: |
+        yarn install --frozen-lockfile
+        yarn destroy --stage ${{ github.event.inputs.stage }}
+
+        
