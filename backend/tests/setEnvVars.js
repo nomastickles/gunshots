@@ -1,0 +1,2 @@
+process.env.S3_NAME = "S3_NAME";
+process.env.SNS_TOPIC_SEND_INCIDENTS = "SNS_TOPIC_SEND_INCIDENTS";

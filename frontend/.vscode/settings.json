@@ -1,0 +1,17 @@
+{
+  "cSpell.words": ["backend"],
+  "editor.formatOnSave": true,
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#000000",
+    "titleBar.inactiveBackground": "#000000",
+    "titleBar.activeForeground": "#f87de8",
+    "titleBar.inactiveForeground": "#914a88"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "jestrunner.jestCommand": "yarn run test --"
+}

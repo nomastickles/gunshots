@@ -1,0 +1,14 @@
+# package directories
+/node_modules
+
+# Serverless directories
+.serverless
+.webpack
+
+yarn-error.log
+
+scratch
+
+coverage
+
+/csv-archive

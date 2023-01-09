@@ -1,0 +1,37 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - boom
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: yarn test
+      run: |
+        yarn install --frozen-lockfile
+        yarn test
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: yarn test
+      run: |
+        yarn install
+        yarn test
+  

@@ -1,0 +1,5 @@
+module.exports.aws = {
+  accountId: "",
+  region: "",
+  s3NamePrefix: "",
+};

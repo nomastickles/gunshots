@@ -1,0 +1,6 @@
+{
+  "requestContext": {
+    "connectionId": "CONNECTION_ID",
+    "eventType": "CONNECT"
+  }
+}

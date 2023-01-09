@@ -1,0 +1,28 @@
+name: Deploy Frontend
+
+on:
+  workflow_dispatch:
+    inputs:
+      websocket:
+        description: 'wss output from backend deployment'
+        required: true 
+        type: string
+
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: test and deploy
+      run: |
+        yarn install
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+        export REACT_APP_WEBSOCKET="${{ github.event.inputs.websocket }}" && yarn deploy
