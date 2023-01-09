@@ -1,4 +1,7 @@
 "Incident ID","Incident Date",State,"City Or County",Address,"# Killed","# Injured",Operations
+2498468,"January 8, 2023",Michigan,Detroit,"Grand River Ave and Monica St",0,1,N/A
+2498466,"January 8, 2023",Michigan,Detroit,"Campbell St and Christiancy St",0,1,N/A
+2498438,"January 8, 2023",Ohio,Toledo,"2000 block of Marlow Rd",0,2,N/A
 2498402,"January 8, 2023",Texas,Houston,"9631 Jensen Dr",0,2,N/A
 2498411,"January 8, 2023",Ohio,Columbus,"1100 block of W Mound St",0,1,N/A
 2498399,"January 8, 2023","New York","Corona (Queens)","129-04 Liberty Ave",0,2,N/A
@@ -13,7 +16,6 @@
 2498314,"January 8, 2023",Florida,Tampa,"2600 block of E 111th Ave",1,1,N/A
 2498249,"January 8, 2023",Pennsylvania,Pittsburgh,"100 block of E Agnew Ave",1,0,N/A
 2498247,"January 8, 2023",Illinois,Peoria,"1900 block of N Wisconsin Ave",0,1,N/A
-2498229,"January 8, 2023",Wisconsin,Racine,"21st St and S Memorial Dr",0,1,N/A
 2498224,"January 8, 2023",Minnesota,Minneapolis,"I-394 and I-94",0,1,N/A
 2498013,"January 8, 2023",Minnesota,Minneapolis,"930 Hennepin Ave",0,4,N/A
 2498066,"January 8, 2023",Illinois,Joliet,"1200 block of Clement St",1,0,N/A
@@ -43,14 +45,24 @@
 2497963,"January 8, 2023",Illinois,Chicago,N/A,0,1,N/A
 2497960,"January 8, 2023",Illinois,Chicago,"3400 block of W 79th St",0,1,N/A
 2497946,"January 8, 2023",California,Merced,"1108 D St",0,1,N/A
+2498521,"January 8, 2023",Virginia,Portsmouth,"2900 block of Elm Ave",1,0,N/A
+2498510,"January 8, 2023",Louisiana,"New Orleans","Hayne Blvd and Michigan St",1,0,N/A
+2498500,"January 8, 2023",Louisiana,"New Orleans","Poland Ave and N Claiborne Ave",0,1,N/A
+2498492,"January 8, 2023",Tennessee,Nashville,"738 Douglas Ave",1,1,N/A
+2498487,"January 8, 2023",Arkansas,Mayflower,"I-40 and AR-89",1,0,N/A
+2498482,"January 8, 2023",Wisconsin,Milwaukee,"3801 W Morgan Ave",1,0,N/A
+2498229,"January 8, 2023",Wisconsin,Racine,"21st St and S Memorial Dr",0,1,N/A
+2498472,"January 8, 2023",Minnesota,Lakeville,"9800 217th St W",0,1,N/A
+2498470,"January 8, 2023",Michigan,Detroit,"16800 block of Cheyenne St",0,1,N/A
 2497792,"January 7, 2023",Texas,Bryan,"300 block of W Duncan St",0,1,N/A
 2497790,"January 7, 2023","New York",Geneva,"N Genesee St",0,1,N/A
 2497502,"January 7, 2023","North Carolina","High Point","2734 Mossy Meadow Dr",5,0,N/A
 2497655,"January 7, 2023",Texas,Tulia,N/A,1,0,N/A
 2497781,"January 7, 2023","New York",Wilson,"Daniels Rd",0,1,N/A
 2497779,"January 7, 2023","New York",Buffalo,"Northland Ave",0,1,N/A
-2497720,"January 7, 2023",Michigan,Fennville,"1101 54th St",4,0,N/A
+2498432,"January 7, 2023",Texas,"Fort Worth","3500 block of Wedgworth Rd S",1,0,N/A
 2498418,"January 7, 2023",Ohio,Columbus,"400 block of W State St",0,1,N/A
+2497720,"January 7, 2023",Michigan,Fennville,"1101 54th St",4,0,N/A
 2498397,"January 7, 2023",Ohio,Columbus,"2100 block of Grasmere Ave",0,1,N/A
 2497719,"January 7, 2023","New York",Bronx,"Findlay Ave and E 169th St",0,1,N/A
 2498394,"January 7, 2023",Pennsylvania,"Coudersport (Summit)","Sportsman Rd",0,1,N/A
@@ -74,7 +86,6 @@
 2498317,"January 7, 2023",Florida,Riverview,"10200 block of Strawberry Tetra Dr",1,0,N/A
 2498291,"January 7, 2023",Florida,Sanford,"120 S Crystal View",0,1,N/A
 2498309,"January 7, 2023",Pennsylvania,Philadelphia,"5104 Frankford Ave",1,1,N/A
-2497630,"January 7, 2023","West Virginia",Ashton,N/A,1,0,N/A
 2498296,"January 7, 2023",Pennsylvania,Sharon,"W Budd St and Dock St",1,0,N/A
 2498301,"January 7, 2023",Florida,Orlando,"1900 block of Lake Atriums Cir",1,0,N/A
 2498289,"January 7, 2023",Illinois,Peoria,"800 block of NE Madison Ave",0,1,N/A
@@ -131,7 +142,14 @@
 2497352,"January 7, 2023",Louisiana,Raceland,"Market St",1,0,N/A
 2497350,"January 7, 2023",Louisiana,"New Orleans","1600 block of Marigny St",1,0,N/A
 2497339,"January 7, 2023",Maryland,"Montgomery (county)",N/A,0,1,N/A
+2497630,"January 7, 2023","West Virginia",Ashton,"Ashton Upland Rd",1,0,N/A
+2498524,"January 7, 2023",Louisiana,"New Iberia","600 block of Park Ave",0,1,N/A
+2498518,"January 7, 2023",Tennessee,Memphis,"1400 block of Patton St",0,1,N/A
+2498513,"January 7, 2023",Tennessee,Memphis,"4300 block of Atwood Ave",1,1,N/A
+2498507,"January 7, 2023",Tennessee,Memphis,"Carlyle Ave",1,0,N/A
+2498497,"January 7, 2023",Tennessee,Nashville,"101 University Ct",1,0,N/A
 2497659,"January 7, 2023",Alabama,"Mobile (Prichard)","400 block of Prichard Ave",1,0,N/A
+2498502,"January 7, 2023",Tennessee,Madison,"1000 block of Gibson Dr",0,1,N/A
 2497596,"January 7, 2023",Michigan,Detroit,"15011 Wyoming St",1,0,N/A
 2497913,"January 7, 2023",Michigan,Detroit,"8800 block of E Canfield St",1,0,N/A
 2497901,"January 7, 2023",Louisiana,Shreveport,"2929 Peach St",0,1,N/A
@@ -152,9 +170,11 @@
 2497215,"January 6, 2023",Virginia,Stephenson,"900 block of Old Charles Town Rd",1,0,N/A
 2497213,"January 6, 2023",Wisconsin,Milwaukee,"2500 block of N 12th St",0,1,N/A
 2496746,"January 6, 2023",Texas,Houston,"2342 Binley Dr",1,1,N/A
+2496714,"January 6, 2023",Texas,Dallas,"8544 Lazy Acres Cir",3,2,N/A
 2496854,"January 6, 2023",Virginia,Woodbridge,"14800 block of Dillon Ave",0,1,N/A
 2497194,"January 6, 2023",Michigan,Detroit,"2002 Puritan Ave",0,1,N/A
 2497196,"January 6, 2023",Michigan,Detroit,N/A,0,1,N/A
+2497309,"January 6, 2023",Alabama,Marion,"200 block of Thompson St",1,0,N/A
 2497750,"January 6, 2023",Louisiana,"Baton Rouge","3100 block of Oak Crest Dr",1,0,N/A
 2497126,"January 6, 2023",Michigan,Detroit,"Freeland St and Lyndon St",1,1,N/A
 2497315,"January 6, 2023",Arizona,Phoenix,"888 N 1st Ave",1,1,N/A
@@ -210,7 +230,6 @@
 2497990,"January 6, 2023",Georgia,Athens,"5000 block of Smokey Rd",1,0,N/A
 2498006,"January 6, 2023",Indiana,"Union (county)",N/A,0,1,N/A
 2498000,"January 6, 2023",California,"Long Beach (North Long Beach)","5500 block of Long Beach Blvd",1,0,N/A
-2496714,"January 6, 2023",Texas,Dallas,"8544 Lazy Acres Cir",3,2,N/A
 2497988,"January 6, 2023",Georgia,"Warner Robins",N/A,0,1,N/A
 2497983,"January 6, 2023",Georgia,Macon,"2075 Rocky Creek Rd",0,1,N/A
 2496700,"January 6, 2023",Illinois,Chicago,"3600 block of N Avondale Ave",0,2,N/A
@@ -232,25 +251,8 @@
 2497328,"January 6, 2023",Arkansas,"North Little Rock","4500 block of Pike Ave",1,0,N/A
 2497325,"January 6, 2023",Arkansas,"Little Rock","9400 block of Stagecoach Rd",1,0,N/A
 2497323,"January 6, 2023",California,"Los Angeles","3451 W Olympic Blvd",0,1,N/A
-2497309,"January 6, 2023",Alabama,Marion,"Thompson St",1,0,N/A
 2497300,"January 6, 2023","Rhode Island",Woonsocket,"Jackson St and Hamilton St",0,1,N/A
 2497289,"January 6, 2023","New Jersey",Newark,"500 block of S Orange Ave",1,0,N/A
 2497285,"January 6, 2023",Alabama,Gadsden,"Hinsdale Ave",1,0,N/A
 2497293,"January 6, 2023",Alabama,"Hazel Green","201 Dixon Dr",1,0,N/A
 2497291,"January 6, 2023","New Jersey",Newark,"2 Spring St",0,1,N/A
-2497280,"January 6, 2023",Ohio,Youngstown,"1418 E Midlothian Blvd",0,2,N/A
-2497268,"January 6, 2023",Ohio,Columbus,"1200 block of Seymour Ave",0,1,N/A
-2497016,"January 6, 2023",Texas,Houston,"12000 block of Greenspoint Dr",1,0,N/A
-2497231,"January 6, 2023",Kansas,Derby,"100 block of Maryland St",0,1,N/A
-2497176,"January 6, 2023",Texas,"San Antonio","4900 Medical Dr",1,1,N/A
-2497221,"January 6, 2023",Kentucky,Louisville,"3510 Goldsmith Ln",0,0,N/A
-2496483,"January 5, 2023","District of Columbia",Washington,"1200 block of Oak Dr SE",0,1,N/A
-2496480,"January 5, 2023",Ohio,Toledo,"3200 block of Elm St",0,1,N/A
-2496755,"January 5, 2023",Texas,Houston,"12302 Hillcroft Ave",1,0,N/A
-2496473,"January 5, 2023",Maryland,"Upper Marlboro (Glenarden)","2250 Petrie Ln",0,2,N/A
-2496431,"January 5, 2023",Louisiana,"New Orleans","St. Andrew St and Rev. John Raphael Jr. Way",2,3,N/A
-2496344,"January 5, 2023","South Carolina",Manning,"1028 Paxville Hwy",2,0,N/A
-2496449,"January 5, 2023","North Carolina",Lumberton,"Carver St and Edgewood St",1,0,N/A
-2497184,"January 5, 2023",Arkansas,"West Memphis","400 block of S Avalon St",0,1,N/A
-2497179,"January 5, 2023",Texas,"San Antonio","6130 Ingram Rd",0,1,N/A
-2496328,"January 5, 2023",Michigan,Lansing,"4500 block of N Aurelius Rd",1,0,N/A
