@@ -26,11 +26,11 @@ function Incident() {
   }, [hide]);
 
   let title = "";
-  if (metrics?.killed) {
+  if (metrics?.killed !== undefined) {
     title = `${metrics?.killed} KILLED`;
   }
 
-  if (metrics?.injured) {
+  if (metrics?.injured !== undefined) {
     const spacing = title ? " + " : "";
     title += `${spacing}${metrics?.injured} INJURED`;
   }
@@ -41,7 +41,7 @@ function Incident() {
 
   let stateInfo = "";
 
-  if (currentIncidentInfo?.stateTotals?.killed) {
+  if (currentIncidentInfo?.stateTotals?.killed !== undefined) {
     stateInfo += `${currentIncidentInfo?.stateTotals?.killed} killed`;
   }
 
@@ -78,13 +78,29 @@ function Incident() {
         </div>
 
         <div className="bg-zinc-100 text-base -mt-7 pt-2">
+          <div className="flex mb-2">
+            <div className="flex-none">
+              <h2 className="text-gray-800">{incident?.date}</h2>
+            </div>
+            <div className="grow" />
+            {/* {title && (
+              <div
+                className="bg-red-400/75 grow"
+                style={{
+                  margin: "11px",
+                }}
+              />
+            )} */}
+            <div className="flex-none">
+              <h2 className="text-red-500">{title || " "}</h2>
+            </div>
+          </div>
+
           <div className="text-gray-700 sm:float-left">
-            <h2 className="text-gray-800">{incident?.date}</h2>
             <p className="text-xs">{incident?.address}</p>
             <p className="text-sm">{cityState}</p>
           </div>
           <div className="text-red-500 sm:float-right sm:text-right text-left">
-            {title && <h2 className="text-red-500">{title || " "}</h2>}
             {!title && <p>&nbsp;</p>}
             <p className="text-sm">&nbsp;</p>
             <p className="text-xs text-gray-500">{stateInfo}</p>
