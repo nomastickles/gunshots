@@ -25,7 +25,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - name: test and deploy
+    - name: yarn and destroy
       run: |
         yarn install --frozen-lockfile
         yarn deploy --stage dev
