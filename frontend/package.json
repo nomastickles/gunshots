@@ -28,7 +28,7 @@
     "test:watch": "react-scripts test",
     "test": "react-scripts test --watchAll=false",
     "predeploy": "npm run build",
-    "deploy": "yarn test && yarn build && gh-pages -d build -u 'github-actions-bot <support+actions@github.com>'",
+    "deploy": "yarn test && gh-pages -d build -u 'github-actions-bot <support+actions@github.com>'",
     "jest-runner-setup": "node src/tests/utils/jest-runner-setup.js"
   },
   "eslintConfig": {
