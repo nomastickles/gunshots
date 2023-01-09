@@ -9,6 +9,10 @@
     "RobbOwen.synthwave-vscode",
     "Tyriar.sort-lines",
     "shd101wyy.markdown-preview-enhanced",
-    "firsttris.vscode-jest-runner"
+    "firsttris.vscode-jest-runner",
+    "mohsen1.prettify-json",
+    "donjayamanne.githistory",
+    "wayou.vscode-todo-highlight"
+    
   ]
 }
