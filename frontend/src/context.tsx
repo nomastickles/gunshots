@@ -28,9 +28,6 @@ const ContextProvider = ({ children }: Props): React.ReactElement => {
     ).__REDUX_DEVTOOLS_EXTENSION__?.connect({
       name: "gunshots",
     });
-    return () => {
-      devToolsConnectionRef.current?.disconnect();
-    };
   }, []);
 
   React.useEffect(() => {
