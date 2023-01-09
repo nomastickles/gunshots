@@ -17,6 +17,7 @@ jobs:
       AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
       S3_NAME: ${{ secrets.S3_NAME }}
+      STAGE: dev
     defaults:
       run:
         working-directory: ./backend
@@ -28,8 +29,8 @@ jobs:
     - name: test and deploy
       run: |
         yarn install --frozen-lockfile
-        yarn deploy --stage dev
+        yarn deploy --stage $STAGE
     - name: upload csv
-      run: STAGE=dev yarn scripts:upload
+      run: yarn scripts:upload
         
   
