@@ -27,7 +27,7 @@ export const fetchAllItemKeys = async () => {
   return items.map((i) => i.Key);
 };
 
-export async function uploadItem(key: string, data: Buffer | string) {
+export async function uploadImage(key: string, data: Buffer | string) {
   await s3Client
     .putObject({
       Bucket,

@@ -100,7 +100,7 @@ export const createNewIncident = async (
   }
 
   const buffer = await googleResponse.buffer();
-  await s3.uploadItem(imageName, buffer); // s3 uploads don't rate limit?
+  await s3.uploadImage(imageName, buffer); // s3 uploads don't rate limit?
   newItem.image = `${s3.S3BaseURL}${imageName}`;
 
   return newItem;
