@@ -7,13 +7,8 @@ const serverlessConfiguration: AWS = {
     "serverless-webpack",
     "serverless-iam-roles-per-function",
     "serverless-stack-output",
-    "serverless-api-gateway-throttling",
   ],
   custom: {
-    apiGatewayThrottling: {
-      maxRequestsPerSecond: "5",
-      maxConcurrentRequests: "10",
-    },
     output: {
       handler: "scripts/stackOutput.handler",
     },
@@ -36,10 +31,6 @@ const serverlessConfiguration: AWS = {
     runtime: "nodejs16.x",
     stage: "${opt:stage, 'dev'}",
     region: "${env:AWS_DEFAULT_REGION}" as any,
-    apiGateway: {
-      minimumCompressionSize: 1024,
-      shouldStartNameWithService: true,
-    },
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
       DB_NAME: "${self:service}-${self:provider.stage}",

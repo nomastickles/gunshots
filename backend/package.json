@@ -21,7 +21,8 @@
     "@middy/core": "^3.1.1",
     "@middy/http-json-body-parser": "^2.5.7",
     "node-fetch": "2.6.7",
-    "papaparse": "^5.3.2"
+    "papaparse": "^5.3.2",
+    "yarn.lock": "^0.0.1-security"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.25.0",
@@ -32,7 +33,6 @@
     "aws-sdk": "^2.1286.0",
     "jest": "^29.3.1",
     "serverless": "3.26.0",
-    "serverless-api-gateway-throttling": "^2.0.2",
     "serverless-iam-roles-per-function": "^3.2.0",
     "serverless-stack-output": "^0.2.3",
     "serverless-webpack": "^5.11.0",
