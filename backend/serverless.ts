@@ -3,7 +3,17 @@ import * as constants from "./src/constants";
 const serverlessConfiguration: AWS = {
   service: "gunshots",
   frameworkVersion: "3",
+  plugins: [
+    "serverless-webpack",
+    "serverless-iam-roles-per-function",
+    "serverless-stack-output",
+    "serverless-api-gateway-throttling",
+  ],
   custom: {
+    apiGatewayThrottling: {
+      maxRequestsPerSecond: "5",
+      maxConcurrentRequests: "10",
+    },
     output: {
       handler: "scripts/stackOutput.handler",
     },
@@ -21,11 +31,6 @@ const serverlessConfiguration: AWS = {
       "arn:aws:sns:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}",
     SSM_PATH_GOOGLE_KEY: "/gunshots/googleAPIKey",
   },
-  plugins: [
-    "serverless-webpack",
-    "serverless-iam-roles-per-function",
-    "serverless-stack-output",
-  ],
   provider: {
     name: "aws",
     runtime: "nodejs16.x",

@@ -4,7 +4,7 @@ import * as libS3 from "../../src/libs/s3";
 import * as libGoogle from "../../src/libs/google";
 
 jest.mock("../../src/libs/s3");
-const mockLibS3UploadItem = jest.spyOn(libS3, "uploadItem");
+const mockLibS3UploadItem = jest.spyOn(libS3, "uploadImage");
 
 jest.mock("../../src/libs/google");
 const mockLibGoogleFetchImage = jest.spyOn(libGoogle, "fetchImage");
