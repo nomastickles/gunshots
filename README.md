@@ -109,7 +109,7 @@ AWS_DEFAULT_REGION
 S3_NAME # unique s3 prefix
 ```
 
-### 2. SAVE GOOGLE STREETVIEW API
+### 2. (OPTIONAL) GET GOOGLE STREETVIEW API KEY
 
 Add Google API key to AWS Systems Manager Parameter Store with path /gunshots/googleAPIKey
 

@@ -10,7 +10,7 @@ const serverlessConfiguration: AWS = {
   ],
   custom: {
     output: {
-      handler: "scripts/stackOutput.handler",
+      handler: "src/scripts/stackOutput.handler",
     },
     webpack: {
       webpackConfig: "./webpack.config.js",

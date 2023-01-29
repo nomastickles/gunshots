@@ -12,8 +12,8 @@ async function updateApiGateway(region, websocket) {
         DataTraceEnabled: false,
         DetailedMetricsEnabled: false,
         LoggingLevel: "ERROR",
-        ThrottlingBurstLimit: 5,
-        ThrottlingRateLimit: 5,
+        ThrottlingBurstLimit: 8,
+        ThrottlingRateLimit: 8,
       },
     };
 
