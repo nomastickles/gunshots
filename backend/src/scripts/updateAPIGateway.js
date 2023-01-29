@@ -5,7 +5,6 @@ async function updateApiGateway(region, websocket) {
     const stage = websocket.split("/").reverse()[0];
     const id = websocket.split("wss://")?.[1]?.split(".")?.[0];
     const ApiGatewayV2 = new AWS.ApiGatewayV2({ region });
-    console.log("updateApiGateway", id, stage);
     const params = {
       ApiId: id,
       StageName: stage,

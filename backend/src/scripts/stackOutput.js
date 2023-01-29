@@ -1,5 +1,5 @@
 const updateDynamoDB = require("./updateDynamoDB");
-const updateAPIGatewaySettings = require("./updateAPIGatewaySettings");
+const updateAPIGateway = require("./updateAPIGateway");
 
 function handler(data, _serverless, options) {
   // console.log("💥 data", JSON.stringify(data));
@@ -9,7 +9,7 @@ function handler(data, _serverless, options) {
 
   Promise.all([
     updateDynamoDB(options.region, ServiceEndpointWebsocket),
-    updateAPIGatewaySettings(options.region, ServiceEndpointWebsocket),
+    updateAPIGateway(options.region, ServiceEndpointWebsocket),
   ]).then(() => {
     console.log("🤝 stackOutput");
   });
