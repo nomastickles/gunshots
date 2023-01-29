@@ -19,9 +19,11 @@ const serverlessConfiguration: AWS = {
       },
     },
     AWS_ACCOUNT_ID: "${env:AWS_ACCOUNT_ID}",
-    S3_NAME: "${env:S3_NAME}-${self:service}-${self:provider.stage}", // public facing
-    SNS_UPLOAD_NAME: "${self:service}-upload-${self:provider.stage}",
-    SNS_SEND_INCIDENTS_NAME: "${self:service}-send-${self:provider.stage}",
+    S3_BUCKET_IMAGES:
+      "${self:provider.stage}-${self:service}-${env:S3_BUCKET_IMAGES_SUFFIX}", // public facing
+    SNS_UPLOAD_NAME: "${self:provider.stage}-${self:service}-upload",
+    SNS_SEND_INCIDENTS_NAME:
+      "${self:provider.stage}-${self:service}-send-incidents",
     SNS_SEND_INCIDENTS_ARN_PREFIX:
       "arn:aws:sns:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}",
     SSM_PATH_GOOGLE_KEY: "/gunshots/googleAPIKey",
@@ -33,8 +35,8 @@ const serverlessConfiguration: AWS = {
     region: "${env:AWS_DEFAULT_REGION}" as any,
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
-      DB_NAME: "${self:service}-${self:provider.stage}",
-      DB_NAME_GSPK: "GSPK-GSSK-index",
+      DB_NAME: "${self:provider.stage}-${self:service}",
+      DB_NAME_GSK: "GSK-GSSK-index",
     },
     logRetentionInDays: 3,
     memorySize: 256,
@@ -52,7 +54,7 @@ const serverlessConfiguration: AWS = {
       S31: {
         Type: "AWS::S3::Bucket",
         Properties: {
-          BucketName: "${self:custom.S3_NAME}",
+          BucketName: "${self:custom.S3_BUCKET_IMAGES}",
         },
       },
       DynamoDB1: {
@@ -65,7 +67,7 @@ const serverlessConfiguration: AWS = {
               AttributeType: "S",
             },
             {
-              AttributeName: "GSPK",
+              AttributeName: "GSK",
               AttributeType: "S",
             },
             {
@@ -85,7 +87,7 @@ const serverlessConfiguration: AWS = {
           },
           GlobalSecondaryIndexes: [
             {
-              IndexName: "${self:provider.environment.DB_NAME_GSPK}",
+              IndexName: "${self:provider.environment.DB_NAME_GSK}",
               Projection: {
                 ProjectionType: "ALL",
               },
@@ -95,7 +97,7 @@ const serverlessConfiguration: AWS = {
               },
               KeySchema: [
                 {
-                  AttributeName: "GSPK",
+                  AttributeName: "GSK",
                   KeyType: "HASH",
                 },
                 {
@@ -207,7 +209,7 @@ const serverlessConfiguration: AWS = {
             // "dynamodb:Scan"
           ],
           Resource:
-            "arn:aws:dynamodb:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}:table/${self:provider.environment.DB_NAME}/index/${self:provider.environment.DB_NAME_GSPK}",
+            "arn:aws:dynamodb:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}:table/${self:provider.environment.DB_NAME}/index/${self:provider.environment.DB_NAME_GSK}",
         },
       ],
     },
@@ -218,7 +220,7 @@ const serverlessConfiguration: AWS = {
       environment: {
         SNS_TOPIC_SEND_INCIDENTS:
           "${self:custom.SNS_SEND_INCIDENTS_ARN_PREFIX}:${self:custom.SNS_SEND_INCIDENTS_NAME}",
-        S3_NAME: "${self:custom.S3_NAME}",
+        S3_BUCKET_IMAGES: "${self:custom.S3_BUCKET_IMAGES}",
         SSM_PATH_GOOGLE_KEY: "${self:custom.SSM_PATH_GOOGLE_KEY}",
       },
       events: [
@@ -250,12 +252,12 @@ const serverlessConfiguration: AWS = {
         {
           Effect: "Allow",
           Action: ["s3:ListBucket"],
-          Resource: "arn:aws:s3:::${self:custom.S3_NAME}",
+          Resource: "arn:aws:s3:::${self:custom.S3_BUCKET_IMAGES}",
         },
         {
           Effect: "Allow",
           Action: ["s3:PutObject", "s3:PutObjectAcl", "s3:DeleteObject"],
-          Resource: "arn:aws:s3:::${self:custom.S3_NAME}/*",
+          Resource: "arn:aws:s3:::${self:custom.S3_BUCKET_IMAGES}/*",
         },
         {
           Effect: "Allow",

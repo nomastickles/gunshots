@@ -20,7 +20,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-      S3_NAME: ${{ secrets.S3_NAME }}
+      S3_BUCKET_IMAGES_SUFFIX: ${{ secrets.S3_BUCKET_IMAGES_SUFFIX }}
       STAGE: ${{ github.event.inputs.stage }}
     steps:
     - uses: actions/checkout@v3

@@ -46,7 +46,7 @@ example websocket connection
   "PK": {
     "S": "298dJsl3="
   },
-  "GSPK": {
+  "GSK": {
     "S": "connection"
   },
   "GSSK": {
@@ -65,7 +65,7 @@ example item with PK "incidents" holding incident array in DATA
   "DATA": {
     "S": "[{\"date\":\"September 13, 2021\",\"state\":\"Illinois\",\"city\":\"Chicago\",\"address\":\"8700 block of S State\",\"killed\":0,\"injured\":1,\"id\":\"sijzhh:1231232\",\"image\":\"https://some-bucket.amazonaws.com/1231232.jpeg\"}]"
   },
-  "GSPK": {
+  "GSK": {
     "S": "data"
   },
   "GSSK": {
@@ -84,7 +84,7 @@ example setting
   "DATA": {
     "S": " wss://abcde.execute-api.us-east-1.amazonaws.com/dev1"
   },
-  "GSPK": {
+  "GSK": {
     "S": "setting"
   },
   "GSSK": {
@@ -106,7 +106,7 @@ AWS_ACCOUNT_ID
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 AWS_DEFAULT_REGION
-S3_NAME # unique s3 prefix
+S3_BUCKET_IMAGES_SUFFIX # unique s3 suffix
 ```
 
 ### 2. (OPTIONAL) GET GOOGLE STREETVIEW API KEY

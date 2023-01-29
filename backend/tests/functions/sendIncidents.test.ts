@@ -63,7 +63,7 @@ describe("sendIncidents lambda", () => {
 [
   {
     "ConnectionId": "CONNECTION_ID",
-    "Data": "[{"address":"address","city":"Cleveland","date":"September 12, 2022","id":"2412750","image":"https://S3_NAME.s3.amazonaws.com/2412750.jpeg","metrics":{"injured":1,"killed":1},"state":"Ohio"}]",
+    "Data": "[{"address":"address","city":"Cleveland","date":"September 12, 2022","id":"2412750","image":"https://S3_BUCKET_IMAGES.s3.amazonaws.com/2412750.jpeg","metrics":{"injured":1,"killed":1},"state":"Ohio"}]",
   },
 ]
 `);

@@ -62,7 +62,7 @@ describe("libIncidents", () => {
         buffer: () => "data",
       } as any);
 
-      process.env.S3_NAME = "test-s3-name";
+      process.env.S3_BUCKET_IMAGES = "test-s3-name";
       const result = await libIncidents.createNewIncident(
         incomingIncident1,
         [],
@@ -77,7 +77,7 @@ describe("libIncidents", () => {
   "city": "Cleveland",
   "date": "September 12, 2022",
   "id": "2412750",
-  "image": "https://S3_NAME.s3.amazonaws.com/2412750.jpeg",
+  "image": "https://S3_BUCKET_IMAGES.s3.amazonaws.com/2412750.jpeg",
   "metrics": {
     "injured": 1,
     "killed": 1,

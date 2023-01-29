@@ -1,10 +1,10 @@
 import * as AWS from "aws-sdk";
 
 const s3Client = new AWS.S3();
-const Bucket = process.env.S3_NAME;
+const Bucket = process.env.S3_BUCKET_IMAGES;
 const GRANT_PUBLIC_READ = "uri=http://acs.amazonaws.com/groups/global/AllUsers";
 
-export const S3BaseURL = `https://${process.env.S3_NAME}.s3.amazonaws.com/`;
+export const S3BaseURL = `https://${process.env.S3_BUCKET_IMAGES}.s3.amazonaws.com/`;
 
 export const listAllS3Objects = async (
   token?: string

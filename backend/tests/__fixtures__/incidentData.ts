@@ -23,7 +23,7 @@ export const incident1 = {
   city: "Cleveland",
   date: "September 12, 2022",
   id: "2412750",
-  image: "https://S3_NAME.s3.amazonaws.com/2412750.jpeg",
+  image: "https://S3_BUCKET_IMAGES.s3.amazonaws.com/2412750.jpeg",
   metrics: {
     injured: 1,
     killed: 1,

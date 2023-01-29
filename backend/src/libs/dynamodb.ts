@@ -20,7 +20,7 @@ export const DynamoDBReadTimeout = Math.round(
 
 const dbClient = new DynamoDBClient({ region: process.env.AWS_REGION });
 const TableName = process.env.DB_NAME;
-const IndexName = process.env.DB_NAME_GSPK;
+const IndexName = process.env.DB_NAME_GSK;
 
 export const addDynamoDBConnection = async (connectionId: string) => {
   await libGeneral.timeout(DynamoDBWriteTimeout);
@@ -28,7 +28,7 @@ export const addDynamoDBConnection = async (connectionId: string) => {
     PK: {
       S: connectionId,
     },
-    GSPK: {
+    GSK: {
       S: "connection",
     },
     GSSK: {
@@ -52,7 +52,7 @@ export const addDynamoDBIncidents = async (incidents: Incident[]) => {
     PK: {
       S: "incidents",
     },
-    GSPK: {
+    GSK: {
       S: "data",
     },
     GSSK: {
@@ -93,7 +93,7 @@ async function getDynamoDBItemByPK(
 /**
  * used to get all connections
  */
-async function getDynamoDBItemsByGSPK(
+async function getDynamoDBItemsByGSK(
   itemName: string,
   exclusiveStartKey?: any
 ): Promise<DynamoDBItem[]> {
@@ -104,22 +104,22 @@ async function getDynamoDBItemsByGSPK(
       TableName,
       IndexName,
       ExclusiveStartKey: exclusiveStartKey,
-      KeyConditionExpression: "GSPK = :gspk",
+      KeyConditionExpression: "GPK = :gsk",
       ExpressionAttributeValues: {
-        ":gspk": { S: itemName },
+        ":gsk": { S: itemName },
       },
     })
   );
 
   const results = Items as DynamoDBItem[];
 
-  console.log("⚡️ getDynamoDBItemsByGSPK", { itemName, exclusiveStartKey });
+  console.log("⚡️ getDynamoDBItemsByGSK", { itemName, exclusiveStartKey });
 
   if (!LastEvaluatedKey) {
     return results;
   }
 
-  const rest = await getDynamoDBItemsByGSPK(itemName, LastEvaluatedKey);
+  const rest = await getDynamoDBItemsByGSK(itemName, LastEvaluatedKey);
   return [...results, ...rest];
 }
 
@@ -139,7 +139,7 @@ export const removeDynamoDBItemByPK = async (id: string) => {
 };
 
 export const getAllDynamoDBConnectionsIds = async () => {
-  const items = await getDynamoDBItemsByGSPK("connection");
+  const items = await getDynamoDBItemsByGSK("connection");
   return items.map((i) => i.PK.S);
 };
 

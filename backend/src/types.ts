@@ -47,10 +47,10 @@ export interface DynamoDBItem extends Record<string, AttributeValue> {
     S: string; // could be <connectionId> or 'incidents' or 'websocket'
   };
   /**
-   * Global Secondary Partition key
+   * Global Secondary Key
    * (paired with Global Secondary Sort key)
    */
-  GSPK?: {
+  GSK?: {
     S: string;
   };
   /**

@@ -3,9 +3,6 @@ const path = require("path");
 const AWS = require("aws-sdk");
 const dynamoDB = require("@aws-sdk/client-dynamodb");
 
-/**
- * STAGE=dev1 yarn scripts:upload
- */
 (async () => {
   console.log("💥 uploadCSVwithSNS");
   const dir = `${__dirname}/../../csv`;
@@ -13,7 +10,7 @@ const dynamoDB = require("@aws-sdk/client-dynamodb");
   const region = process.env.AWS_DEFAULT_REGION;
   const accountId = process.env.AWS_ACCOUNT_ID;
   const stage = process.env.STAGE;
-  const dbName = `gunshots-${stage}`;
+  const dbName = `${stage}-gunshots`;
 
   if (!file) {
     console.error("missing csv");
@@ -64,7 +61,7 @@ const dynamoDB = require("@aws-sdk/client-dynamodb");
         PK: {
           S: "lastFileName",
         },
-        GSPK: {
+        GSK: {
           S: "setting",
         },
         GSSK: {
