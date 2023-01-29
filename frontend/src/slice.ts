@@ -99,11 +99,12 @@ export const AppSlice = createSlice({
       }
     });
     builder.addCase(actions.focusState, (sliceState, { payload: state }) => {
-      if (sliceState.focusedState === state) {
+      if (sliceState.focusedState) {
+        // clear it out
         sliceState.focusedState = "";
-      } else {
-        sliceState.focusedState = state;
+        return;
       }
+      sliceState.focusedState = state;
     });
   },
 });

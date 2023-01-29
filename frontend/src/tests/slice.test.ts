@@ -64,20 +64,23 @@ Array [
         testingState,
         actions.selectNextIncident()
       );
-
+      expect(testingState.focusedState).toBeFalsy();
       expect(testingState.currentIncidentIndex).toMatchInlineSnapshot(`0`);
     });
 
-    test("with focused state", () => {
+    test("selecting focused state", () => {
       testingState = AppSlice.reducer(
         initialState,
         actions.setUSTerritoryData(incidents)
       );
       testingState = AppSlice.reducer(
-        { ...testingState, focusedState: "Minnesota" },
+        testingState,
+        actions.focusState("Minnesota")
+      );
+      testingState = AppSlice.reducer(
+        testingState,
         actions.selectNextIncident()
       );
-
       const id =
         testingState.orderedIncidentIds[
           testingState.currentIncidentIndex as number
@@ -85,6 +88,27 @@ Array [
       expect(testingState.incidents.find((item) => item.id === id)?.state).toBe(
         "Minnesota"
       );
+    });
+
+    test("selecting focused staten again", () => {
+      testingState = AppSlice.reducer(
+        initialState,
+        actions.setUSTerritoryData(incidents)
+      );
+      testingState = AppSlice.reducer(
+        testingState,
+        actions.focusState("Minnesota")
+      );
+      testingState = AppSlice.reducer(
+        testingState,
+        actions.focusState("Anything")
+      );
+      testingState = AppSlice.reducer(
+        testingState,
+        actions.selectNextIncident()
+      );
+
+      expect(testingState.focusedState).toBeFalsy();
     });
   });
 });
