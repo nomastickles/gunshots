@@ -31,6 +31,7 @@ async function updateDynamoDB(region, websocket) {
     );
   } catch (e) {
     console.error("❌ updateWebsocket", e);
+    throw e;
   }
 }
 

@@ -21,6 +21,7 @@ async function updateApiGateway(region, websocket) {
     await ApiGatewayV2.updateStage(params).promise();
   } catch (e) {
     console.error("❌ updateApiGateway", e);
+    throw e;
   }
 }
 
