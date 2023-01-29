@@ -20,10 +20,10 @@ const serverlessConfiguration: AWS = {
     },
     AWS_ACCOUNT_ID: "${env:AWS_ACCOUNT_ID}",
     S3_BUCKET_IMAGES:
-      "${self:provider.stage}-${self:service}-${env:S3_BUCKET_IMAGES_SUFFIX}", // public facing
-    SNS_UPLOAD_NAME: "${self:provider.stage}-${self:service}-upload",
+      "${self:service}-${self:provider.stage}-${env:S3_BUCKET_IMAGES_SUFFIX}", // public facing
+    SNS_UPLOAD_NAME: "${self:service}-${self:provider.stage}-upload",
     SNS_SEND_INCIDENTS_NAME:
-      "${self:provider.stage}-${self:service}-send-incidents",
+      "${self:service}-${self:provider.stage}-send-incidents",
     SNS_SEND_INCIDENTS_ARN_PREFIX:
       "arn:aws:sns:${self:provider.region}:${self:custom.AWS_ACCOUNT_ID}",
     SSM_PATH_GOOGLE_KEY: "/gunshots/googleAPIKey",
@@ -35,7 +35,7 @@ const serverlessConfiguration: AWS = {
     region: "${env:AWS_DEFAULT_REGION}" as any,
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
-      DB_NAME: "${self:provider.stage}-${self:service}",
+      DB_NAME: "${self:service}-${self:provider.stage}",
       DB_NAME_GSK: "GSK-GSSK-index",
     },
     logRetentionInDays: 3,
