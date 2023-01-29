@@ -10,7 +10,7 @@ const dynamoDB = require("@aws-sdk/client-dynamodb");
   const region = process.env.AWS_DEFAULT_REGION;
   const accountId = process.env.AWS_ACCOUNT_ID;
   const stage = process.env.STAGE;
-  const dbName = `${stage}-gunshots`;
+  const dbName = `gunshots-${stage}`;
 
   if (!file) {
     console.error("missing csv");
@@ -23,7 +23,7 @@ const dynamoDB = require("@aws-sdk/client-dynamodb");
   }
 
   const data = fs.readFileSync(`${dir}/${file}`, "utf8");
-  const topicArn = `arn:aws:sns:${region}:${accountId}:gunshots-upload-${stage}`;
+  const topicArn = `arn:aws:sns:${region}:${accountId}:gunshots-${stage}-upload`;
 
   const dbClient = new dynamoDB.DynamoDBClient({
     region,

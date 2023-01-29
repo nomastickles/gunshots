@@ -3,7 +3,7 @@ const dynamoDB = require("@aws-sdk/client-dynamodb");
 async function updateDynamoDB(region, websocket) {
   try {
     const stage = websocket.split("/").reverse()[0];
-    const dbName = `${stage}-gunshots`;
+    const dbName = `gunshots-${stage}`;
     const dbClient = new dynamoDB.DynamoDBClient({
       region,
     });
