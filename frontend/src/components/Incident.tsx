@@ -60,6 +60,10 @@ function Incident() {
     stateInfo += ` in ${incident?.state}`;
   }
 
+  const textDivClasses = `bg-zinc-100 text-base pt-2 ${
+    incident?.image ? "-mt-7" : ""
+  }`;
+
   return (
     <div
       data-testid="incident"
@@ -67,30 +71,17 @@ function Incident() {
     >
       <div className="rounded flex flex-col h-full mx-auto p-3 shadow-lg bg-zinc-100 max-w-2xl w-full">
         <div className={`rounded flex flex-col justify-center bg-gray-300`}>
-          {!incident?.image && (
-            <div className="font-light text-gray-400 text-center sm:h-96 h-60 sm:mt-60 mt-20">
-              <p className="h-full align-middle">image unavailable</p>
-            </div>
-          )}
           {incident?.image && (
             <img alt="incident" className="rounded-sm" src={incident?.image} />
           )}
         </div>
 
-        <div className="bg-zinc-100 text-base -mt-7 pt-2">
+        <div className={textDivClasses}>
           <div className="flex mb-2">
             <div className="flex-none">
               <h2 className="text-gray-800">{incident?.date}</h2>
             </div>
             <div className="grow" />
-            {/* {title && (
-              <div
-                className="bg-red-400/75 grow"
-                style={{
-                  margin: "11px",
-                }}
-              />
-            )} */}
             <div className="flex-none">
               <h2 className="text-red-500">{title || " "}</h2>
             </div>

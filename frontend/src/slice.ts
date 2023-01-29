@@ -52,10 +52,8 @@ export const AppSlice = createSlice({
           metricsStateInfo[incomingItem.state].killed += killed;
           metricsStateInfo[incomingItem.state].injured += injured;
 
-          if (incomingItem.image) {
-            // for now we'll only display the incidents with images
-            incidentsWithImages.push(incomingItem);
-          }
+          // delete incomingItem.image;
+          incidentsWithImages.push(incomingItem);
         });
 
         // preserving original order within incidents
