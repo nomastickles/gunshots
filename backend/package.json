@@ -4,8 +4,8 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "deploy": "yarn test && node_modules/.bin/serverless deploy --verbose",
-    "destroy": "node_modules/.bin/serverless remove --verbose",
+    "deploy": "yarn test && node_modules/.bin/serverless deploy",
+    "destroy": "node_modules/.bin/serverless remove",
     "serverless:metrics": "node_modules/.bin/serverless metrics",
     "serverless:doctor": "node_modules/.bin/serverless doctor",
     "test": "jest",
