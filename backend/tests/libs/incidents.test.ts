@@ -7,7 +7,10 @@ jest.mock("../../src/libs/s3");
 const mockLibS3UploadItem = jest.spyOn(libS3, "uploadImage");
 
 jest.mock("../../src/libs/google");
-const mockLibGoogleFetchImage = jest.spyOn(libGoogle, "fetchImage");
+const mockLibGoogleFetchImage = jest.spyOn(
+  libGoogle,
+  "fetchImageFromGoogleStreetView"
+);
 
 describe("libIncidents", () => {
   beforeEach(() => {

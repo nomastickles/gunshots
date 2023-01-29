@@ -87,7 +87,10 @@ export const createNewIncident = async (
 
   try {
     console.log("🗺 💰", newItem.id);
-    googleResponse = await google.fetchImage(googleAPIKey, location);
+    googleResponse = await google.fetchImageFromGoogleStreetView(
+      googleAPIKey,
+      location
+    );
   } catch (e) {
     console.error("google fetch", item, e);
   }

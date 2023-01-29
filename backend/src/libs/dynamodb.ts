@@ -22,7 +22,7 @@ const dbClient = new DynamoDBClient({ region: process.env.AWS_REGION });
 const TableName = process.env.DB_NAME;
 const IndexName = process.env.DB_NAME_GSPK;
 
-export const addConnection = async (connectionId: string) => {
+export const addDynamoDBConnection = async (connectionId: string) => {
   await libGeneral.timeout(DynamoDBWriteTimeout);
   const item = {
     PK: {
@@ -43,10 +43,10 @@ export const addConnection = async (connectionId: string) => {
       ConditionExpression: "attribute_not_exists(PK)",
     })
   );
-  console.log("🤝 addConnection");
+  console.log("🤝 addDynamoDBConnection");
 };
 
-export const addAllIncidents = async (incidents: Incident[]) => {
+export const addDynamoDBIncidents = async (incidents: Incident[]) => {
   await libGeneral.timeout(DynamoDBWriteTimeout);
   const item = {
     PK: {
@@ -72,7 +72,7 @@ export const addAllIncidents = async (incidents: Incident[]) => {
   console.log("➕ # saved incidents:", incidents.length);
 };
 
-async function getItemByPK(
+async function getDynamoDBItemByPK(
   pk: string
 ): Promise<Record<string, AttributeValue>> {
   await libGeneral.timeout(DynamoDBReadTimeout);
@@ -85,7 +85,7 @@ async function getItemByPK(
     })
   );
 
-  console.log("⚡️ getItemByPK", { pk });
+  console.log("⚡️ getDynamoDBItemByPK", { pk });
   const results = data?.Item || undefined;
   return results;
 }
@@ -93,7 +93,7 @@ async function getItemByPK(
 /**
  * used to get all connections
  */
-async function getAllItemsByGSPK(
+async function getDynamoDBItemsByGSPK(
   itemName: string,
   exclusiveStartKey?: any
 ): Promise<DynamoDBItem[]> {
@@ -113,17 +113,17 @@ async function getAllItemsByGSPK(
 
   const results = Items as DynamoDBItem[];
 
-  console.log("⚡️ getAllItemsByGSPK", { itemName, exclusiveStartKey });
+  console.log("⚡️ getDynamoDBItemsByGSPK", { itemName, exclusiveStartKey });
 
   if (!LastEvaluatedKey) {
     return results;
   }
 
-  const rest = await getAllItemsByGSPK(itemName, LastEvaluatedKey);
+  const rest = await getDynamoDBItemsByGSPK(itemName, LastEvaluatedKey);
   return [...results, ...rest];
 }
 
-export const removeItemByPrimaryKey = async (id: string) => {
+export const removeDynamoDBItemByPK = async (id: string) => {
   await libGeneral.timeout(DynamoDBWriteTimeout);
   await dbClient.send(
     new DeleteItemCommand({
@@ -135,16 +135,16 @@ export const removeItemByPrimaryKey = async (id: string) => {
       },
     })
   );
-  console.log("🔥🤲 removeItemByPrimaryKey", id);
+  console.log("🔥🤲 removeDynamoDBItemByPK", id);
 };
 
-export const getAllConnectionsIds = async () => {
-  const items = await getAllItemsByGSPK("connection");
+export const getAllDynamoDBConnectionsIds = async () => {
+  const items = await getDynamoDBItemsByGSPK("connection");
   return items.map((i) => i.PK.S);
 };
 
-export const getAllIncidents = async () => {
-  const dbItem = await getItemByPK("incidents");
+export const getAllDynamoDBIncidents = async () => {
+  const dbItem = await getDynamoDBItemByPK("incidents");
   const dataRaw = dbItem?.DATA?.S;
   try {
     const allIncidents = JSON.parse(dataRaw);
@@ -154,8 +154,8 @@ export const getAllIncidents = async () => {
   }
 };
 
-export const getSettings = async () => {
-  const item = await getItemByPK("websocket");
+export const getAllDynamoDBSettings = async () => {
+  const item = await getDynamoDBItemByPK("websocket");
 
   return {
     websocket: item?.DATA?.S,

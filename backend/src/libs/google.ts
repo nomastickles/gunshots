@@ -7,7 +7,10 @@ import fetch from "node-fetch";
  */
 export const GoogleBatchLimitPerSecond = 500;
 
-export async function fetchImage(apiKey: string, location: string) {
+export async function fetchImageFromGoogleStreetView(
+  apiKey: string,
+  location: string
+) {
   const imageLookupURL = `https://maps.googleapis.com/maps/api/streetview?return_error_code=true&size=640x640&location=${location}&key=${apiKey}`;
   const response = await fetch(imageLookupURL);
   return response;

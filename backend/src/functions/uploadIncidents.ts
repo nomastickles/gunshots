@@ -26,9 +26,12 @@ const uploadIncidents: SNSHandler = async (event) => {
     return null;
   }
 
-  const googleAPIKey = await ssm.getParameter(process.env.SSM_PATH_GOOGLE_KEY);
-  const incidentsAllPrevious = await dynamodb.getAllIncidents();
-  const allPreviousImageKeys = await s3.fetchAllItemKeys();
+  const googleAPIKey = await ssm.getSSMParameter(
+    process.env.SSM_PATH_GOOGLE_KEY
+  );
+  const incidentsAllPrevious = await dynamodb.getAllDynamoDBIncidents();
+  const allS3Images = await s3.listAllS3Objects();
+  const allPreviousImageKeys = allS3Images.map((i) => i.Key);
 
   for (const incidentsBatch of libGeneral.batchArray(
     incidentsIncoming,
@@ -75,12 +78,12 @@ const uploadIncidents: SNSHandler = async (event) => {
     console.warn("🌕🌕 duplicate data");
     return null;
   }
-  await dynamodb.addAllIncidents(incidentsToSave);
+  await dynamodb.addDynamoDBIncidents(incidentsToSave);
 
   /**
    * initiate update for all frontend clients
    */
-  await sns.sendMessage(
+  await sns.sendSNSMessage(
     process.env.SNS_TOPIC_SEND_INCIDENTS,
     sns.SEND_TO_ALL_INDICATOR
   );
@@ -100,7 +103,7 @@ const uploadIncidents: SNSHandler = async (event) => {
 
   if (S3KeysToDelete.length) {
     console.log("🌕 🌕 s3 keys to delete", S3KeysToDelete);
-    await s3.deleteItems(S3KeysToDelete);
+    await s3.deleteS3Objects(S3KeysToDelete);
   }
 
   console.log("🟢 finished");

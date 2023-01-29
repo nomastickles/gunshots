@@ -14,7 +14,7 @@ const sendIncidents: SNSHandler = async (event) => {
   const connectionIds = [];
 
   if (!cachedWebsocket) {
-    const { websocket } = await dynamodb.getSettings();
+    const { websocket } = await dynamodb.getAllDynamoDBSettings();
     cachedWebsocket = websocket;
   }
 
@@ -23,13 +23,13 @@ const sendIncidents: SNSHandler = async (event) => {
   }
 
   if (!cachedAllIncidents) {
-    cachedAllIncidents = await dynamodb.getAllIncidents();
+    cachedAllIncidents = await dynamodb.getAllDynamoDBIncidents();
   }
 
   const message = JSON.stringify(cachedAllIncidents);
 
   if (incomingId === sns.SEND_TO_ALL_INDICATOR) {
-    const ids = await dynamodb.getAllConnectionsIds();
+    const ids = await dynamodb.getAllDynamoDBConnectionsIds();
     connectionIds.push(...ids);
   } else {
     connectionIds.push(incomingId);
@@ -45,7 +45,7 @@ const sendIncidents: SNSHandler = async (event) => {
       await client.postToConnection(data).promise();
     } catch (err) {
       console.error("🙅🏻‍♀️ sendMessageToConnections", err);
-      await dynamodb.removeItemByPrimaryKey(connectionId);
+      await dynamodb.removeDynamoDBItemByPK(connectionId);
     }
   });
   await Promise.all(messageCalls);

@@ -8,14 +8,17 @@ import event1 from "../__fixtures__/APIGatewayEvent1.json";
 import event2 from "../__fixtures__/APIGatewayEvent2.json";
 
 jest.mock("../../src/libs/dynamodb");
-const mockLibDynamodbAddConnection = jest.spyOn(libDynamodb, "addConnection");
+const mockLibDynamodbAddConnection = jest.spyOn(
+  libDynamodb,
+  "addDynamoDBConnection"
+);
 const mockLibDynamodbRemoveItemByPrimaryKey = jest.spyOn(
   libDynamodb,
-  "removeItemByPrimaryKey"
+  "removeDynamoDBItemByPK"
 );
 
 jest.mock("../../src/libs/sns");
-const mockLibSNSSendMessage = jest.spyOn(libSNS, "sendMessage");
+const mockLibSNSSendMessage = jest.spyOn(libSNS, "sendSNSMessage");
 
 describe("connectionManager lambda", () => {
   beforeEach(() => {

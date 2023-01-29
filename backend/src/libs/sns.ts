@@ -3,7 +3,7 @@ const sns = new AWS.SNS();
 
 export const SEND_TO_ALL_INDICATOR = "*";
 
-export const sendMessage = async (
+export const sendSNSMessage = async (
   topicArn: string,
   message: string
 ): Promise<void> => {

@@ -12,3 +12,5 @@ scratch
 coverage
 
 /csv-archive
+
+config.js

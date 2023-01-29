@@ -8,4 +8,5 @@ module.exports = {
   setupFiles: ["<rootDir>/tests/setEnvVars.js"],
   resetMocks: true,
   restoreMocks: true,
+  modulePathIgnorePatterns: ["<rootDir>/scratch/"],
 };

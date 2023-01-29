@@ -13,14 +13,17 @@ import { incident1 } from "../__fixtures__/incidentData";
 jest.mock("../../src/libs/dynamodb");
 const mockLibDynamodbGetAllConnectionsIds = jest.spyOn(
   libDynamodb,
-  "getAllConnectionsIds"
+  "getAllDynamoDBConnectionsIds"
 );
 const mockLibDynamodbGetAllIncidents = jest.spyOn(
   libDynamodb,
-  "getAllIncidents"
+  "getAllDynamoDBIncidents"
 );
 
-const mockLibDynamodbGetSettings = jest.spyOn(libDynamodb, "getSettings");
+const mockLibDynamodbGetSettings = jest.spyOn(
+  libDynamodb,
+  "getAllDynamoDBSettings"
+);
 
 jest.mock("../../src/libs/apiGateway");
 let mockGetApiGatewayManagementClient = jest.spyOn(

@@ -40,6 +40,12 @@ const serverlessConfiguration: AWS = {
     memorySize: 256,
     timeout: 120,
     versionFunctions: false,
+    logs: {
+      websocket: {
+        level: "ERROR",
+        fullExecutionData: false,
+      },
+    },
   },
   resources: {
     Resources: {
