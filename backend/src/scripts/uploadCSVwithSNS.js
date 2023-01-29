@@ -8,7 +8,7 @@ const dynamoDB = require("@aws-sdk/client-dynamodb");
  */
 (async () => {
   console.log("💥 uploadCSVwithSNS");
-  const dir = `${__dirname}/../csv`;
+  const dir = `${__dirname}/../../csv`;
   const { file } = getMostRecentFile(dir);
   const region = process.env.AWS_DEFAULT_REGION;
   const accountId = process.env.AWS_ACCOUNT_ID;
