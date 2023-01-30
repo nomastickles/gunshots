@@ -23,15 +23,22 @@ async function updateApiGateway(region, websocket) {
         ThrottlingBurstLimit: 8,
         ThrottlingRateLimit: 8,
       },
-      // RouteSettings: {
-      //   boom: {
-      //     DataTraceEnabled: false,
-      //     DetailedMetricsEnabled: false,
-      //     LoggingLevel: "ERROR",
-      //     ThrottlingBurstLimit: 8,
-      //     ThrottlingRateLimit: 8,
-      //   },
-      // },
+      RouteSettings: {
+        $connect: {
+          DataTraceEnabled: false,
+          DetailedMetricsEnabled: false,
+          LoggingLevel: "ERROR",
+          ThrottlingBurstLimit: 8,
+          ThrottlingRateLimit: 8,
+        },
+        $disconnect: {
+          DataTraceEnabled: false,
+          DetailedMetricsEnabled: false,
+          LoggingLevel: "ERROR",
+          ThrottlingBurstLimit: 8,
+          ThrottlingRateLimit: 8,
+        },
+      },
     }).promise();
   } catch (e) {
     console.error("❌ updateApiGateway", e);
