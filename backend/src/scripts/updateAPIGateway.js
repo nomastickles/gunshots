@@ -6,37 +6,23 @@ async function updateApiGateway(region, websocket) {
     const id = websocket.split("wss://")?.[1]?.split(".")?.[0];
     const ApiGatewayV2 = new AWS.ApiGatewayV2({ region });
 
-    const temp = await ApiGatewayV2.getStage({
-      ApiId: id,
-      StageName: stage,
-    }).promise();
-
-    console.log("🌈", temp.RouteSettings);
-
     await ApiGatewayV2.updateStage({
       ApiId: id,
       StageName: stage,
-      DefaultRouteSettings: {
-        DataTraceEnabled: false,
-        DetailedMetricsEnabled: false,
-        LoggingLevel: "ERROR",
-        ThrottlingBurstLimit: 8,
-        ThrottlingRateLimit: 8,
-      },
       RouteSettings: {
         $connect: {
           DataTraceEnabled: false,
           DetailedMetricsEnabled: false,
           LoggingLevel: "ERROR",
-          ThrottlingBurstLimit: 8,
-          ThrottlingRateLimit: 8,
+          ThrottlingBurstLimit: 5,
+          ThrottlingRateLimit: 5,
         },
         $disconnect: {
           DataTraceEnabled: false,
           DetailedMetricsEnabled: false,
           LoggingLevel: "ERROR",
-          ThrottlingBurstLimit: 8,
-          ThrottlingRateLimit: 8,
+          ThrottlingBurstLimit: 5,
+          ThrottlingRateLimit: 5,
         },
       },
     }).promise();
