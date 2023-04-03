@@ -55,3 +55,8 @@ export type AppState = {
    */
   focusedState?: string;
 };
+
+export interface SetStepProps {
+  step: AppSteps;
+  clear?: boolean;
+}
