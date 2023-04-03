@@ -25,40 +25,15 @@ function Incident() {
     }
   }, [hide]);
 
-  let title = "";
-  if (metrics?.killed !== undefined) {
-    title = `${metrics?.killed} KILLED`;
-  }
+  const incidentInfo = !hideIncidentTotals
+    ? `${metrics?.killed || 0} KILLED + ${metrics?.injured || 0} INJURED`
+    : "";
 
-  if (metrics?.injured !== undefined) {
-    const spacing = title ? " + " : "";
-    title += `${spacing}${metrics?.injured} INJURED`;
-  }
-
-  if (hideIncidentTotals) {
-    title = "";
-  }
-
-  let stateInfo = "";
-
-  if (currentIncidentInfo?.stateTotals?.killed !== undefined) {
-    stateInfo += `${currentIncidentInfo?.stateTotals?.killed} killed`;
-  }
-
-  if (
-    currentIncidentInfo?.stateTotals?.killed &&
-    currentIncidentInfo?.stateTotals?.injured
-  ) {
-    stateInfo += " + ";
-  }
-
-  if (currentIncidentInfo?.stateTotals?.injured) {
-    stateInfo += `${currentIncidentInfo?.stateTotals?.injured} injured`;
-  }
-
-  if (stateInfo) {
-    stateInfo += ` in ${incident?.state}`;
-  }
+  const stateInfo = `${
+    currentIncidentInfo?.stateTotals?.killed || 0
+  } killed + ${currentIncidentInfo?.stateTotals?.injured || 0} injured in ${
+    incident?.state
+  }`;
 
   const textDivClasses = `bg-zinc-100 text-base pt-2 ${
     incident?.image ? "-mt-7" : ""
@@ -83,7 +58,7 @@ function Incident() {
             </div>
             <div className="grow" />
             <div className="flex-none">
-              <h2 className="text-red-500">{title || " "}</h2>
+              <h2 className="text-red-500">{incidentInfo}</h2>
             </div>
           </div>
 
@@ -92,7 +67,7 @@ function Incident() {
             <p className="text-sm">{cityState}</p>
           </div>
           <div className="text-red-500 sm:float-right sm:text-right text-left">
-            {!title && <p>&nbsp;</p>}
+            {!incidentInfo && <p>&nbsp;</p>}
             <p className="text-sm">&nbsp;</p>
             <p className="text-xs text-gray-500">{stateInfo}</p>
           </div>
