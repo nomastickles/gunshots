@@ -12,6 +12,17 @@ function Incident() {
   const hide = stepMap[AppSteps.HIDE_INCIDENT];
   const hideIncidentTotals = metrics?.killed === 0 && metrics?.injured === 0;
   const cityState = getCityStateString(incident?.city, incident?.state);
+  const incidentInfo = !hideIncidentTotals
+    ? `${metrics?.killed || 0} KILLED + ${metrics?.injured || 0} INJURED`
+    : "";
+  const stateInfo = `${
+    currentIncidentInfo?.stateTotals?.killed || 0
+  } killed + ${currentIncidentInfo?.stateTotals?.injured || 0} injured in ${
+    incident?.state
+  }`;
+  const textDivClasses = `bg-zinc-100 text-base pt-2 ${
+    incident?.image ? "-mt-7" : ""
+  }`;
 
   React.useEffect(() => {
     if (show) {
@@ -24,20 +35,6 @@ function Incident() {
       setVisibleClass("animate__fadeOut");
     }
   }, [hide]);
-
-  const incidentInfo = !hideIncidentTotals
-    ? `${metrics?.killed || 0} KILLED + ${metrics?.injured || 0} INJURED`
-    : "";
-
-  const stateInfo = `${
-    currentIncidentInfo?.stateTotals?.killed || 0
-  } killed + ${currentIncidentInfo?.stateTotals?.injured || 0} injured in ${
-    incident?.state
-  }`;
-
-  const textDivClasses = `bg-zinc-100 text-base pt-2 ${
-    incident?.image ? "-mt-7" : ""
-  }`;
 
   return (
     <div
