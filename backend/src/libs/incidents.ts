@@ -6,7 +6,7 @@ import papaparse from "papaparse";
 
 export const getCombinedIncidentIds = (items: Incident[]) =>
   items
-    .map((i) => i.id)
+    .map((i) => `${i.id}${i.metrics?.injured}${i.metrics?.killed}`)
     .sort()
     .join("");
 
