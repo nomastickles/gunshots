@@ -56,8 +56,8 @@ export const createNewIncident = async (
     state:
       item.State === "District of Columbia" ? "Washington, DC" : item.State,
     metrics: {
-      injured: Number(item["# Injured"] || 0),
-      killed: Number(item["# Killed"] || 0),
+      injured: Number(item["# Victims Injured"] || 0),
+      killed: Number(item["# Victims Killed"] || 0),
     },
   };
 

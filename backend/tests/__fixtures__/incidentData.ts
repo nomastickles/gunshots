@@ -8,8 +8,8 @@ export const CSVData1 = `"Incident ID","Incident Date",State,"City Or County",Ad
 2412702,"September 12, 2022",Maine,Portland,"43 Wharf St",0,2,N/A`;
 
 export const incomingIncident1 = {
-  "# Injured": 1,
-  "# Killed": 1,
+  "# Victims Injured": 1,
+  "# Victims Killed": 1,
   Address: "address",
   "City Or County": "Cleveland",
   "Incident Date": "September 12, 2022",
