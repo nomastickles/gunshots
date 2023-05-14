@@ -52,7 +52,9 @@ export const AppSlice = createSlice({
           metricsStateInfo[incomingItem.state].killed += killed;
           metricsStateInfo[incomingItem.state].injured += injured;
 
-          // delete incomingItem.image;
+          if (!incomingItem.image) {
+            return;
+          }
           incidentsWithImages.push(incomingItem);
         });
 
