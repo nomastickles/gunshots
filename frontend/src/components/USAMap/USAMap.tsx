@@ -71,7 +71,6 @@ const USAMap = () => {
         <SVGMap
           map={USA}
           locationClassName={locationClassName}
-          {/* onLocationClick={onLocationClick} */}
         />
       </div>
     </div>
