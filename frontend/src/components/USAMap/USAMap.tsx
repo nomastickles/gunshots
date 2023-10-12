@@ -6,7 +6,7 @@ import { AppSteps } from "../../types";
 import "./styles.scss";
 import SVGMap from "./svg-map";
 import USA from "./svgPathData";
-import * as actions from "../../actions";
+// import * as actions from "../../actions";
 
 const heatMapBuckets = [
   [39, 50],
