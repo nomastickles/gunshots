@@ -51,16 +51,16 @@ const USAMap = () => {
     [currentUSTerritory, isolateState, orderedStateNames]
   );
 
-  const onLocationClick = React.useCallback(
-    (args: any) => {
-      // (disabling for now)
-      // const area = args.target.outerHTML as string;
-      // const state = area.match(/(?<=name=").+?(?=")/)?.[0] || "";
-      // dispatch(actions.focusState(state));
-      // dispatch(actions.selectNextIncident());
-    },
-    [dispatch]
-  );
+  // const onLocationClick = React.useCallback(
+  //   (args: any) => {
+  //     (disabling for now)
+  //     const area = args.target.outerHTML as string;
+  //     const state = area.match(/(?<=name=").+?(?=")/)?.[0] || "";
+  //     dispatch(actions.focusState(state));
+  //     dispatch(actions.selectNextIncident());
+  //   },
+  //   [dispatch]
+  // );
 
   return (
     <div
@@ -71,7 +71,7 @@ const USAMap = () => {
         <SVGMap
           map={USA}
           locationClassName={locationClassName}
-          onLocationClick={onLocationClick}
+          {/* onLocationClick={onLocationClick} */}
         />
       </div>
     </div>
