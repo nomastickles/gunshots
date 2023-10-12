@@ -53,10 +53,11 @@ const USAMap = () => {
 
   const onLocationClick = React.useCallback(
     (args: any) => {
-      const area = args.target.outerHTML as string;
-      const state = area.match(/(?<=name=").+?(?=")/)?.[0] || "";
-      dispatch(actions.focusState(state));
-      dispatch(actions.selectNextIncident());
+      // (disabling for now)
+      // const area = args.target.outerHTML as string;
+      // const state = area.match(/(?<=name=").+?(?=")/)?.[0] || "";
+      // dispatch(actions.focusState(state));
+      // dispatch(actions.selectNextIncident());
     },
     [dispatch]
   );
