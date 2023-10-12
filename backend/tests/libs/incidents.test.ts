@@ -28,28 +28,28 @@ describe("libIncidents", () => {
       // spot check
       expect(result[2]).toMatchInlineSnapshot(`
 {
-  "Victims Injured": "1",
-  "Victims Killed": "0",
   "Address": "E 113th St and Benham Ave",
   "City Or County": "Cleveland",
   "Incident Date": "September 12, 2022",
   "Incident ID": "2412750",
   "Operations": "N/A",
   "State": "Ohio",
+  "Victims Injured": "1",
+  "Victims Killed": "0",
 }
 `);
 
       // spot check
       expect(result[4]).toMatchInlineSnapshot(`
 {
-  "Victims Injured": "2",
-  "Victims Killed": "0",
   "Address": "7000 block of S Normal Ave",
   "City Or County": "Chicago",
   "Incident Date": "September 12, 2022",
   "Incident ID": "2412712",
   "Operations": "N/A",
   "State": "Illinois",
+  "Victims Injured": "2",
+  "Victims Killed": "0",
 }
 `);
     });
