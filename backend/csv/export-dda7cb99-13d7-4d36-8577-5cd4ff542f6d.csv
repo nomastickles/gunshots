@@ -1,4 +1,4 @@
-"Incident ID","Incident Date",State,"City Or County",Address,"# Victims Injured","# Victims Killed","# Subjects-Suspects Injured","# Subjects-Suspects Killed","# Subjects-Suspects Arrested",Operations
+"Incident ID","Incident Date",State,"City Or County",Address,"Victims Injured","Victims Killed","Subjects-Suspects Injured","Subjects-Suspects Killed","Subjects-Suspects Arrested",Operations
 2597332,"May 13, 2023",Arkansas,"Little Rock",N/A,1,0,0,0,1,N/A
 2597330,"May 13, 2023",Texas,Houston,"7700 block of Elmwood St",1,0,0,0,0,N/A
 2597328,"May 13, 2023",Texas,Houston,"5900 block of Brock St",1,0,0,0,0,N/A
