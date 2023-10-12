@@ -6,8 +6,8 @@ import { AttributeValue } from "@aws-sdk/client-dynamodb";
 export interface IncidentIncoming {
   "Incident ID": number;
   "Incident Date": string;
-  "# Victims Injured": number;
-  "# Victims Killed": number;
+  "Victims Injured": number;
+  "Victims Killed": number;
   State: string;
   "City Or County": string;
   Address: string;
