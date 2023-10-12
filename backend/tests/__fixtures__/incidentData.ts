@@ -1,4 +1,4 @@
-export const CSVData1 = `"Incident ID","Incident Date",State,"City Or County",Address,"# Killed","# Injured",Operations
+export const CSVData1 = `"Incident ID","Incident Date",State,"City Or County",Address,"Victims Killed","Victims Injured",Operations
 2412785,"September 12, 2022",Florida,"Hollywood (West Park)","4100 block of SW 21st St",3,0,N/A
 2412758,"September 12, 2022",Indiana,Indianapolis,"E 18th St and Dequincy St",1,0,N/A
 2412750,"September 12, 2022",Ohio,Cleveland,"E 113th St and Benham Ave",0,1,N/A
