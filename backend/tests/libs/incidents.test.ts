@@ -28,8 +28,8 @@ describe("libIncidents", () => {
       // spot check
       expect(result[2]).toMatchInlineSnapshot(`
 {
-  "Injured": "1",
-  "Killed": "0",
+  "Victims Injured": "1",
+  "Victims Killed": "0",
   "Address": "E 113th St and Benham Ave",
   "City Or County": "Cleveland",
   "Incident Date": "September 12, 2022",
@@ -42,8 +42,8 @@ describe("libIncidents", () => {
       // spot check
       expect(result[4]).toMatchInlineSnapshot(`
 {
-  "Injured": "2",
-  "Killed": "0",
+  "Victims Injured": "2",
+  "Victims Killed": "0",
   "Address": "7000 block of S Normal Ave",
   "City Or County": "Chicago",
   "Incident Date": "September 12, 2022",
