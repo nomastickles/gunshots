@@ -10,11 +10,9 @@ function Incident() {
   const metrics = currentIncidentInfo?.incident?.metrics;
   const show = stepMap[AppSteps.SHOW_INCIDENT];
   const hide = stepMap[AppSteps.HIDE_INCIDENT];
-  const hideIncidentTotals = metrics?.killed === 0 && metrics?.injured === 0;
+
   const cityState = getCityStateString(incident?.city, incident?.state);
-  const incidentInfo = !hideIncidentTotals
-    ? `${metrics?.killed || 0} KILLED + ${metrics?.injured || 0} INJURED`
-    : "";
+  const incidentInfo = `${metrics?.killed || 0} KILLED + ${metrics?.injured || 0} INJURED`
   const stateInfo = `${
     currentIncidentInfo?.stateTotals?.killed || 0
   } killed + ${currentIncidentInfo?.stateTotals?.injured || 0} injured in ${
