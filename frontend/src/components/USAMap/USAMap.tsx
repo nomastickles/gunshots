@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
+// import { useAppDispatch } from "../../hooks/useAppDispatch";
 
 import { useAppState } from "../../hooks/useAppState";
 import { AppSteps } from "../../types";
@@ -16,7 +16,7 @@ const heatMapBuckets = [
 ];
 
 const USAMap = () => {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const { stepMap, orderedStateNames, currentIncidentInfo } = useAppState();
   const { incident } = currentIncidentInfo;
 
