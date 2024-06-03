@@ -17,6 +17,8 @@ const dynamoDB = require("@aws-sdk/client-dynamodb");
     return;
   }
 
+  console.log("💥 file", file);
+
   if (!stage) {
     console.error("missing stage");
     return;
@@ -74,12 +76,12 @@ const dynamoDB = require("@aws-sdk/client-dynamodb");
     })
   );
 
-  console.log("data sent and last file name updated");
+  console.log("💥 data sent and last file name updated");
 })();
 
 function getMostRecentFile(dir) {
   const files = orderFiles(dir);
-  return files.length ? files[0] : undefined;
+  return files[files.length - 1];
 }
 
 function orderFiles(dir) {
